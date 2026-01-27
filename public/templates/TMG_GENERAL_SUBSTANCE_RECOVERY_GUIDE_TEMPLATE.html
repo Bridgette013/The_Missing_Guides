@@ -1,0 +1,3154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Missing Guide to Recovery - All Sections</title>
+        <style>
+        @media print {
+            body { 
+                margin: 0;
+                padding: 0;
+            }
+            .page-break { 
+                page-break-before: always; 
+            }
+            .no-print { 
+                display: none; 
+            }
+            .section-header {
+                page-break-before: always;
+            }
+            /* Keep boxes together */
+            .info-box, .warning-box, .urgent-box, .option-box, .checklist, 
+            .contact-card, .form-field, .wallet-card, .personalization-box {
+                page-break-inside: avoid;
+            }
+            /* Prevent orphans and widows */
+            p, li {
+                orphans: 3;
+                widows: 3;
+            }
+            h1, h2, h3, h4 {
+                page-break-after: avoid;
+            }
+            @page {
+                margin: 0.75in 0.75in 1in 0.75in; /* Extra bottom margin for page numbers */
+                size: letter portrait;
+                @bottom-center {
+                    content: "Page " counter(page) " of " counter(pages);
+                    font-family: 'Calibri', 'Arial', sans-serif;
+                    font-size: 10pt;
+                    color: #666666;
+                }
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            font-size: 13pt; /* ADA: Large text for readability */
+            line-height: 1.7; /* ADA: Generous line spacing */
+            color: #000000; /* ADA: Pure black for maximum contrast */
+            max-width: 7in; /* Letter paper with margins */
+            margin: 0 auto;
+            padding: 0.75in;
+            background: #FFFFFF; /* ADA: Pure white background */
+        }
+        
+        /* Cover page */
+        .cover-title {
+            font-size: 32pt;
+            text-align: center;
+            margin: 120px 0 30px 0;
+            color: #000000;
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+        
+        .cover-subtitle {
+            font-size: 18pt;
+            text-align: center;
+            margin: 15px 0;
+            color: #000000;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        
+        /* Section headers - always start new page */
+        .section-header {
+            font-size: 24pt; /* ADA: Large headers */
+            margin: 40px 0 20px 0;
+            color: #000000;
+            border-bottom: 4px solid #2529A7; /* Strong blue border */
+            padding-bottom: 12px;
+            page-break-before: always;
+            page-break-after: avoid;
+            font-weight: 700;
+            background: linear-gradient(to bottom, #E8F0F8 0%, #FFFFFF 100%); /* Subtle blue gradient */
+            padding: 15px 10px 12px 10px;
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+        
+        h1 {
+            font-size: 26pt;
+            margin: 30px 0 18px 0;
+            color: #000000;
+            font-weight: 700;
+            page-break-after: avoid;
+            line-height: 1.3;
+        }
+        
+        h2 {
+            font-size: 18pt; /* ADA: Large subheadings */
+            margin: 28px 0 14px 0;
+            color: #000000;
+            border-bottom: 2px solid #4A7BA7;
+            padding-bottom: 8px;
+            page-break-after: avoid;
+            font-weight: 600;
+        }
+        
+        h3 {
+            font-size: 15pt;
+            margin: 22px 0 12px 0;
+            color: #000000;
+            font-weight: 600;
+            page-break-after: avoid;
+        }
+        
+        h4 {
+            font-size: 14pt;
+            margin: 18px 0 10px 0;
+            color: #000000;
+            font-weight: 600;
+            page-break-after: avoid;
+        }
+        
+        p {
+            margin: 0 0 14px 0;
+            color: #000000;
+            font-size: 13pt;
+        }
+        
+        ul, ol {
+            margin: 12px 0 18px 30px;
+            color: #000000;
+        }
+        
+        li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        
+        strong {
+            color: #000000;
+            font-weight: 700; /* Extra bold for emphasis */
+        }
+        
+        em {
+            font-style: italic;
+            color: #000000;
+        }
+        
+        /* Info boxes - HIGH CONTRAST with color */
+        .info-box {
+            border: 3px solid #2529A7; /* Strong blue border */
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            background: #E8F0F8; /* Light blue background */
+            page-break-inside: avoid;
+        }
+        
+        .info-box h3, .info-box h4 {
+            color: #1A3A5C; /* Dark blue for headers */
+            margin-top: 0;
+        }
+        
+        /* Warning boxes - RED for urgency */
+        .warning-box {
+            border: 4px solid #C41E3A; /* Strong red border */
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            background: #FFF0F0; /* Light red background */
+            page-break-inside: avoid;
+        }
+        
+        .warning-box h3, .warning-box h4 {
+            color: #8B0000; /* Dark red */
+            margin-top: 0;
+        }
+        
+        /* Urgent boxes - BOLD RED */
+        .urgent-box {
+            border: 5px solid #C41E3A;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            background: #FFE5E5; /* Pink background */
+            page-break-inside: avoid;
+        }
+        
+        .urgent-box h3 {
+            color: #8B0000;
+            margin-top: 0;
+            font-size: 16pt;
+        }
+        
+        /* Tip boxes - GREEN for helpful info */
+        .tip-box {
+            border: 3px solid #2E7D32; /* Green border */
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            background: #F0F8F0; /* Light green background */
+            page-break-inside: avoid;
+        }
+        
+        /* Checklists - LARGE checkboxes */
+        .checklist {
+            list-style: none;
+            margin: 18px 0;
+            padding: 0;
+            page-break-inside: avoid;
+        }
+        
+        .checklist li {
+            padding: 12px 0 12px 40px;
+            position: relative;
+            border-bottom: 2px solid #D0D0D0;
+            font-size: 13pt;
+            line-height: 1.6;
+        }
+        
+        .checklist li:before {
+            content: "☐"; 
+            position: absolute;
+            left: 0;
+            font-size: 24px; /* LARGE checkbox */
+            color: #000000;
+            font-weight: 700;
+        }
+        
+        /* Contact cards - BOLD borders */
+        .contact-card {
+            border: 3px solid #4A7BA7;
+            border-radius: 8px;
+            padding: 18px;
+            margin: 18px 0;
+            background: #F5F9FC; /* Light blue background */
+            page-break-inside: avoid;
+        }
+        
+        .contact-card h4 {
+            margin-top: 0;
+            color: #1A3A5C;
+            font-size: 15pt;
+        }
+        
+        /* Tables - HIGH CONTRAST */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            page-break-inside: avoid;
+            border: 2px solid #000000;
+        }
+        
+        th, td {
+            border: 2px solid #000000; /* Bold borders */
+            padding: 12px;
+            text-align: left;
+            color: #000000;
+            font-size: 13pt;
+        }
+        
+        th {
+            background: #4A7BA7; /* Blue header */
+            font-weight: 700;
+            color: #FFFFFF; /* White text on blue */
+        }
+        
+        td {
+            background: #FFFFFF;
+        }
+        
+        /* Alternating row colors for readability */
+        tr:nth-child(even) td {
+            background: #F0F4F8;
+        }
+        
+        /* Form fields - CLEAR boundaries */
+        .form-field {
+            margin: 18px 0;
+            padding: 15px;
+            border: 3px solid #4A7BA7;
+            border-radius: 6px;
+            background: #FAFCFE;
+            page-break-inside: avoid;
+        }
+        
+        .form-field label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #000000;
+            font-size: 14pt;
+        }
+        
+        .form-field input, .form-field textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #000000;
+            border-radius: 4px;
+            background: #FFFFFF;
+            font-size: 13pt;
+            min-height: 40px; /* Large touch target */
+        }
+        
+        /* Wallet cards - BOLD design */
+        .wallet-card {
+            width: 3.5in;
+            height: 2in;
+            border: 3px solid #000000; /* Bold border */
+            padding: 12px;
+            margin: 20px auto;
+            background: #FFFFFF;
+            page-break-inside: avoid;
+            page-break-after: always;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .wallet-card h4 {
+            margin-top: 0;
+            font-size: 12pt;
+            color: #000000;
+        }
+        
+        /* Cut line for wallet cards */
+        .cut-line {
+            border-top: 2px dashed #666666;
+            margin: 30px 0;
+            text-align: center;
+            padding-top: 8px;
+            color: #000000;
+            font-size: 11pt;
+            font-weight: 600;
+        }
+        
+        .cut-line:before {
+            content: "✂ CUT HERE ✂";
+            background: #FFFFFF;
+            padding: 0 15px;
+        }
+        
+        /* Option boxes - PROMINENT */
+        .option-box {
+            border: 4px solid #2529A7;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            background: #F0F6FC;
+            page-break-before: always;
+            page-break-inside: avoid;
+        }
+        
+        .option-box h3 {
+            margin-top: 0;
+            color: #1A3A5C;
+            font-size: 18pt;
+            border-bottom: 2px solid #2529A7;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        /* Personalization boxes */
+        .personalization-box {
+            border: 4px solid #4A7BA7;
+            padding: 25px;
+            margin: 40px auto;
+            max-width: 600px;
+            background: #F5F9FC;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+        
+        .personalization-box label {
+            display: block;
+            font-weight: 700;
+            margin: 15px 0 8px 0;
+            color: #000000;
+            font-size: 14pt;
+        }
+        
+        .personalization-box input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #000000;
+            border-radius: 4px;
+            font-size: 13pt;
+            min-height: 40px;
+        }
+        
+        /* Page breaks for major sections */
+        .page-break {
+            page-break-before: always;
+        }
+        
+        /* ADA: Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000000;
+            color: #FFFFFF;
+            padding: 8px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Print quality */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+    
+        
+        /* Page numbers - visible in print */
+        @media print {
+            body {
+                counter-reset: page;
+            }
+            
+            .page-number {
+                position: fixed;
+                bottom: 0.5in;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 10pt;
+                color: #666666;
+                font-family: 'Calibri', 'Arial', sans-serif;
+            }
+            
+            .page-number:after {
+                counter-increment: page;
+                content: "Page " counter(page);
+            }
+        }
+        
+        /* Page number hidden on screen */
+        @media screen {
+            .page-number {
+                display: none;
+            }
+        }
+    
+        
+        /* Template placeholder highlighting */
+        input[placeholder*="["], textarea[placeholder*="["] {
+            background: #FFFACD !important; /* Light yellow for visibility */
+            border: 2px solid #FFB300 !important;
+        }
+        
+        .template-field {
+            background: #FFFACD;
+            padding: 2px 6px;
+            border: 1px dashed #FFB300;
+            font-weight: 600;
+            color: #E65100;
+        }
+    </style>
+</head>
+<body>
+    <!-- TEMPLATE INSTRUCTIONS - REMOVE AFTER FILLING IN -->
+    <div class="template-instructions no-print" style="background: #FFF9E6; border: 3px solid #FFB300; padding: 25px; margin: 20px 0; border-radius: 8px;">
+        <h2 style="color: #E65100; margin-top: 0;">📝 HOW TO USE THIS TEMPLATE</h2>
+        <p style="font-size: 14pt; color: #000000; margin: 15px 0;"><strong>This is your customizable Alcohol The Missing Guide.</strong></p>
+        
+        <h3 style="color: #E65100; font-size: 16pt; margin: 20px 0 10px 0;">STEP 1: Fill in Personal Information</h3>
+        <p style="color: #000000;">Search for and replace these placeholders throughout the document:</p>
+        <ul style="color: #000000; font-size: 13pt; line-height: 1.7;">
+            <li><strong>[PATIENT_NAME]</strong> = Your loved one's first name (e.g., "John", "Sarah")</li>
+            <li><strong>[YOUR_NAME]</strong> = Your name as the primary support person</li>
+            <li><strong>[YOUR_PHONE]</strong> = Your cell phone number</li>
+            <li><strong>[PATIENT_PHONE]</strong> = Patient's cell phone number (if applicable)</li>
+            <li><strong>[BACKUP_CONTACT]</strong> = Secondary contact person's name</li>
+            <li><strong>[BACKUP_PHONE]</strong> = Secondary contact's phone number</li>
+            <li><strong>[INSURANCE_PROVIDER]</strong> = Health insurance company name</li>
+            <li><strong>[POLICY_NUMBER]</strong> = Insurance policy number</li>
+            <li><strong>[PRIMARY_CARE_DR]</strong> = Primary care physician's name</li>
+            <li><strong>[DR_PHONE]</strong> = Doctor's office phone number</li>
+        </ul>
+        
+        <h3 style="color: #E65100; font-size: 16pt; margin: 20px 0 10px 0;">STEP 2: Complete the Worksheets</h3>
+        <p style="color: #000000;">Fill in the blank forms and checklists as you go through the process.</p>
+        
+        <h3 style="color: #E65100; font-size: 16pt; margin: 20px 0 10px 0;">STEP 3: Delete This Yellow Box</h3>
+        <p style="color: #000000;">Once you've personalized everything, delete this instruction box and print your guide.</p>
+        
+        <div style="background: #FFFFFF; border: 2px solid #4CAF50; padding: 15px; margin: 20px 0; border-radius: 6px;">
+            <p style="color: #000000; margin: 0; font-size: 14pt;"><strong>💚 TIP:</strong> Use Ctrl+F (Windows) or Cmd+F (Mac) to find and replace all placeholders at once!</p>
+        </div>
+    </div>
+    <div class="page-break"></div>
+
+<div class="page-break"></div>
+<h1>SECTION 2: QUICK START GUIDE</h1>
+    <div class="subtitle">Going to the Hospital TODAY</div>
+    
+    <div class="breathe-box">
+        <p>BREATHE FIRST</p>
+        <p style="font-size: 16px; font-weight: 400; margin-top: 15px;">
+            You're doing the right thing.<br>
+            This is the hardest part.<br>
+            You've got this.
+        </p>
+    </div>
+    
+    <div style="margin: 30px 0;">
+        <p><strong>Time you're reading this:</strong> <span class="fill-in"></span></p>
+        <p><strong>How you're feeling right now:</strong> <span class="fill-in"></span></p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="step-box">
+        <h2 style="border: none; margin: 0;">
+            <span class="step-number">1</span>DECIDE WHICH HOSPITAL (2 Minutes)
+        </h2>
+    </div>
+    
+    <div class="hospital-option primary">
+        <h3>PRIMARY OPTION:</h3>
+        <p style="font-size: 18px; font-weight: 700; color: #2c3e50; margin: 10px 0;">Banner Thunderbird Medical Center</p>
+        <p>5555 W Thunderbird Rd, Glendale, AZ 85306</p>
+        <p style="font-size: 20px; font-weight: 700; color: #e74c3c; margin: 10px 0;">Phone: (602) 865-5555</p>
+        <p style="margin-top: 15px;"><span class="checkbox"></span> This is where we're going</p>
+    </div>
+    
+    <h3 style="margin-top: 30px;">BACKUP OPTIONS (if Banner Thunderbird is full or if you prefer):</h3>
+    
+    <div class="hospital-option">
+        <p style="font-size: 18px; font-weight: 700; color: #2c3e50; margin: 10px 0;">Aurora Behavioral Health - West</p>
+        <p>6015 W Peoria Ave, Glendale, AZ 85302</p>
+        <p style="font-size: 20px; font-weight: 700; color: #3498db; margin: 10px 0;">Phone: (623) 344-4400 or 24/7 line: (877) 870-7012</p>
+        <p style="margin-top: 15px;"><span class="checkbox"></span> This is where we're going instead</p>
+    </div>
+    
+    <div style="margin: 30px 0; padding: 20px; background: #ecf0f1; border-radius: 8px;">
+        <p><strong>Hospital we chose:</strong> <span class="fill-in"></span></p>
+        <p><strong>Driving time from home:</strong> <span class="fill-in"></span></p>
+        <p><strong>Who's driving:</strong> <span class="fill-in"></span></p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="step-box">
+        <h2 style="border: none; margin: 0;">
+            <span class="step-number">2</span>GRAB THESE ITEMS (5 Minutes Max)
+        </h2>
+    </div>
+    
+    <h3>FOR HIM - ABSOLUTE ESSENTIALS:</h3>
+    
+    <ul class="checklist">
+        <li><span class="checkbox"></span> <strong>His photo ID / Driver's License</strong></li>
+        <li><span class="checkbox"></span> <strong>Insurance card</strong> (front and back)<br>
+            <span style="font-size: 14px; color: #7f8c8d;">→ Take a photo of it with your phone as backup</span></li>
+        <li><span class="checkbox"></span> <strong>His phone + charger</strong></li>
+        <li><span class="checkbox"></span> <strong>Comfortable clothes</strong> (sweatpants, t-shirt, hoodie, slip-on shoes)<br>
+            <span style="font-size: 14px; color: #7f8c8d;">→ No belts, no drawstrings, no laces (hospital will remove them)</span></li>
+        <li><span class="checkbox"></span> <strong>Glasses</strong> (if he wears them)</li>
+        <li><span class="checkbox"></span> <strong>List of current medications</strong> (write below if you don't have a list):
+            <div style="margin: 10px 0;">
+                <span class="fill-in-long"></span>
+                <span class="fill-in-long"></span>
+                <span class="fill-in-long"></span>
+            </div>
+        </li>
+    </ul>
+    
+    <h3 style="margin-top: 30px;">FOR YOU - DON'T FORGET:</h3>
+    
+    <ul class="checklist">
+        <li><span class="checkbox"></span> <strong>Your phone + charger</strong></li>
+        <li><span class="checkbox"></span> <strong>Water bottle</strong></li>
+        <li><span class="checkbox"></span> <strong>Snack</strong> (protein bar, crackers, anything)</li>
+        <li><span class="checkbox"></span> <strong>This binder</strong> (keep it in the car)</li>
+        <li><span class="checkbox"></span> <strong>Sweater or jacket</strong> (hospitals are freezing)</li>
+        <li><span class="checkbox"></span> <strong>Something to do</strong> (book, tablet, earbuds for waiting)</li>
+    </ul>
+    
+    <h3 style="margin-top: 30px;">Optional but helpful:</h3>
+    
+    <ul class="checklist">
+        <li><span class="checkbox"></span> Notepad and pen (for writing down doctor names, instructions)</li>
+        <li><span class="checkbox"></span> Small toiletries for him (travel toothbrush, deodorant)</li>
+        <li><span class="checkbox"></span> Cash ($20 max - for vending machines)</li>
+    </ul>
+    
+    <div class="pro-tip">
+        Take photos of his ID and insurance card RIGHT NOW with your phone. If you forget the physical cards, you'll have backup.
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="page-break"></div>
+    
+    <div class="step-box">
+        <h2 style="border: none; margin: 0;">
+            <span class="step-number">3</span>CRITICAL INFORMATION TO KNOW
+        </h2>
+    </div>
+    
+    <div style="background: #fff3cd; border: 2px solid #ffc107; padding: 25px; border-radius: 8px; margin: 20px 0;">
+        <p style="font-weight: 700; font-size: 18px; margin-bottom: 15px;">Before You Leave Home, Write This Down:</p>
+        
+        <p style="margin: 15px 0;"><strong>Last drink - EXACT TIME:</strong> <span class="fill-in"></span></p>
+        
+        <p style="margin: 15px 0;"><strong>Approximate daily alcohol consumption:</strong></p>
+        <p style="margin-left: 20px;">Type of alcohol: <span class="fill-in"></span></p>
+        <p style="margin-left: 20px;">Amount per day (be specific - ounces, bottles, etc.): <span class="fill-in"></span></p>
+        
+        <p style="margin: 15px 0;"><strong>When did heavy drinking start:</strong> <span class="fill-in"></span></p>
+        
+        <p style="margin: 15px 0;"><strong>Has he had withdrawal symptoms before?</strong> 
+            <span class="checkbox"></span> Yes  
+            <span class="checkbox"></span> No  
+            <span class="checkbox"></span> Don't know
+        </p>
+        
+        <p style="margin-left: 20px;">If yes, what happened: <span class="fill-in-long"></span></p>
+        
+        <p style="margin: 15px 0;"><strong>Has he ever had seizures?</strong> 
+            <span class="checkbox"></span> Yes  
+            <span class="checkbox"></span> No  
+            <span class="checkbox"></span> Don't know
+        </p>
+        
+        <p style="margin: 15px 0;"><strong>Other drug use:</strong> <span class="fill-in"></span></p>
+        
+        <p style="margin: 15px 0;"><strong>Mental health conditions or medications:</strong></p>
+        <span class="fill-in-long"></span>
+        
+        <p style="margin: 15px 0;"><strong>Allergies (medications, food, anything):</strong></p>
+        <span class="fill-in-long"></span>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="step-box">
+        <h2 style="border: none; margin: 0;">
+            <span class="step-number">4</span>WHAT TO SAY AT THE HOSPITAL
+        </h2>
+    </div>
+    
+    <h3>When You Arrive at Emergency Room:</h3>
+    
+    <div class="script-box">
+        <p class="label">Go directly to triage (check-in desk) and say:</p>
+        <p style="font-size: 16px; margin-top: 10px;">
+            "We're here for alcohol detoxification. He's a heavy drinker attempting to quit and needs medical supervision for withdrawal."
+        </p>
+    </div>
+    
+    <h3 style="margin-top: 30px;">They Will Ask These Questions - Be Ready:</h3>
+    
+    <div style="margin: 20px 0;">
+        <div style="background: #f8f9fa; padding: 15px; margin: 10px 0; border-left: 4px solid #3498db; border-radius: 0 4px 4px 0;">
+            <p><strong>Q: How much does he drink?</strong></p>
+            <p style="color: #7f8c8d; font-size: 14px; margin: 5px 0;">A: [Use the numbers you wrote on previous page - BE HONEST]</p>
+            <p style="margin-top: 10px;">Your answer: <span class="fill-in"></span></p>
+        </div>
+        
+        <div style="background: #f8f9fa; padding: 15px; margin: 10px 0; border-left: 4px solid #3498db; border-radius: 0 4px 4px 0;">
+            <p><strong>Q: When was his last drink?</strong></p>
+            <p style="color: #7f8c8d; font-size: 14px; margin: 5px 0;">A: [Exact time you wrote down]</p>
+            <p style="margin-top: 10px;">Your answer: <span class="fill-in"></span></p>
+        </div>
+        
+        <div style="background: #f8f9fa; padding: 15px; margin: 10px 0; border-left: 4px solid #3498db; border-radius: 0 4px 4px 0;">
+            <p><strong>Q: Has he had withdrawal symptoms before?</strong></p>
+            <p style="color: #7f8c8d; font-size: 14px; margin: 5px 0;">A: [Yes/No and what happened]</p>
+            <p style="margin-top: 10px;">Your answer: <span class="fill-in"></span></p>
+        </div>
+        
+        <div style="background: #f8f9fa; padding: 15px; margin: 10px 0; border-left: 4px solid #3498db; border-radius: 0 4px 4px 0;">
+            <p><strong>Q: Any other drug use?</strong></p>
+            <p style="color: #7f8c8d; font-size: 14px; margin: 5px 0;">A: [Be honest - they need to know everything]</p>
+            <p style="margin-top: 10px;">Your answer: <span class="fill-in"></span></p>
+        </div>
+        
+        <div style="background: #f8f9fa; padding: 15px; margin: 10px 0; border-left: 4px solid #3498db; border-radius: 0 4px 4px 0;">
+            <p><strong>Q: Medical history, medications, allergies?</strong></p>
+            <p style="color: #7f8c8d; font-size: 14px; margin: 5px 0;">A: [List everything - better to over-share than under-share]</p>
+            <p style="margin-top: 10px;">Your answer: <span class="fill-in-long"></span></p>
+        </div>
+    </div>
+    
+    <div class="warning">
+        DO NOT downplay how much he drinks. Medical staff need accurate information to dose medications correctly. They are not there to judge. They're there to keep him safe.
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="step-box">
+        <h2 style="border: none; margin: 0;">
+            <span class="step-number">5</span>WHAT HAPPENS NEXT (Timeline)
+        </h2>
+    </div>
+    
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3 style="color: #3498db;">Hour 0-2: Emergency Department Intake</h3>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>He'll be taken back for initial assessment</li>
+                <li>Vital signs checked (blood pressure, heart rate, temperature)</li>
+                <li>Blood work drawn</li>
+                <li>Medical history taken</li>
+                <li>CIWA scale assessment (measures withdrawal severity)</li>
+            </ul>
+            <p style="font-style: italic; color: #7f8c8d; margin-top: 10px;">You may be asked to wait in waiting room during this</p>
+        </div>
+        
+        <div class="timeline-item">
+            <h3 style="color: #3498db;">Hour 2-8: Waiting for Admission</h3>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>IV fluids started (usually with vitamins - thiamine, B12, folate)</li>
+                <li>Medications given (likely benzodiazepines to prevent seizures)</li>
+                <li>Monitored in ER until bed available in behavioral health unit</li>
+            </ul>
+            <p style="font-weight: 700; color: #e74c3c; margin-top: 10px;">This is the longest part. ER wait times vary wildly (2-8 hours typical)</p>
+        </div>
+        
+        <div class="timeline-item">
+            <h3 style="color: #3498db;">Days 1-3: Acute Withdrawal Phase</h3>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Worst symptoms typically happen here</li>
+                <li>Medications adjusted as needed</li>
+                <li>24/7 medical monitoring</li>
+                <li>He may be confused, agitated, or not himself - <strong>this is normal</strong></li>
+            </ul>
+        </div>
+        
+        <div class="timeline-item">
+            <h3 style="color: #3498db;">Days 3-7: Stabilization & Discharge Planning</h3>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Symptoms improving</li>
+                <li>Social worker/case manager assigned</li>
+                <li>Discharge planning begins</li>
+                <li>Treatment recommendations made</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div style="background: #e8f5e9; border-left: 4px solid #4caf50; padding: 20px; margin: 30px 0; border-radius: 0 8px 8px 0;">
+        <p style="font-weight: 700; font-size: 16px;">Expected total hospital stay: 3-7 days (varies by individual)</p>
+    </div>
+    
+    <div class="pro-tip">
+        Once he's stable and admitted, YOU CAN GO HOME. He stays at the hospital, but you don't have to stay there 24/7. The hospital staff will call you if anything changes.
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="page-break"></div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">WHAT YOU MIGHT SEE (Withdrawal Symptoms)</div>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+        <div>
+            <h3 style="color: #2ecc71;">Common & Expected:</h3>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li>Tremors, shaking hands</li>
+                <li>Sweating (a lot)</li>
+                <li>Nausea, vomiting</li>
+                <li>Anxiety, agitation, irritability</li>
+                <li>Can't sleep</li>
+                <li>Rapid heartbeat</li>
+                <li>Headache</li>
+            </ul>
+            <p style="font-style: italic; color: #27ae60; margin-top: 10px;">These are uncomfortable but medically managed</p>
+        </div>
+        
+        <div>
+            <h3 style="color: #e74c3c;">Serious (Hospital Will Handle):</h3>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li>Seizures</li>
+                <li>Hallucinations</li>
+                <li>Severe confusion</li>
+                <li>Delirium tremens (DTs)</li>
+                <li>Chest pain</li>
+            </ul>
+            <p style="font-weight: 700; color: #c0392b; margin-top: 10px;">This is WHY hospital detox is critical - they can intervene immediately</p>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">YOUR ROLE TODAY</div>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+        <div style="background: #e8f5e9; padding: 20px; border-radius: 8px;">
+            <h3 style="color: #27ae60; margin-top: 0;">What You CAN Do:</h3>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li>Get him to the hospital safely</li>
+                <li>Provide accurate medical information</li>
+                <li>Be honest with hospital staff</li>
+                <li>Stay calm (or fake it - that's fine too)</li>
+                <li>Take care of yourself</li>
+            </ul>
+        </div>
+        
+        <div style="background: #ffebee; padding: 20px; border-radius: 8px;">
+            <h3 style="color: #c0392b; margin-top: 0;">What You CANNOT Do:</h3>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li>Control his withdrawal symptoms</li>
+                <li>Speed up the ER wait time</li>
+                <li>Make him feel better right now</li>
+                <li>Fix this alone</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div style="background: #667eea; color: white; padding: 25px; border-radius: 12px; margin: 30px 0; text-align: center;">
+        <p style="font-size: 18px; font-weight: 700;">
+            Your job is to get him to people who can help.<br>
+            That's it.<br>
+            You're doing that job right now.
+        </p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">HOSPITAL DAY-OF CHECKLIST</div>
+    
+    <div style="background: #f8f9fa; padding: 25px; border-radius: 8px; margin: 20px 0;">
+        <p><strong>Time we left for hospital:</strong> <span class="fill-in"></span></p>
+        <p><strong>Time we arrived at ER:</strong> <span class="fill-in"></span></p>
+        <p><strong>Triage nurse name:</strong> <span class="fill-in"></span></p>
+        <p><strong>ER doctor name:</strong> <span class="fill-in"></span></p>
+        
+        <p style="margin-top: 20px;"><strong>What they told us:</strong></p>
+        <div class="note-space" style="min-height: 100px;">
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+        </div>
+        
+        <p><strong>Medications they gave him:</strong></p>
+        <span class="fill-in-long"></span>
+        
+        <p style="margin-top: 20px;"><strong>Time he was admitted to behavioral health unit:</strong> <span class="fill-in"></span></p>
+        <p><strong>Unit name/floor:</strong> <span class="fill-in"></span></p>
+        <p><strong>Room number:</strong> <span class="fill-in"></span></p>
+        <p><strong>Nurse station phone number:</strong> <span class="fill-in"></span></p>
+        <p><strong>Visiting hours:</strong> <span class="fill-in"></span></p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">NOTES FROM TODAY</div>
+    
+    <div class="note-space">
+        <p class="label">Use this space for anything you need to remember:</p>
+        <span class="fill-in-long"></span>
+        <span class="fill-in-long"></span>
+        <span class="fill-in-long"></span>
+        <span class="fill-in-long"></span>
+        <span class="fill-in-long"></span>
+        <span class="fill-in-long"></span>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">WHEN YOU LEAVE THE HOSPITAL</div>
+    
+    <h3>Before You Go Home:</h3>
+    
+    <ul class="checklist">
+        <li><span class="checkbox"></span> Get nurse station phone number (write it on previous page)</li>
+        <li><span class="checkbox"></span> Ask when you can call for updates</li>
+        <li><span class="checkbox"></span> Ask about visiting hours</li>
+        <li><span class="checkbox"></span> Make sure they have your phone number</li>
+        <li><span class="checkbox"></span> Ask when they expect him to be moved to behavioral health unit (if still in ER)</li>
+    </ul>
+    
+    <h3 style="margin-top: 30px;">Once You're Home:</h3>
+    
+    <ul class="checklist">
+        <li><span class="checkbox"></span> Eat something (even if you don't feel like it)</li>
+        <li><span class="checkbox"></span> Drink water</li>
+        <li><span class="checkbox"></span> Call someone who loves you - tell them it's done</li>
+        <li><span class="checkbox"></span> Take a shower</li>
+        <li><span class="checkbox"></span> Try to sleep (or at least rest)</li>
+    </ul>
+    
+    <h3 style="margin-top: 30px;">Tomorrow Morning:</h3>
+    
+    <ul class="checklist">
+        <li><span class="checkbox"></span> Call hospital for update</li>
+        <li><span class="checkbox"></span> Read Section 3 (Hospital Detox Phase) when you're ready</li>
+        <li><span class="checkbox"></span> Breathe</li>
+    </ul>
+    
+    <div class="page-break"></div>
+    
+    <div class="affirmation">
+        <p style="font-size: 24px; margin-bottom: 20px;">ONE LAST THING</p>
+        <p style="font-size: 18px; line-height: 1.8;">
+            You just did the hardest thing.
+        </p>
+        <p style="font-size: 16px; margin-top: 20px; font-weight: 400;">
+            Getting him to the hospital - physically getting him there, walking through those doors, saying the words out loud - that's the hardest part of all of this.
+        </p>
+        <p style="font-size: 16px; margin-top: 15px; font-weight: 400;">
+            Everything else has professionals, protocols, and procedures.
+        </p>
+        <p style="font-size: 16px; margin-top: 15px; font-weight: 400;">
+            But this first step? That was all you.
+        </p>
+        <p style="font-size: 18px; margin-top: 20px; font-weight: 700;">
+            You showed up. You did it.
+        </p>
+        <p style="font-size: 18px; margin-top: 10px; font-weight: 700;">
+            I'm so proud of you.
+        </p>
+    </div>
+    
+    <div style="margin: 40px 0; padding: 20px; background: #f8f9fa; border-radius: 8px; text-align: center;">
+        <p style="font-size: 16px; color: #7f8c8d;">
+            → <strong>He's admitted and stable?</strong> Turn to Section 3 (Hospital Detox Phase) when you're ready.
+        </p>
+        <p style="font-size: 16px; color: #7f8c8d; margin-top: 10px;">
+            → <strong>Need emotional support right now?</strong> Turn to Section 7 (For Mom - Self-Care).
+        </p>
+        <p style="font-size: 16px; color: #7f8c8d; margin-top: 10px;">
+            → <strong>Just need phone numbers?</strong> Turn to Section 6 (Contact Directory).
+        </p>
+    </div>
+<div class="page-break"></div>
+<h1>SECTION 3: HOSPITAL DETOX PHASE</h1>
+    <div class="subtitle">What Happens During His 3-7 Day Stay</div>
+    
+    <div class="intro-box">
+        <p><strong>He's admitted. You can breathe a little.</strong></p>
+        <p style="margin-top: 15px;">
+            This section covers what to expect during his hospital detox stay, what questions to ask, 
+            and how to navigate the next few days. You don't need to read this all at once—use it as 
+            a reference when you need it.
+        </p>
+    </div>
+    
+    <div style="margin: 30px 0;">
+        <p><strong>Date he was admitted:</strong> <span class="fill-in"></span></p>
+        <p><strong>Hospital unit/floor:</strong> <span class="fill-in"></span></p>
+        <p><strong>Room number:</strong> <span class="fill-in"></span></p>
+        <p><strong>Nurse station phone:</strong> <span class="fill-in"></span></p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">WHAT'S HAPPENING MEDICALLY</div>
+    
+    <h2>The Detox Process Explained</h2>
+    
+    <p>Alcohol detoxification is the process of the body eliminating alcohol and adjusting to functioning 
+    without it. For heavy, chronic drinkers, this process is dangerous without medical supervision because 
+    the body has become physically dependent on alcohol to regulate basic functions.</p>
+    
+    <h3 style="margin-top: 25px;">What the Hospital is Doing:</h3>
+    
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <p><strong>1. Preventing Dangerous Complications</strong></p>
+        <p style="margin-left: 20px;">Alcohol withdrawal can cause seizures, cardiac issues, and delirium tremens (DTs). 
+        The medications he's receiving (typically benzodiazepines like Ativan, Librium, or Valium) prevent these 
+        life-threatening complications.</p>
+        
+        <p style="margin-top: 15px;"><strong>2. Managing Symptoms</strong></p>
+        <p style="margin-left: 20px;">Medications reduce the severity of withdrawal symptoms—tremors, anxiety, nausea, 
+        sweating. The doses are adjusted based on regular CIWA assessments (Clinical Institute Withdrawal Assessment scale).</p>
+        
+        <p style="margin-top: 15px;"><strong>3. Correcting Nutritional Deficiencies</strong></p>
+        <p style="margin-left: 20px;">Heavy drinking depletes essential vitamins. He's likely receiving thiamine (B1), 
+        folate, and other B vitamins through IV or oral supplements to prevent serious complications like Wernicke-Korsakoff syndrome.</p>
+        
+        <p style="margin-top: 15px;"><strong>4. Monitoring Vital Signs</strong></p>
+        <p style="margin-left: 20px;">Blood pressure, heart rate, temperature, and oxygen levels are checked regularly. 
+        Withdrawal puts stress on the cardiovascular system.</p>
+        
+        <p style="margin-top: 15px;"><strong>5. Treating Co-occurring Conditions</strong></p>
+        <p style="margin-left: 20px;">Depression, anxiety, sleep disorders, liver damage, GI issues—all common in chronic 
+        alcohol use and all being assessed and addressed.</p>
+    </div>
+    
+    <div class="info-box">
+        The goal of medical detox is safe stabilization—getting him through withdrawal alive and as comfortable as possible. 
+        It is NOT addiction treatment. Detox addresses the physical dependence. Treatment addresses the addiction itself.
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">DAY-BY-DAY TIMELINE</div>
+    
+    <div class="day-section">
+        <h2 style="border: none; margin: 0;">
+            <span class="day-number">1</span>DAY 1: ADMISSION & ASSESSMENT
+        </h2>
+        
+        <h3 style="margin-top: 20px;">What's Happening:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Comprehensive medical evaluation completed</li>
+            <li>Baseline labs drawn (liver function, blood count, electrolytes, etc.)</li>
+            <li>Medication protocol started</li>
+            <li>CIWA assessments begin (every 2-4 hours initially)</li>
+            <li>He may still be in ER or newly moved to behavioral health unit</li>
+        </ul>
+        
+        <h3 style="margin-top: 20px;">What He Might Experience:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Anxiety, restlessness, agitation</li>
+            <li>Tremors (shaky hands)</li>
+            <li>Sweating, nausea</li>
+            <li>Trouble sleeping</li>
+            <li>Some confusion or disorientation</li>
+        </ul>
+        
+        <h3 style="margin-top: 20px;">What You Can Do:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Visiting may not be allowed yet or may be limited</li>
+            <li>Call nurse station for updates</li>
+            <li>Rest at home—you need your energy for the days ahead</li>
+        </ul>
+        
+        <div class="note-space" style="margin-top: 20px;">
+            <p class="label">Notes from Day 1:</p>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+        </div>
+    </div>
+    
+    <div class="day-section">
+        <h2 style="border: none; margin: 0;">
+            <span class="day-number">2</span>DAYS 2-3: PEAK WITHDRAWAL
+        </h2>
+        
+        <h3 style="margin-top: 20px;">What's Happening:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Withdrawal symptoms typically WORST during this period</li>
+            <li>Medications being adjusted based on symptom severity</li>
+            <li>Frequent monitoring continues</li>
+            <li>Risk of seizures highest in this window</li>
+            <li>May be moved to ICU if complications develop (rare but possible)</li>
+        </ul>
+        
+        <h3 style="margin-top: 20px;">What He Might Experience:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Intense anxiety, possible panic</li>
+            <li>Severe tremors</li>
+            <li>Profuse sweating, rapid heartbeat</li>
+            <li>Nausea, vomiting</li>
+            <li>Insomnia despite exhaustion</li>
+            <li>Possible hallucinations (visual, auditory, tactile)</li>
+            <li>Confusion, disorientation, memory issues</li>
+            <li>May not recognize you or know where he is</li>
+            <li>May be irritable, agitated, or paranoid</li>
+        </ul>
+        
+        <div class="warning">
+            If he seems "not himself," confused, seeing things, or saying things that don't make sense—
+            this is medically expected during peak withdrawal. The staff knows. They're managing it. 
+            Don't panic. Don't argue with him or try to convince him what's real. Just stay calm, 
+            keep visits short, and let the medical team handle it.
+        </div>
+        
+        <h3 style="margin-top: 20px;">What You Can Do:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Keep visits SHORT if allowed (10-15 minutes max)</li>
+            <li>Speak calmly and simply</li>
+            <li>Don't take anything he says personally</li>
+            <li>Ask nurses how he's doing—don't rely only on what he tells you</li>
+            <li>This is hardest for YOU too—lean on your support people</li>
+        </ul>
+        
+        <div class="note-space" style="margin-top: 20px;">
+            <p class="label">Notes from Days 2-3:</p>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="day-section">
+        <h2 style="border: none; margin: 0;">
+            <span class="day-number">4</span>DAYS 4-5: STABILIZATION
+        </h2>
+        
+        <h3 style="margin-top: 20px;">What's Happening:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Acute withdrawal symptoms begin to subside</li>
+            <li>Medications being tapered down</li>
+            <li>He should be more alert, oriented, and himself</li>
+            <li>Social worker/case manager will start discharge planning</li>
+            <li>Recommendations for continuing care will be discussed</li>
+        </ul>
+        
+        <h3 style="margin-top: 20px;">What He Might Experience:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Physically exhausted but mental clarity returning</li>
+            <li>Mood swings (guilt, shame, anger, relief, fear)</li>
+            <li>Anxiety about what comes next</li>
+            <li>May minimize what happened or already talk about going home</li>
+            <li>Sleep still disrupted but improving</li>
+            <li>Appetite may return</li>
+        </ul>
+        
+        <h3 style="margin-top: 20px;">What You Can Do:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>NOW is when you can have real conversations</li>
+            <li>Ask to meet with social worker/case manager TOGETHER</li>
+            <li>Listen to their recommendations about next steps</li>
+            <li>Start reading Section 5 (Treatment Conversations)</li>
+            <li>Don't let him minimize this or rush discharge</li>
+        </ul>
+        
+        <div class="pro-tip">
+            This is the window where he might feel "fine" and want to leave AMA (against medical advice) or 
+            skip inpatient treatment. Hold firm. He feels better because of MEDICAL INTERVENTION, not because 
+            he's cured. The alcohol is out of his system but the addiction isn't.
+        </div>
+        
+        <div class="note-space" style="margin-top: 20px;">
+            <p class="label">Notes from Days 4-5:</p>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="day-section">
+        <h2 style="border: none; margin: 0;">
+            <span class="day-number">5</span>DAYS 6-7: DISCHARGE PREPARATION
+        </h2>
+        
+        <h3 style="margin-top: 20px;">What's Happening:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Medical detox complete—he's physically stable</li>
+            <li>Discharge plan being finalized</li>
+            <li>Referrals to treatment facilities being coordinated</li>
+            <li>Discharge medications prescribed</li>
+            <li>Follow-up appointments scheduled</li>
+        </ul>
+        
+        <h3 style="margin-top: 20px;">What He Might Experience:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Eager to leave</li>
+            <li>May feel good physically and think he's "got this"</li>
+            <li>Anxious about treatment or facing life without alcohol</li>
+            <li>May be in denial about needing further help</li>
+        </ul>
+        
+        <h3 style="margin-top: 20px;">Critical Decisions:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Does he go directly to inpatient treatment? (RECOMMENDED)</li>
+            <li>Does he go home with intensive outpatient plan?</li>
+            <li>Does he refuse all treatment?</li>
+        </ul>
+        
+        <div class="warning">
+            Detox alone has an extremely high relapse rate—often within days. The physical withdrawal is managed, 
+            but nothing has addressed WHY he drinks, HOW to cope without alcohol, or HOW to prevent relapse. 
+            Going straight from hospital to home is statistically the least successful path.
+        </div>
+        
+        <div class="note-space" style="margin-top: 20px;">
+            <p class="label">Notes from Days 6-7 / Discharge Planning:</p>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">UNDERSTANDING WITHDRAWAL SYMPTOMS</div>
+    
+    <div class="symptom-grid">
+        <div class="symptom-box normal">
+            <h3 style="color: #2e7d32;">EXPECTED & MANAGED</h3>
+            <p style="font-size: 14px; color: #558b2f; margin: 5px 0;">These are uncomfortable but medically controlled:</p>
+            <ul>
+                <li>Anxiety, restlessness</li>
+                <li>Tremors (shaking)</li>
+                <li>Sweating</li>
+                <li>Nausea, vomiting</li>
+                <li>Headache</li>
+                <li>Rapid heartbeat</li>
+                <li>Insomnia</li>
+                <li>Loss of appetite</li>
+                <li>Mood swings</li>
+            </ul>
+        </div>
+        
+        <div class="symptom-box concerning">
+            <h3 style="color: #f57c00;">CONCERNING - NOTIFY STAFF</h3>
+            <p style="font-size: 14px; color: #e65100; margin: 5px 0;">Tell nurses if you observe:</p>
+            <ul>
+                <li>Severe confusion</li>
+                <li>Seeing/hearing things</li>
+                <li>Extreme agitation</li>
+                <li>Severe tremors</li>
+                <li>Very high blood pressure</li>
+                <li>Racing heart</li>
+                <li>High fever</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="symptom-box emergency" style="margin-top: 20px;">
+        <h3 style="color: #c62828;">MEDICAL EMERGENCY - CALL NURSE IMMEDIATELY</h3>
+        <p style="font-size: 14px; color: #b71c1c; margin: 5px 0 15px 0;">These require immediate intervention:</p>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li><strong>Seizures</strong> (convulsions, loss of consciousness, muscle rigidity)</li>
+            <li><strong>Delirium tremens (DTs)</strong> (severe confusion, fever, severe agitation, hallucinations)</li>
+            <li><strong>Chest pain or pressure</strong></li>
+            <li><strong>Difficulty breathing</strong></li>
+            <li><strong>Unresponsiveness</strong></li>
+        </ul>
+        <p style="margin-top: 15px; font-weight: 700; color: #c62828;">
+            If he's in the hospital and any of these occur, staff will respond immediately. If he's home and 
+            these happen, call 911.
+        </p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">QUESTIONS TO ASK THE MEDICAL TEAM</div>
+    
+    <h3>For the Attending Physician or Psychiatrist:</h3>
+    
+    <div class="contact-card">
+        <p><strong>Doctor's name:</strong> <span class="fill-in"></span></p>
+        <p><strong>When can I speak with them:</strong> <span class="fill-in"></span></p>
+        
+        <h3 style="margin-top: 20px;">Questions to Ask:</h3>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> How is he progressing through withdrawal?</li>
+            <li><span class="checkbox"></span> Have there been any complications?</li>
+            <li><span class="checkbox"></span> What medications is he receiving and why?</li>
+            <li><span class="checkbox"></span> What medications will he be discharged with?</li>
+            <li><span class="checkbox"></span> Are there any medical concerns beyond the addiction (liver damage, etc.)?</li>
+            <li><span class="checkbox"></span> What level of care do you recommend after discharge—inpatient or outpatient?</li>
+            <li><span class="checkbox"></span> When do you expect discharge?</li>
+        </ul>
+        
+        <div class="note-space" style="margin-top: 15px;">
+            <p class="label">Notes from doctor conversation:</p>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+        </div>
+    </div>
+    
+    <div class="contact-card">
+        <p><strong>Social Worker / Case Manager name:</strong> <span class="fill-in"></span></p>
+        <p><strong>Phone number:</strong> <span class="fill-in"></span></p>
+        
+        <h3 style="margin-top: 20px;">Questions to Ask:</h3>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> What treatment options are you recommending?</li>
+            <li><span class="checkbox"></span> Can you provide direct referrals to inpatient facilities?</li>
+            <li><span class="checkbox"></span> Which facilities accept our insurance?</li>
+            <li><span class="checkbox"></span> Can you coordinate a direct transfer from hospital to treatment facility?</li>
+            <li><span class="checkbox"></span> What happens if he refuses treatment recommendations?</li>
+            <li><span class="checkbox"></span> What outpatient resources are available if inpatient isn't possible?</li>
+            <li><span class="checkbox"></span> Will he have follow-up appointments? With whom?</li>
+        </ul>
+        
+        <div class="note-space" style="margin-top: 15px;">
+            <p class="label">Notes from social worker conversation:</p>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">VISITING TIPS</div>
+    
+    <div class="pro-tip">
+        Visiting hours: <span class="fill-in"></span>
+    </div>
+    
+    <h3>DO:</h3>
+    <ul style="margin-left: 20px; line-height: 1.8;">
+        <li>Keep visits SHORT during acute withdrawal (Days 1-3)—he needs rest</li>
+        <li>Speak calmly and simply</li>
+        <li>Ask nurses how he's really doing before/after your visit</li>
+        <li>Bring comfort items (if allowed): photos, his favorite snacks (check with staff first), phone charger</li>
+        <li>Be prepared for him to not remember conversations</li>
+        <li>Tell him you're proud he's getting help</li>
+    </ul>
+    
+    <h3 style="margin-top: 25px;">DON'T:</h3>
+    <ul style="margin-left: 20px; line-height: 1.8;">
+        <li>Expect meaningful conversations during peak withdrawal</li>
+        <li>Argue with hallucinations or delusions—just redirect or leave</li>
+        <li>Make promises about what happens after discharge</li>
+        <li>Bring up past grievances or conflicts</li>
+        <li>Agree to check him out AMA (Against Medical Advice)</li>
+        <li>Take his irritability, confusion, or anger personally</li>
+    </ul>
+    
+    <div class="info-box" style="margin-top: 20px;">
+        Remember: He's going through a medical crisis. His brain chemistry is in chaos. The person you're 
+        talking to during peak withdrawal is not "him"—it's withdrawal. Real conversations happen during 
+        stabilization (Days 4+).
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">PRACTICAL LOGISTICS</div>
+    
+    <h3>Hospital Contact Information:</h3>
+    
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <p><strong>Main hospital line:</strong> <span class="fill-in"></span></p>
+        <p><strong>Unit/Floor name:</strong> <span class="fill-in"></span></p>
+        <p><strong>Nurse station direct line:</strong> <span class="fill-in"></span></p>
+        <p><strong>Social work department:</strong> <span class="fill-in"></span></p>
+        <p><strong>Best times to call for updates:</strong> <span class="fill-in"></span></p>
+    </div>
+    
+    <h3>What to Bring on Future Visits:</h3>
+    
+    <ul class="checklist">
+        <li><span class="checkbox"></span> Clean clothes (comfortable, casual)</li>
+        <li><span class="checkbox"></span> Personal hygiene items (if hospital doesn't provide or he wants his own)</li>
+        <li><span class="checkbox"></span> Books, magazines (nothing too complex)</li>
+        <li><span class="checkbox"></span> Phone charger</li>
+        <li><span class="checkbox"></span> Snacks (check with nursing staff first—some items restricted)</li>
+        <li><span class="checkbox"></span> Photos from home (can be comforting)</li>
+    </ul>
+    
+    <h3 style="margin-top: 25px;">What NOT to Bring:</h3>
+    
+    <ul style="margin-left: 20px; line-height: 1.8;">
+        <li>Anything containing alcohol (mouthwash, hand sanitizer, colognes)</li>
+        <li>Medications (hospital manages all meds)</li>
+        <li>Sharp objects (razors, scissors, etc.)</li>
+        <li>Valuables (jewelry, large amounts of cash)</li>
+        <li>Belts, shoe laces, drawstrings (safety protocols)</li>
+    </ul>
+    
+    <div class="page-break"></div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">DAILY TRACKING LOG</div>
+    
+    <p style="margin-bottom: 20px;">Use this space to track updates, changes, or things to remember:</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 15%;">Date</th>
+                <th style="width: 15%;">Day #</th>
+                <th style="width: 70%;">Notes / Updates / Observations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td style="height: 60px;"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td style="height: 60px;"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td style="height: 60px;"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td style="height: 60px;"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td style="height: 60px;"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td style="height: 60px;"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td style="height: 60px;"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div style="margin: 40px 0; padding: 25px; background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white; border-radius: 12px; text-align: center;">
+        <p style="font-size: 18px; font-weight: 700;">
+            You're navigating a medical crisis with grace.
+        </p>
+        <p style="font-size: 16px; margin-top: 15px; font-weight: 400;">
+            This phase is temporary. He's getting the medical help he needs. <br>
+            You're doing everything right.
+        </p>
+    </div>
+    
+    <div style="margin: 40px 0; padding: 20px; background: #f8f9fa; border-radius: 8px; text-align: center;">
+        <p style="font-size: 16px; color: #2c3e50;">
+            → <strong>Hospital talking about discharge?</strong> Turn to Section 4 (Discharge Planning).
+        </p>
+        <p style="font-size: 16px; color: #2c3e50; margin-top: 10px;">
+            → <strong>Need to talk to him about treatment?</strong> Turn to Section 5 (Treatment Conversations).
+        </p>
+        <p style="font-size: 16px; color: #2c3e50; margin-top: 10px;">
+            → <strong>Feeling overwhelmed?</strong> Turn to Section 7 (For Mom - Self-Care).
+        </p>
+    </div>
+<div class="page-break"></div>
+<h1>SECTION 4: DISCHARGE PLANNING</h1>
+    <div class="subtitle">Preparing for What Comes Next</div>
+    
+    <div class="intro-box">
+        <p><strong>Detox is almost complete. Now comes the critical decision.</strong></p>
+        <p style="margin-top: 15px;">
+            This section covers what happens during discharge planning, the treatment options available, 
+            and how to navigate this pivotal transition. The decisions made in the next 24-48 hours will 
+            significantly impact his chances of long-term recovery.
+        </p>
+    </div>
+    
+    <div style="margin: 30px 0;">
+        <p><strong>Expected discharge date:</strong> <span class="fill-in"></span></p>
+        <p><strong>Discharge planner/social worker:</strong> <span class="fill-in"></span></p>
+        <p><strong>Their phone number:</strong> <span class="fill-in"></span></p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">UNDERSTANDING THE DISCHARGE PROCESS</div>
+    
+    <h2>What Happens During Discharge Planning</h2>
+    
+    <p>Typically begins on <strong>Day 4-5</strong> of hospital stay, once acute withdrawal has resolved and he's medically stable.</p>
+    
+    <h3 style="margin-top: 25px;">The Discharge Team Will:</h3>
+    
+    <ul style="margin-left: 20px; line-height: 1.8;">
+        <li>Assess his readiness for discharge (medically stable, withdrawal managed)</li>
+        <li>Evaluate his risk level for relapse</li>
+        <li>Recommend appropriate level of continuing care</li>
+        <li>Provide referrals to treatment facilities</li>
+        <li>Coordinate insurance authorization if needed</li>
+        <li>Prescribe discharge medications</li>
+        <li>Schedule follow-up appointments</li>
+        <li>Provide crisis resources and relapse prevention information</li>
+    </ul>
+    
+    <div class="warning">
+        Discharge planning often happens QUICKLY—sometimes with only 24-48 hours notice. Don't wait. Start asking about discharge plans on Day 3 or 4, even if they say it's "too early." It's not.
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">QUESTIONS FOR THE DISCHARGE TEAM</div>
+    
+    <div class="checklist-box">
+        <h2 style="border: none; margin: 0 0 15px 0;">Critical Questions to Ask:</h2>
+        
+        <ul class="checklist">
+            <li><span class="checkbox"></span> <strong>What level of care are you recommending and why?</strong>
+                <div class="note-space" style="min-height: 60px; margin: 10px 0;">
+                    <span class="fill-in-long"></span>
+                </div>
+            </li>
+            
+            <li><span class="checkbox"></span> <strong>What happens if he refuses the recommended level of care?</strong>
+                <div class="note-space" style="min-height: 60px; margin: 10px 0;">
+                    <span class="fill-in-long"></span>
+                </div>
+            </li>
+            
+            <li><span class="checkbox"></span> <strong>Which treatment facilities accept our insurance?</strong>
+                <div class="note-space" style="min-height: 60px; margin: 10px 0;">
+                    <span class="fill-in-long"></span>
+                </div>
+            </li>
+            
+            <li><span class="checkbox"></span> <strong>Can you arrange a direct transfer from hospital to treatment facility?</strong>
+                <div class="note-space" style="min-height: 60px; margin: 10px 0;">
+                    <span class="fill-in-long"></span>
+                </div>
+            </li>
+            
+            <li><span class="checkbox"></span> <strong>What medications will he be discharged with? What are they for?</strong>
+                <div class="note-space" style="min-height: 60px; margin: 10px 0;">
+                    <span class="fill-in-long"></span>
+                </div>
+            </li>
+            
+            <li><span class="checkbox"></span> <strong>What are the warning signs that he needs to return to the ER?</strong>
+                <div class="note-space" style="min-height: 60px; margin: 10px 0;">
+                    <span class="fill-in-long"></span>
+                </div>
+            </li>
+            
+            <li><span class="checkbox"></span> <strong>What's the relapse rate for people who go home versus inpatient treatment?</strong>
+                <div class="note-space" style="min-height: 60px; margin: 10px 0;">
+                    <span class="fill-in-long"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">UNDERSTANDING TREATMENT OPTIONS</div>
+    
+    <p>After medical detox, there are three primary paths:</p>
+    
+    <div class="option-box recommended">
+        <h2 style="border: none; margin: 0;">✓ OPTION 1: RESIDENTIAL INPATIENT TREATMENT</h2>
+        <p style="font-weight: 700; color: #27ae60; margin: 10px 0;">MOST RECOMMENDED - Highest Success Rate</p>
+        
+        <h3 style="margin-top: 20px;">What It Is:</h3>
+        <p>30-90 day residential program where he lives at the facility full-time. Intensive therapy, medical management, structured environment, 24/7 support.</p>
+        
+        <h3 style="margin-top: 20px;">Why It Works:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Removes ALL triggers and access to alcohol</li>
+            <li>Builds coping skills in controlled environment before returning to real world</li>
+            <li>Addresses underlying issues (trauma, mental health, relationship patterns)</li>
+            <li>Establishes routine and accountability</li>
+            <li>Peer support from others in recovery</li>
+            <li>Medical oversight for any complications or co-occurring conditions</li>
+            <li>Family therapy and discharge planning built in</li>
+        </ul>
+        
+        <h3 style="margin-top: 20px;">Typical Structure:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Individual therapy (3-5 sessions/week)</li>
+            <li>Group therapy (daily)</li>
+            <li>12-step or alternative recovery meetings</li>
+            <li>Life skills, relapse prevention education</li>
+            <li>Recreational therapy, mindfulness, exercise</li>
+            <li>Medication management if needed</li>
+        </ul>
+        
+        <h3 style="margin-top: 20px;">Cost/Insurance:</h3>
+        <p>Many programs accept insurance. Out-of-pocket costs vary widely ($5,000-$30,000+ for 30 days). Scholarships and payment plans often available.</p>
+        
+        <h3 style="margin-top: 20px;">Facilities in Your Area:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li><strong>The Meadows (Wickenburg)</strong> - (800) 632-3697</li>
+            <li><strong>Cottonwood Tucson</strong> - (888) 727-0441</li>
+        </ul>
+        
+        <div class="note-space" style="margin-top: 15px;">
+            <p class="label">Notes on inpatient options discussed:</p>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="page-break"></div>
+    
+    <div class="option-box">
+        <h2 style="border: none; margin: 0;">OPTION 2: INTENSIVE OUTPATIENT PROGRAM (IOP)</h2>
+        <p style="font-weight: 700; color: #f39c12; margin: 10px 0;">MODERATE RECOMMENDATION - Requires Strong Support System</p>
+        
+        <h3 style="margin-top: 20px;">What It Is:</h3>
+        <p>Lives at home, attends treatment 3-5 days/week for 3-4 hours/day. Typically 8-12 weeks. Group therapy, individual sessions, education.</p>
+        
+        <h3 style="margin-top: 20px;">When It Might Work:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>First-time seeking treatment with no prior relapses</li>
+            <li>Strong, sober support system at home</li>
+            <li>High motivation and insight into addiction</li>
+            <li>No co-occurring severe mental health issues</li>
+            <li>Stable housing situation</li>
+            <li>Able to remove all alcohol from home environment</li>
+            <li>Employment or family obligations make inpatient impossible</li>
+        </ul>
+        
+        <h3 style="margin-top: 20px;">The Challenges:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Returns to same environment where drinking occurred</li>
+            <li>All the same triggers, stressors, people, places</li>
+            <li>Limited accountability (honor system between sessions)</li>
+            <li>Higher relapse rate than residential</li>
+            <li>Requires immense self-discipline during vulnerable period</li>
+        </ul>
+        
+        <h3 style="margin-top: 20px;">Local IOP Options:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li><strong>Calvary Healing Center</strong> - (602) 279-1468</li>
+            <li><strong>Terros Health</strong> - (602) 685-6000</li>
+        </ul>
+        
+        <div class="note-space" style="margin-top: 15px;">
+            <p class="label">Notes on outpatient options discussed:</p>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+            <span class="fill-in-long"></span>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="page-break"></div>
+    
+    <div class="option-box not-recommended">
+        <h2 style="border: none; margin: 0;">OPTION 3: HOME WITH MINIMAL SUPPORT</h2>
+        <p style="font-weight: 700; color: #c0392b; margin: 10px 0;">NOT RECOMMENDED - Highest Relapse Risk</p>
+        
+        <h3 style="margin-top: 20px;">What It Is:</h3>
+        <p>Goes home after detox with outpatient therapy appointments (1x/week or less), maybe AA meetings, no structured program.</p>
+        
+        <h3 style="margin-top: 20px;">Why This Usually Fails:</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Detox only addressed physical dependence, NOT addiction</li>
+            <li>No tools learned for coping without alcohol</li>
+            <li>Returns immediately to all triggers and stressors</li>
+            <li>Minimal accountability</li>
+            <li>Easy access to alcohol</li>
+            <li>No peer support system established</li>
+            <li>Underlying issues (mental health, trauma) unaddressed</li>
+        </ul>
+        
+        <div class="stats-box" style="margin-top: 20px;">
+            <h3>The Reality of Relapse Rates:</h3>
+            <p>Studies show that <strong>40-60% of people relapse within the first year after detox alone</strong>. Many relapse within <strong>days or weeks</strong> without continuing treatment.</p>
+            <p style="margin-top: 10px;">With intensive treatment (inpatient + aftercare), success rates improve significantly—some studies show <strong>70-80% maintaining sobriety</strong> after comprehensive treatment.</p>
+        </div>
+        
+        <div class="critical-box">
+            <h3>If This Is The Path He Chooses:</h3>
+            <p>You need to know your boundaries NOW. Turn to Section 5 (Treatment Conversations) for how to handle this scenario.</p>
+            <p style="margin-top: 15px;"><strong>Things to establish immediately:</strong></p>
+            <ul style="margin-left: 20px; line-height: 1.8; margin-top: 10px;">
+                <li>No alcohol in the house</li>
+                <li>He attends AA/support group meetings daily</li>
+                <li>Random drug/alcohol testing</li>
+                <li>Outpatient therapy minimum 2x/week</li>
+                <li>If he drinks, he leaves the house</li>
+            </ul>
+            <p style="margin-top: 15px; font-weight: 700;">Do not enable. Do not make excuses. Do not pretend it's working if it's not.</p>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">MEDICATION MANAGEMENT</div>
+    
+    <h2>Common Discharge Medications</h2>
+    
+    <p>He may be prescribed one or more of the following:</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Medication</th>
+                <th>Purpose</th>
+                <th>Important Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Naltrexone (Vivitrol)</strong></td>
+                <td>Blocks opioid receptors; reduces alcohol cravings and pleasure from drinking</td>
+                <td>Monthly injection or daily pill. Does NOT cause sickness if he drinks.</td>
+            </tr>
+            <tr>
+                <td><strong>Acamprosate (Campral)</strong></td>
+                <td>Restores brain chemistry balance; reduces cravings</td>
+                <td>Take 3x daily. Most effective when combined with counseling.</td>
+            </tr>
+            <tr>
+                <td><strong>Disulfiram (Antabuse)</strong></td>
+                <td>Causes severe nausea/vomiting if alcohol consumed</td>
+                <td>Deterrent only. Must be taken daily. Requires commitment.</td>
+            </tr>
+            <tr>
+                <td><strong>Gabapentin</strong></td>
+                <td>Reduces anxiety, helps with sleep, may reduce cravings</td>
+                <td>Not FDA-approved for alcohol use disorder but commonly prescribed off-label.</td>
+            </tr>
+            <tr>
+                <td><strong>Antidepressants (SSRI/SNRI)</strong></td>
+                <td>Treats co-occurring depression/anxiety</td>
+                <td>Takes 4-6 weeks for full effect. Don't stop abruptly.</td>
+            </tr>
+            <tr>
+                <td><strong>Thiamine, B-vitamins</strong></td>
+                <td>Corrects nutritional deficiencies from heavy drinking</td>
+                <td>Critical for preventing neurological damage.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="question-box" style="margin-top: 30px;">
+        <h3>Medications He's Being Discharged With:</h3>
+        
+        <p style="margin: 15px 0;"><strong>Medication 1:</strong> <span class="fill-in"></span></p>
+        <p style="margin-left: 20px;">Purpose: <span class="fill-in-long"></span></p>
+        <p style="margin-left: 20px;">Dosage/Frequency: <span class="fill-in"></span></p>
+        
+        <p style="margin: 15px 0;"><strong>Medication 2:</strong> <span class="fill-in"></span></p>
+        <p style="margin-left: 20px;">Purpose: <span class="fill-in-long"></span></p>
+        <p style="margin-left: 20px;">Dosage/Frequency: <span class="fill-in"></span></p>
+        
+        <p style="margin: 15px 0;"><strong>Medication 3:</strong> <span class="fill-in"></span></p>
+        <p style="margin-left: 20px;">Purpose: <span class="fill-in-long"></span></p>
+        <p style="margin-left: 20px;">Dosage/Frequency: <span class="fill-in"></span></p>
+        
+        <p style="margin-top: 20px;"><strong>Pharmacy for prescriptions:</strong> <span class="fill-in"></span></p>
+        <p><strong>Prescribing doctor follow-up:</strong> <span class="fill-in"></span></p>
+    </div>
+    
+    <div class="warning" style="margin-top: 20px;">
+        Make sure YOU understand his medications, not just him. He may not remember instructions during discharge. Get written information for every prescription.
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">DISCHARGE DAY CHECKLIST</div>
+    
+    <div class="checklist-box">
+        <h2 style="border: none; margin: 0 0 15px 0;">Before Leaving the Hospital:</h2>
+        
+        <ul class="checklist">
+            <li><span class="checkbox"></span> <strong>Discharge summary received</strong> (written document with diagnosis, treatment received, discharge instructions)</li>
+            <li><span class="checkbox"></span> <strong>All prescriptions filled or given</strong></li>
+            <li><span class="checkbox"></span> <strong>Follow-up appointments scheduled</strong>
+                <p style="margin-left: 30px; margin-top: 5px;">Doctor: <span class="fill-in"></span> Date: <span class="fill-in"></span></p>
+                <p style="margin-left: 30px;">Therapist: <span class="fill-in"></span> Date: <span class="fill-in"></span></p>
+            </li>
+            <li><span class="checkbox"></span> <strong>Treatment facility confirmed</strong> (if going to inpatient)
+                <p style="margin-left: 30px; margin-top: 5px;">Facility: <span class="fill-in"></span></p>
+                <p style="margin-left: 30px;">Admission date: <span class="fill-in"></span></p>
+                <p style="margin-left: 30px;">Transportation arranged: <span class="checkbox"></span> Yes <span class="checkbox"></span> No</p>
+            </li>
+            <li><span class="checkbox"></span> <strong>IOP program enrolled</strong> (if doing outpatient)
+                <p style="margin-left: 30px; margin-top: 5px;">Program: <span class="fill-in"></span></p>
+                <p style="margin-left: 30px;">Start date: <span class="fill-in"></span></p>
+                <p style="margin-left: 30px;">Schedule: <span class="fill-in"></span></p>
+            </li>
+            <li><span class="checkbox"></span> <strong>Crisis resources provided</strong> (phone numbers, what to do if he wants to drink)</li>
+            <li><span class="checkbox"></span> <strong>Insurance paperwork completed</strong> (if applicable for next level of care)</li>
+            <li><span class="checkbox"></span> <strong>Personal belongings collected</strong></li>
+            <li><span class="checkbox"></span> <strong>Questions answered</strong> - don't leave confused</li>
+        </ul>
+    </div>
+    
+    <div class="pro-tip">
+        Take photos of ALL discharge paperwork with your phone before leaving the hospital. Paper gets lost. Photos don't.
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">WHAT HAPPENS NEXT</div>
+    
+    <h2>Three Possible Scenarios:</h2>
+    
+    <h3 style="margin-top: 25px;">SCENARIO A: He Goes Directly to Inpatient Treatment</h3>
+    
+    <div style="background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+        <p><strong>This is the best-case scenario.</strong></p>
+        <p style="margin-top: 10px;"><strong>What happens:</strong></p>
+        <ul style="margin-left: 20px; line-height: 1.8; margin-top: 5px;">
+            <li>Ideally, direct transfer from hospital to treatment facility (same day or next day)</li>
+            <li>OR: Home briefly (1-2 days max) then to treatment</li>
+            <li>You can breathe a little easier knowing he's in a structured, safe environment</li>
+            <li>Focus shifts to YOUR recovery and rebuilding your life</li>
+        </ul>
+        
+        <p style="margin-top: 15px;"><strong>Your role during his treatment:</strong></p>
+        <ul style="margin-left: 20px; line-height: 1.8; margin-top: 5px;">
+            <li>Participate in family therapy sessions if offered</li>
+            <li>Focus on Al-Anon and your own healing</li>
+            <li>Set boundaries for after treatment</li>
+            <li>Prepare for his return home (if that's the plan)</li>
+        </ul>
+    </div>
+    
+    <h3 style="margin-top: 25px;">SCENARIO B: He Agrees to IOP/Outpatient</h3>
+    
+    <div style="background: #fff3e0; padding: 20px; border-radius: 8px; margin: 15px 0;">
+        <p><strong>This requires vigilance and clear boundaries.</strong></p>
+        <p style="margin-top: 10px;"><strong>What happens:</strong></p>
+        <ul style="margin-left: 20px; line-height: 1.8; margin-top: 5px;">
+            <li>He comes home</li>
+            <li>All triggers and stressors are immediately present</li>
+            <li>His commitment to IOP will be tested daily</li>
+            <li>You'll be navigating this with him in real-time</li>
+        </ul>
+        
+        <p style="margin-top: 15px;"><strong>Boundaries to establish BEFORE discharge:</strong></p>
+        <ul style="margin-left: 20px; line-height: 1.8; margin-top: 5px;">
+            <li>All alcohol removed from home</li>
+            <li>He attends EVERY IOP session - no excuses</li>
+            <li>Daily AA/support meetings in addition to IOP</li>
+            <li>Regular drug/alcohol testing (at-home tests available at pharmacy)</li>
+            <li>What happens if he misses sessions or drinks</li>
+        </ul>
+        
+        <p style="margin-top: 15px; font-weight: 700;">Turn to Section 5 for scripts on how to have these conversations.</p>
+    </div>
+    
+    <h3 style="margin-top: 25px;">SCENARIO C: He Refuses All Treatment</h3>
+    
+    <div style="background: #ffebee; padding: 20px; border-radius: 8px; margin: 15px 0;">
+        <p><strong>This is the hardest scenario and requires you to protect yourself.</strong></p>
+        <p style="margin-top: 10px;"><strong>What happens:</strong></p>
+        <ul style="margin-left: 20px; line-height: 1.8; margin-top: 5px;">
+            <li>He leaves AMA (Against Medical Advice) OR</li>
+            <li>He's discharged with no follow-up plan and declines all referrals</li>
+            <li>Statistically, he will relapse - often quickly</li>
+            <li>You have to decide what YOUR boundaries are</li>
+        </ul>
+        
+        <p style="margin-top: 15px;"><strong>Your options:</strong></p>
+        <ul style="margin-left: 20px; line-height: 1.8; margin-top: 5px;">
+            <li>He cannot come home until he agrees to treatment</li>
+            <li>He can come home with STRICT boundaries (see above) - one slip and he leaves</li>
+            <li>You separate until he's ready to get help</li>
+        </ul>
+        
+        <p style="margin-top: 15px; font-weight: 700; color: #c0392b;">You did not cause this. You cannot control this. You can only control YOUR response. Turn to Section 5 and Section 7 for support.</p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">NOTES & PLANNING</div>
+    
+    <div class="note-space">
+        <p class="label">Discharge plan discussed with medical team:</p>
+        <span class="fill-in-long"></span>
+        <span class="fill-in-long"></span>
+        <span class="fill-in-long"></span>
+        <span class="fill-in-long"></span>
+        <span class="fill-in-long"></span>
+    </div>
+    
+    <div class="note-space">
+        <p class="label">His reaction to treatment recommendations:</p>
+        <span class="fill-in-long"></span>
+        <span class="fill-in-long"></span>
+        <span class="fill-in-long"></span>
+        <span class="fill-in-long"></span>
+    </div>
+    
+    <div class="note-space">
+        <p class="label">My concerns or questions:</p>
+        <span class="fill-in-long"></span>
+        <span class="fill-in-long"></span>
+        <span class="fill-in-long"></span>
+        <span class="fill-in-long"></span>
+    </div>
+    
+    <div style="margin: 40px 0; padding: 25px; background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); color: white; border-radius: 12px; text-align: center;">
+        <p style="font-size: 18px; font-weight: 700;">
+            Discharge planning is overwhelming - but you're navigating it.
+        </p>
+        <p style="font-size: 16px; margin-top: 15px; font-weight: 400;">
+            Ask questions. Take notes. Trust your gut.<br>
+            You know what's right even when it's hard.
+        </p>
+    </div>
+    
+    <div style="margin: 40px 0; padding: 20px; background: #f8f9fa; border-radius: 8px; text-align: center;">
+        <p style="font-size: 16px; color: #2c3e50;">
+            → <strong>Need to talk to him about treatment?</strong> Turn to Section 5 (Treatment Conversations).
+        </p>
+        <p style="font-size: 16px; color: #2c3e50; margin-top: 10px;">
+            → <strong>Just need phone numbers?</strong> Turn to Section 6 (Contact Directory).
+        </p>
+        <p style="font-size: 16px; color: #2c3e50; margin-top: 10px;">
+            → <strong>Feeling overwhelmed?</strong> Turn to Section 7 (For Mom - Self-Care).
+        </p>
+    </div>
+<div class="page-break"></div>
+<h1>SECTION 5: TREATMENT CONVERSATIONS</h1>
+    <div class="subtitle">Scripts for the Hard Talks</div>
+    
+    <div class="intro-box">
+        <p><strong>These conversations are difficult. You may hear resistance, anger, promises, excuses.</strong></p>
+        <p style="margin-top: 15px;">
+            This section provides you with language for the conversations you're dreading. Use these scripts 
+            word-for-word if you need to, or adapt them to your situation. The goal is to be clear, calm, and 
+            firm without being cruel.
+        </p>
+        <p style="margin-top: 15px;">
+            <strong>Remember:</strong> You're not responsible for his choices. You're only responsible for your boundaries.
+        </p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">WHEN HE SAYS "I JUST WANT TO GO HOME"</div>
+    
+    <p>This is the most common resistance. He's tired, uncomfortable, ready to leave. He may genuinely believe he can "do it on his own."</p>
+    
+    <div class="script-box">
+        <h3>SCRIPT: Encouraging Inpatient Treatment</h3>
+        
+        <div class="script-text">
+            "I know you want to come home. I understand this is hard. But detox was just the first step—it got the alcohol out of your system. It didn't address WHY you drink or how to stay sober. The doctors are recommending [inpatient/IOP] because that's what gives you the best chance. I want you to have that chance."
+        </div>
+        
+        <div class="script-text" style="margin-top: 15px;">
+            "If you come home now without treatment, the odds say you'll drink again. I can't watch that happen. I need you to do this—for you, and for us."
+        </div>
+    </div>
+    
+    <div class="tactic-box">
+        <h3>HE MIGHT SAY: "I've got this. I don't need more treatment."</h3>
+        
+        <div class="response-box">
+            <h4>YOUR RESPONSE:</h4>
+            <p class="script-text">"You've said that before. This time needs to be different. The medical team—people who do this every day—are telling you that you need more help. I'm asking you to listen to them. I'm asking you to take this seriously."</p>
+        </div>
+    </div>
+    
+    <div class="tactic-box">
+        <h3>HE MIGHT SAY: "I can't afford it. We can't afford it."</h3>
+        
+        <div class="response-box">
+            <h4>YOUR RESPONSE:</h4>
+            <p class="script-text">"We'll figure out the money. What we can't afford is for you to relapse. Let's talk to the social worker about payment plans, insurance coverage, or financial aid. There are options."</p>
+        </div>
+        
+        <div class="pro-tip">
+            Many treatment facilities have sliding scale fees, scholarships, or payment plans. Don't let cost be the excuse without exploring ALL options with the discharge planner.
+        </div>
+    </div>
+    
+    <div class="tactic-box">
+        <h3>HE MIGHT SAY: "I need to get back to work."</h3>
+        
+        <div class="response-box">
+            <h4>YOUR RESPONSE:</h4>
+            <p class="script-text">"If you relapse, you won't have a job anyway. FMLA protects your job for medical treatment. Recovery IS medical treatment. Your employer would rather you take 30 days now than lose you permanently."</p>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">SETTING BOUNDARIES BEFORE DISCHARGE</div>
+    
+    <p>If he refuses inpatient treatment, you need to establish CLEAR boundaries BEFORE he comes home. Not suggestions. Boundaries.</p>
+    
+    <div class="boundary-box">
+        <h3>CRITICAL BOUNDARIES TO ESTABLISH:</h3>
+        
+        <table style="margin-top: 15px;">
+            <thead>
+                <tr>
+                    <th>Boundary</th>
+                    <th>How to Say It</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>No alcohol in the house</strong></td>
+                    <td class="script-text">"There will be no alcohol in this house. Not for me, not for anyone. If I find it, I pour it out."</td>
+                </tr>
+                <tr>
+                    <td><strong>Attending treatment/meetings</strong></td>
+                    <td class="script-text">"You will attend every IOP session and daily AA meetings. No excuses. If you miss one, we have a problem."</td>
+                </tr>
+                <tr>
+                    <td><strong>Random testing</strong></td>
+                    <td class="script-text">"I will randomly test you for alcohol. If you refuse, that's the same as failing. If you fail, you leave."</td>
+                </tr>
+                <tr>
+                    <td><strong>Consequence for drinking</strong></td>
+                    <td class="script-text">"If you drink, you cannot stay here. You will need to leave until you're ready to go to treatment. I mean it."</td>
+                </tr>
+                <tr>
+                    <td><strong>Your own self-care</strong></td>
+                    <td class="script-text">"I will be attending Al-Anon. This isn't negotiable. I need support too."</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="warning">
+        Write these boundaries down. Give him a copy. Don't leave room for "I thought you meant..." or "I didn't know." Make it crystal clear.
+    </div>
+    
+    <div class="note-space">
+        <p class="label">Boundaries I'm setting:</p>
+        <div style="height: 150px;"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">HANDLING MANIPULATION TACTICS</div>
+    
+    <p>He may not do this intentionally, but addiction comes with manipulation. Recognizing the tactics helps you stay firm.</p>
+    
+    <div class="tactic-box">
+        <h3>TACTIC: Guilt Tripping</h3>
+        <p><strong>Sounds like:</strong> "You don't trust me." "You're treating me like a child." "After everything I've been through, you're going to abandon me now?"</p>
+        
+        <div class="response-box">
+            <h4>YOUR RESPONSE:</h4>
+            <p class="script-text">"This isn't about trust. This is about your health. The medical professionals are recommending treatment. I'm supporting that recommendation. I love you, and that's why I'm asking you to do this."</p>
+        </div>
+    </div>
+    
+    <div class="tactic-box">
+        <h3>TACTIC: Minimizing</h3>
+        <p><strong>Sounds like:</strong> "It wasn't that bad." "I've got it under control now." "Other people have it way worse than me."</p>
+        
+        <div class="response-box">
+            <h4>YOUR RESPONSE:</h4>
+            <p class="script-text">"You were hospitalized for detox. That's how bad it was. 'Under control' would have been not ending up in the ER. You need treatment. This isn't up for debate."</p>
+        </div>
+    </div>
+    
+    <div class="tactic-box">
+        <h3>TACTIC: Future Promising</h3>
+        <p><strong>Sounds like:</strong> "I promise I'll go to meetings." "I'll start therapy next week." "Just give me a chance to prove I can do this."</p>
+        
+        <div class="response-box">
+            <h4>YOUR RESPONSE:</h4>
+            <p class="script-text">"I want to believe you. But promises aren't a treatment plan. You need a structured program with professional support. You can prove you're serious BY going to treatment, not instead of it."</p>
+        </div>
+    </div>
+    
+    <div class="tactic-box">
+        <h3>TACTIC: Anger/Intimidation</h3>
+        <p><strong>Sounds like:</strong> "You can't tell me what to do!" "I'll just leave then!" "Fine, I'll go drink if that's what you think I'm going to do anyway!"</p>
+        
+        <div class="response-box">
+            <h4>YOUR RESPONSE:</h4>
+            <p class="script-text">"You're right, I can't control what you do. But I can control what I accept in my life. If you choose not to get help, you're choosing the consequences that come with that. I hope you don't."</p>
+        </div>
+        
+        <div class="warning" style="margin-top: 15px;">
+            If he becomes aggressive or threatens violence, disengage immediately. You do not have to tolerate abuse. Call 988 (crisis line) or 911 if you feel unsafe.
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">IF HE LEAVES AMA (AGAINST MEDICAL ADVICE)</div>
+    
+    <p>If he tries to leave the hospital before discharge is recommended, or refuses all treatment:</p>
+    
+    <div class="script-box">
+        <h3>WHAT TO SAY AT THE HOSPITAL:</h3>
+        
+        <div class="script-text">
+            "I understand you want to leave, but the doctors are saying you're not ready. I'm asking you—begging you—to stay and complete the plan. Please don't do this."
+        </div>
+        
+        <div class="script-text" style="margin-top: 15px;">
+            [If he insists on leaving anyway:]
+        </div>
+        
+        <div class="script-text">
+            "Okay. You're an adult and I can't stop you. But I need you to understand: if you leave without treatment, you cannot come home. I will not enable this. You'll need to make other arrangements."
+        </div>
+    </div>
+    
+    <div class="boundary-box" style="margin-top: 25px;">
+        <h3>IF HE LEAVES AMA - YOUR ACTION PLAN:</h3>
+        
+        <ul style="margin-left: 20px; line-height: 1.8; margin-top: 15px;">
+            <li><strong>Do NOT pick him up</strong> - He chose to leave; he needs to arrange his own transportation</li>
+            <li><strong>Do NOT let him come home</strong> - Not until he agrees to treatment</li>
+            <li><strong>Give him treatment facility phone numbers</strong> - "When you're ready to get help, call these numbers. I'll support that decision."</li>
+            <li><strong>Contact Al-Anon immediately</strong> - You need support NOW</li>
+            <li><strong>Call a friend or family member</strong> - Don't be alone with this decision</li>
+            <li><strong>Document everything</strong> - If legal issues arise later (custody, divorce, etc.), you may need proof you tried</li>
+        </ul>
+        
+        <p style="margin-top: 20px; font-weight: 700; color: #7b1fa2;">This is the hardest thing you may ever do. But helping him avoid consequences is NOT helping him get better.</p>
+    </div>
+    
+    <div class="note-space" style="margin-top: 25px;">
+        <p class="label">If he leaves AMA, my plan is:</p>
+        <div style="height: 150px;"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">DO'S AND DON'TS</div>
+    
+    <div class="do-dont-box">
+        <div class="do-column">
+            <h3>✓ DO</h3>
+            <ul>
+                <li>Stay calm and speak in a steady voice</li>
+                <li>Use "I" statements ("I need..." "I feel...")</li>
+                <li>Acknowledge his feelings ("I know this is hard")</li>
+                <li>Refer to medical recommendations ("The doctors say...")</li>
+                <li>Focus on his health and future</li>
+                <li>Set clear boundaries and follow through</li>
+                <li>Take breaks if the conversation gets heated</li>
+                <li>Bring in a third party (counselor, family member) if needed</li>
+                <li>Write down what you want to say beforehand</li>
+                <li>Remember this is a disease, not a character flaw</li>
+            </ul>
+        </div>
+        
+        <div class="dont-column">
+            <h3>✗ DON'T</h3>
+            <ul>
+                <li>Yell, name-call, or attack his character</li>
+                <li>Bring up past mistakes or failures</li>
+                <li>Say "You always..." or "You never..."</li>
+                <li>Negotiate your boundaries</li>
+                <li>Make threats you won't follow through on</li>
+                <li>Accept vague promises ("I'll try")</li>
+                <li>Let guilt override your judgment</li>
+                <li>Engage when he's angry or manipulative</li>
+                <li>Make excuses for him to others</li>
+                <li>Expect him to thank you or appreciate this now</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">SAMPLE CONVERSATION: PUTTING IT ALL TOGETHER</div>
+    
+    <p style="font-weight: 700;">You're at the hospital on Day 5. He's medically stable. Discharge planning says they're recommending 30-day inpatient. He says he wants to come home instead.</p>
+    
+    <div class="script-box" style="margin-top: 20px;">
+        <h3>FULL CONVERSATION EXAMPLE:</h3>
+        
+        <p style="margin: 15px 0; font-weight: 700;">HIM: "I'm ready to go home. I feel fine now. I don't need to go to some facility."</p>
+        
+        <p class="script-text">
+            <strong>YOU:</strong> "I'm glad you're feeling better. But feeling better physically and being ready to stay sober are two different things. The medical team is recommending inpatient treatment because that's what gives you the best shot at recovery."
+        </p>
+        
+        <p style="margin: 15px 0; font-weight: 700;">HIM: "I don't need that. I can go to meetings at home, do outpatient. I'm not going to drink again."</p>
+        
+        <p class="script-text">
+            <strong>YOU:</strong> "You've said that before. I want to believe you. But the statistics show that without intensive treatment, most people relapse quickly. I can't go through this again. I need you to take the path that has the best chance of working."
+        </p>
+        
+        <p style="margin: 15px 0; font-weight: 700;">HIM: "So you don't trust me. Great. Thanks for the support."</p>
+        
+        <p class="script-text">
+            <strong>YOU:</strong> "This isn't about trust. This is about doing what works. The doctors aren't recommending inpatient to punish you—they're recommending it because it WORKS. I love you, and I want you healthy. That's why I'm asking you to do this."
+        </p>
+        
+        <p style="margin: 15px 0; font-weight: 700;">HIM: "What if I say no? You gonna kick me out?"</p>
+        
+        <p class="script-text">
+            <strong>YOU:</strong> "If you refuse treatment and come home, we need to have very clear rules. No alcohol in the house. Daily AA meetings. IOP sessions—every single one. Random alcohol testing. And if you drink, you can't stay. I mean that. I will not enable this anymore."
+        </p>
+        
+        <p style="margin: 15px 0; font-weight: 700;">HIM: [silence]</p>
+        
+        <p class="script-text">
+            <strong>YOU:</strong> "I know this is hard. I know you want your life back. But the only way to get your life back is to do the work. Let the professionals help you. Please."
+        </p>
+    </div>
+    
+    <div class="pro-tip" style="margin-top: 25px;">
+        You don't have to have all the answers. It's okay to say "I don't know, but the doctors do." It's okay to say "I need to think about this" and step away. You're allowed to be uncertain—just not unclear about your boundaries.
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">REMEMBER</div>
+    
+    <div style="background: #f3e5f5; padding: 25px; border-radius: 12px; margin: 30px 0;">
+        <p style="font-size: 18px; line-height: 1.8;"><strong>You cannot control his choices.</strong></p>
+        <p style="font-size: 18px; line-height: 1.8; margin-top: 15px;"><strong>You can only control YOUR responses and YOUR boundaries.</strong></p>
+        <p style="font-size: 18px; line-height: 1.8; margin-top: 15px;"><strong>Saying NO to enabling is saying YES to his recovery.</strong></p>
+        <p style="font-size: 18px; line-height: 1.8; margin-top: 15px;"><strong>His anger at your boundaries is not proof you're wrong. It's proof the boundaries are necessary.</strong></p>
+    </div>
+    
+    <div class="note-space">
+        <p class="label">Notes on conversations we've had:</p>
+        <div style="height: 200px;"></div>
+    </div>
+    
+    <div class="note-space">
+        <p class="label">What I wish I had said / What I need to say next time:</p>
+        <div style="height: 150px;"></div>
+    </div>
+    
+    <div style="margin: 40px 0; padding: 20px; background: #f8f9fa; border-radius: 8px; text-align: center;">
+        <p style="font-size: 16px; color: #2c3e50;">
+            → <strong>Need phone numbers for treatment facilities?</strong> Turn to Section 6 (Contact Directory).
+        </p>
+        <p style="font-size: 16px; color: #2c3e50; margin-top: 10px;">
+            → <strong>Feeling overwhelmed or defeated?</strong> Turn to Section 7 (For Mom - Self-Care).
+        </p>
+    </div>
+<div class="page-break"></div>
+<h1>SECTION 6: CONTACT DIRECTORY</h1>
+    <div class="subtitle">Quick Reference for All Resources</div>
+    
+    <div class="intro-box">
+        <p><strong>Keep this section handy.</strong> You may need these numbers at 2am, in a panic, or when you can't think straight. Everything is here.</p>
+    </div>
+    
+    <div class="crisis-box">
+        <h2>🚨 CRISIS RESOURCES - CALL THESE FIRST 🚨</h2>
+        
+        <div style="margin: 20px 0;">
+            <p style="font-weight: 700; font-size: 18px;">If he's in immediate danger or you are:</p>
+            <p class="crisis-number">📞 911</p>
+        </div>
+        
+        <div style="margin: 20px 0;">
+            <p style="font-weight: 700; font-size: 18px;">Arizona Crisis Line (24/7):</p>
+            <p class="crisis-number">📞 1-844-534-4673</p>
+            <p style="margin-top: 5px;">Mental health crisis, suicide prevention, substance abuse support</p>
+        </div>
+        
+        <div style="margin: 20px 0;">
+            <p style="font-weight: 700; font-size: 18px;">SAMHSA National Helpline (24/7):</p>
+            <p class="crisis-number">📞 1-800-662-4357</p>
+            <p style="margin-top: 5px;">Substance Abuse and Mental Health Services - Treatment referrals and support</p>
+        </div>
+        
+        <div style="margin: 20px 0;">
+            <p style="font-weight: 700; font-size: 18px;">988 Suicide & Crisis Lifeline (24/7):</p>
+            <p class="crisis-number">📞 988</p>
+            <p style="margin-top: 5px;">Call or text - For him or for you</p>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">HOSPITALS FOR DETOX</div>
+    
+    <div class="contact-card hospital">
+        <h3>Banner Thunderbird Medical Center</h3>
+        <p class="phone">📞 (602) 865-5555</p>
+        <p class="address">📍 5555 W Thunderbird Rd, Glendale, AZ 85306</p>
+        <p class="notes">Emergency Room - Full medical detox services</p>
+        <div class="note-space">
+            <p class="label">Notes from visit:</p>
+        </div>
+    </div>
+    
+    <div class="contact-card hospital">
+        <h3>Aurora Behavioral Health West</h3>
+        <p class="phone">📞 (623) 344-4400</p>
+        <p class="phone">📞 24/7 Crisis: (877) 870-7012</p>
+        <p class="address">📍 6015 W Peoria Ave, Glendale, AZ 85302</p>
+        <p class="notes">Psychiatric hospital with detox unit - Behavioral health focus</p>
+        <div class="note-space">
+            <p class="label">Notes from visit:</p>
+        </div>
+    </div>
+    
+    <div class="contact-card hospital">
+        <h3>Aurora Behavioral Health East</h3>
+        <p class="phone">📞 (480) 345-5420</p>
+        <p class="address">📍 6350 S Maple Ave, Tempe, AZ 85283</p>
+        <p class="notes">Alternative location if closer or West is full</p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">INPATIENT TREATMENT FACILITIES</div>
+    
+    <div class="contact-card inpatient">
+        <h3>The Meadows</h3>
+        <p class="phone">📞 (800) 632-3697</p>
+        <p class="address">📍 1655 N Tegner St, Wickenburg, AZ 85390</p>
+        <p class="notes">30-90 day residential program - Nationally recognized, trauma-focused, accepts many insurance plans</p>
+        <div class="note-space">
+            <p class="label">Insurance verification / admission notes:</p>
+        </div>
+    </div>
+    
+    <div class="contact-card inpatient">
+        <h3>Cottonwood Tucson</h3>
+        <p class="phone">📞 (888) 727-0441</p>
+        <p class="address">📍 4110 W Sweetwater Dr, Tucson, AZ 85745</p>
+        <p class="notes">45+ day residential program - Holistic approach, co-occurring disorders, luxury setting</p>
+        <div class="note-space">
+            <p class="label">Insurance verification / admission notes:</p>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">OUTPATIENT PROGRAMS (IOP)</div>
+    
+    <div class="contact-card outpatient">
+        <h3>Calvary Healing Center</h3>
+        <p class="phone">📞 (602) 279-1468</p>
+        <p class="address">📍 717 E Monroe St, Phoenix, AZ 85034</p>
+        <p class="notes">Faith-based program - Men's and women's programs, sliding scale fees, 12-step focus</p>
+        <div class="note-space">
+            <p class="label">Program details / schedule:</p>
+        </div>
+    </div>
+    
+    <div class="contact-card outpatient">
+        <h3>Terros Health</h3>
+        <p class="phone">📞 (602) 685-6000</p>
+        <p class="address">📍 Multiple Valley locations</p>
+        <p class="notes">Non-profit behavioral health - IOP, counseling, medication management, accepts Medicaid</p>
+        <div class="note-space">
+            <p class="label">Program details / schedule:</p>
+        </div>
+    </div>
+    
+    <div class="contact-card outpatient">
+        <h3>Community Bridges</h3>
+        <p class="phone">📞 (480) 831-7566</p>
+        <p class="address">📍 Multiple locations in Mesa, Phoenix, Scottsdale</p>
+        <p class="notes">IOP and outpatient counseling - Low-cost options, flexible scheduling</p>
+        <div class="note-space">
+            <p class="label">Program details / schedule:</p>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">SUPPORT GROUPS & RESOURCES</div>
+    
+    <div class="contact-card support">
+        <h3>Al-Anon (For You)</h3>
+        <p class="phone">📞 1-888-425-2666</p>
+        <p class="phone">🌐 al-anon.org</p>
+        <p class="notes">Support groups for families of alcoholics - Find local meetings at al-anon.org/al-anon-meetings/</p>
+        <div class="note-space">
+            <p class="label">Meeting location / time I'm attending:</p>
+        </div>
+    </div>
+    
+    <div class="contact-card support">
+        <h3>Alcoholics Anonymous (AA)</h3>
+        <p class="phone">📞 Phoenix: (602) 264-1341</p>
+        <p class="phone">🌐 azaa.org</p>
+        <p class="notes">12-step recovery meetings - Find meetings 24/7 at azaa.org/meetings</p>
+        <div class="note-space">
+            <p class="label">Meeting location / time for him:</p>
+        </div>
+    </div>
+    
+    <div class="contact-card support">
+        <h3>SMART Recovery</h3>
+        <p class="phone">📞 1-866-951-5357</p>
+        <p class="phone">🌐 smartrecovery.org</p>
+        <p class="notes">Science-based alternative to AA - Self-empowerment approach, online and in-person meetings</p>
+    </div>
+    
+    <div class="contact-card support">
+        <h3>Refuge Recovery</h3>
+        <p class="phone">🌐 refugerecovery.org</p>
+        <p class="notes">Buddhist-based recovery - Meditation and mindfulness focus, non-religious but spiritual</p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">INSURANCE & FINANCIAL RESOURCES</div>
+    
+    <div class="contact-card">
+        <h3>Insurance Provider</h3>
+        <p class="phone">📞 <span style="border-bottom: 2px solid #3498db; display: inline-block; min-width: 200px; padding: 2px;">&nbsp;</span></p>
+        <p class="phone">Policy #: <span style="border-bottom: 2px solid #3498db; display: inline-block; min-width: 200px; padding: 2px;">&nbsp;</span></p>
+        <p class="phone">Member Services: <span style="border-bottom: 2px solid #3498db; display: inline-block; min-width: 200px; padding: 2px;">&nbsp;</span></p>
+        <div class="note-space">
+            <p class="label">What's covered / Authorization numbers:</p>
+        </div>
+    </div>
+    
+    <div class="contact-card">
+        <h3>AHCCCS (Arizona Medicaid)</h3>
+        <p class="phone">📞 1-855-HEA-PLUS (1-855-432-7587)</p>
+        <p class="phone">🌐 healthearizonaplus.gov</p>
+        <p class="notes">Arizona's Medicaid program - Covers substance abuse treatment</p>
+    </div>
+    
+    <div class="contact-card">
+        <h3>Substance Abuse Block Grant Program</h3>
+        <p class="phone">📞 (602) 364-4558</p>
+        <p class="notes">State-funded treatment assistance for low-income individuals</p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">LEGAL & WORK RESOURCES</div>
+    
+    <div class="contact-card">
+        <h3>FMLA Information (Family Medical Leave Act)</h3>
+        <p class="phone">📞 U.S. Dept of Labor: 1-866-487-2365</p>
+        <p class="phone">🌐 dol.gov/whd/fmla</p>
+        <p class="notes">Job protection for medical treatment - Up to 12 weeks unpaid leave</p>
+    </div>
+    
+    <div class="contact-card">
+        <h3>Employee Assistance Program (EAP)</h3>
+        <p class="phone">📞 <span style="border-bottom: 2px solid #3498db; display: inline-block; min-width: 200px; padding: 2px;">&nbsp;</span></p>
+        <p class="notes">Check with his employer - Many offer free counseling sessions and treatment referrals</p>
+        <div class="note-space">
+            <p class="label">EAP contact / services available:</p>
+        </div>
+    </div>
+    
+    <div class="contact-card">
+        <h3>Arizona Coalition to End Sexual and Domestic Violence</h3>
+        <p class="phone">📞 1-800-782-6400 (24/7)</p>
+        <p class="notes">If you need safety planning or support</p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">PERSONAL CONTACTS</div>
+    
+    <div class="note-space">
+        <p class="label" style="font-size: 16px; font-weight: 700;">People I can call when I need support:</p>
+        
+        <p style="margin: 20px 0;">
+            <strong>Name:</strong> <span style="border-bottom: 2px solid #3498db; display: inline-block; min-width: 300px; padding: 2px;">&nbsp;</span><br>
+            <strong>Phone:</strong> <span style="border-bottom: 2px solid #3498db; display: inline-block; min-width: 300px; padding: 2px;">&nbsp;</span><br>
+            <strong>When to call:</strong> <span style="border-bottom: 2px solid #3498db; display: inline-block; min-width: 300px; padding: 2px;">&nbsp;</span>
+        </p>
+        
+        <p style="margin: 20px 0;">
+            <strong>Name:</strong> <span style="border-bottom: 2px solid #3498db; display: inline-block; min-width: 300px; padding: 2px;">&nbsp;</span><br>
+            <strong>Phone:</strong> <span style="border-bottom: 2px solid #3498db; display: inline-block; min-width: 300px; padding: 2px;">&nbsp;</span><br>
+            <strong>When to call:</strong> <span style="border-bottom: 2px solid #3498db; display: inline-block; min-width: 300px; padding: 2px;">&nbsp;</span>
+        </p>
+        
+        <p style="margin: 20px 0;">
+            <strong>Name:</strong> <span style="border-bottom: 2px solid #3498db; display: inline-block; min-width: 300px; padding: 2px;">&nbsp;</span><br>
+            <strong>Phone:</strong> <span style="border-bottom: 2px solid #3498db; display: inline-block; min-width: 300px; padding: 2px;">&nbsp;</span><br>
+            <strong>When to call:</strong> <span style="border-bottom: 2px solid #3498db; display: inline-block; min-width: 300px; padding: 2px;">&nbsp;</span>
+        </p>
+    </div>
+    
+    <div style="margin: 40px 0; padding: 20px; background: #e3f2fd; border-radius: 8px; text-align: center;">
+        <p style="font-size: 16px; color: #1a1a1a;">
+            <strong>You are not alone.</strong><br>
+            These resources exist because addiction is a disease, and recovery is possible.<br>
+            Don't hesitate to use them.
+        </p>
+    </div>
+<div class="page-break"></div>
+<h1>SECTION 7: FOR MOM</h1>
+    <div class="subtitle">Taking Care of Yourself Through This</div>
+    
+    <div class="intro-box">
+        <p><strong>This section is for you. Not for him. For you.</strong></p>
+        <p style="margin-top: 15px;">
+            You've been focused on his crisis, his health, his recovery. That's natural. That's what you do. 
+            But you cannot pour from an empty cup. This section is about keeping yourself together while 
+            everything else feels like it's falling apart.
+        </p>
+    </div>
+    
+    <div class="affirmation">
+        You did not cause this.<br>
+        You cannot cure this.<br>
+        You cannot control this.<br>
+        <strong style="font-size: 20px; margin-top: 10px; display: block;">But you can take care of yourself.</strong>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">HOSPITAL SURVIVAL GUIDE</div>
+    
+    <h2>Practical Tips for Getting Through Hospital Days</h2>
+    
+    <div class="tip-box">
+        <h3>What to Bring to the Hospital</h3>
+        <ul>
+            <li><strong>Phone charger</strong> - You'll be there longer than you think</li>
+            <li><strong>Snacks</strong> - Hospital food is terrible and expensive</li>
+            <li><strong>Water bottle</strong> - Hospitals are dehydrating</li>
+            <li><strong>Sweater or jacket</strong> - It's always freezing</li>
+            <li><strong>Headphones</strong> - For when you need to tune out</li>
+            <li><strong>This binder</strong> - So you can reference sections as needed</li>
+            <li><strong>Book or tablet</strong> - Waiting rooms are boring</li>
+            <li><strong>Notebook and pen</strong> - For taking notes during doctor conversations</li>
+        </ul>
+    </div>
+    
+    <div class="tip-box">
+        <h3>Managing Hospital Time</h3>
+        <ul>
+            <li><strong>You don't have to stay all day.</strong> Seriously. It's okay to go home.</li>
+            <li><strong>Visiting during peak withdrawal (Days 2-3) is HARD.</strong> He may not recognize you, may be confused or agitated. Short visits are fine.</li>
+            <li><strong>Ask the nurses for the real updates.</strong> They know more than he does about how he's actually doing.</li>
+            <li><strong>Take breaks.</strong> Walk outside. Sit in your car. Leave the hospital and get lunch somewhere else.</li>
+            <li><strong>You don't owe anyone an explanation for leaving.</strong> "I need to take care of some things" is enough.</li>
+        </ul>
+    </div>
+    
+    <div class="checklist-box">
+        <h2 style="border: none; margin: 0 0 15px 0;">Daily Self-Check During Hospital Stay:</h2>
+        
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Did I eat today? (Not just hospital vending machine chips)</li>
+            <li><span class="checkbox"></span> Did I drink water?</li>
+            <li><span class="checkbox"></span> Did I get fresh air at some point?</li>
+            <li><span class="checkbox"></span> Did I sleep at least 5 hours last night?</li>
+            <li><span class="checkbox"></span> Did I talk to someone who's not a medical professional?</li>
+            <li><span class="checkbox"></span> Did I do something that's not hospital-related today?</li>
+        </ul>
+        
+        <p style="margin-top: 20px; font-style: italic; color: #555555;">If you checked fewer than 4 boxes, you need to prioritize yourself more tomorrow.</p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">EMOTIONAL SURVIVAL</div>
+    
+    <h2>What You Might Be Feeling (And Why That's Normal)</h2>
+    
+    <div class="truth-box">
+        <h3>It's Normal to Feel:</h3>
+        
+        <p style="margin: 15px 0;"><strong>Relief</strong> - He's safe. Someone else is in charge. You can breathe for a minute.</p>
+        
+        <p style="margin: 15px 0;"><strong>Exhaustion</strong> - You've been running on adrenaline. Now that the immediate crisis is over, you're crashing.</p>
+        
+        <p style="margin: 15px 0;"><strong>Anger</strong> - At him. At the situation. At yourself. At everything.</p>
+        
+        <p style="margin: 15px 0;"><strong>Guilt</strong> - For not catching it sooner. For being angry. For wanting to leave the hospital. For ALL of it.</p>
+        
+        <p style="margin: 15px 0;"><strong>Hope and Fear at the Same Time</strong> - Maybe this is the turning point. Maybe it's not. You don't know which to believe.</p>
+        
+        <p style="margin: 15px 0;"><strong>Numb</strong> - Sometimes you feel nothing at all because it's too much to process.</p>
+        
+        <p style="margin-top: 25px; font-weight: 700; color: #27ae60; font-size: 18px;">ALL OF THESE ARE NORMAL. You're not broken. You're human.</p>
+    </div>
+    
+    <div class="boundary-box">
+        <h3>Give Yourself Permission To:</h3>
+        <ul>
+            <li>Not have all the answers</li>
+            <li>Say "I don't know" when people ask how you're doing</li>
+            <li>Cry in the hospital bathroom</li>
+            <li>Feel angry at him even though he's sick</li>
+            <li>Not want to be at the hospital every waking moment</li>
+            <li>Take a nap instead of visiting hours</li>
+            <li>Tell people you don't want to talk about it</li>
+            <li>Change your mind about your boundaries</li>
+            <li>Ask for help</li>
+            <li>Put yourself first sometimes</li>
+        </ul>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">BOUNDARIES WITH YOURSELF</div>
+    
+    <p>You've set boundaries with him. Now you need to set some with yourself.</p>
+    
+    <div class="boundary-box">
+        <h3>Stop Doing This:</h3>
+        
+        <p style="margin: 15px 0;"><strong>❌ Googling "alcoholism recovery rates" at 3am</strong><br>
+        It won't help. The statistics won't tell you what HE will do. Close the laptop.</p>
+        
+        <p style="margin: 15px 0;"><strong>❌ Replaying every conversation to find what you "should have said"</strong><br>
+        You said what you said. It's done. You can't change the past by obsessing over it.</p>
+        
+        <p style="margin: 15px 0;"><strong>❌ Blaming yourself for not "seeing the signs" sooner</strong><br>
+        Addiction is sneaky. It hides. Even trained professionals miss it sometimes. You're not a failure.</p>
+        
+        <p style="margin: 15px 0;"><strong>❌ Checking your phone every 5 minutes waiting for hospital updates</strong><br>
+        Put the phone down. They'll call if something changes. You checking doesn't make time move faster.</p>
+        
+        <p style="margin: 15px 0;"><strong>❌ Explaining or justifying his behavior to others</strong><br>
+        You don't owe anyone an explanation. "He's dealing with some health issues" is enough.</p>
+        
+        <p style="margin: 15px 0;"><strong>❌ Putting your life completely on hold</strong><br>
+        Yes, this is a crisis. No, you don't have to cancel everything else in your life indefinitely.</p>
+    </div>
+    
+    <div class="boundary-box">
+        <h3>Start Doing This:</h3>
+        
+        <p style="margin: 15px 0;"><strong>✓ Say "I need a break" OUT LOUD</strong><br>
+        To yourself. To him. To the nurses. To anyone. Then take the break.</p>
+        
+        <p style="margin: 15px 0;"><strong>✓ Set a bedtime and stick to it</strong><br>
+        Even if your brain is racing. Even if you "can't sleep." Lying down in the dark counts.</p>
+        
+        <p style="margin: 15px 0;"><strong>✓ Eat one real meal a day</strong><br>
+        Not just coffee and anxiety. Actual food. Your body needs fuel.</p>
+        
+        <p style="margin: 15px 0;"><strong>✓ Talk to someone who's not involved</strong><br>
+        A friend. A therapist. An Al-Anon meeting. Someone who gets it.</p>
+        
+        <p style="margin: 15px 0;"><strong>✓ Do one thing every day that's just for you</strong><br>
+        Read a chapter. Take a bath. Watch a show. Something that's not about him.</p>
+        
+        <p style="margin: 15px 0;"><strong>✓ Keep a list of what you CAN control</strong><br>
+        When everything feels out of control, write down what's actually in your power. It's more than you think.</p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">AL-ANON: SUPPORT FOR YOU</div>
+    
+    <p>Al-Anon is a support group for families and friends of alcoholics. It's not about HIM. It's about YOU.</p>
+    
+    <div class="truth-box">
+        <h3>Why Al-Anon Matters</h3>
+        
+        <p style="margin: 15px 0;">You've been living in his chaos. Al-Anon gives you a room full of people who understand that chaos because they've lived it too. You don't have to explain. You don't have to justify. You can just BE.</p>
+        
+        <p style="margin: 15px 0;"><strong>What you'll learn:</strong></p>
+        <ul>
+            <li>How to detach with love (care about him without being destroyed by his choices)</li>
+            <li>How to set boundaries and actually keep them</li>
+            <li>How to stop enabling without feeling like you're abandoning him</li>
+            <li>How to take care of yourself without guilt</li>
+            <li>How to recognize when you're trying to control things you can't control</li>
+            <li>How to grieve the person he was while dealing with the person he is</li>
+        </ul>
+        
+        <p style="margin: 20px 0; font-weight: 700;">Most importantly: You'll realize you're not alone. You're not crazy. And you're not the only one who's been through this.</p>
+    </div>
+    
+    <div class="tip-box">
+        <h3>Finding Al-Anon Meetings</h3>
+        
+        <p><strong>📞 Call:</strong> 1-888-425-2666</p>
+        <p><strong>🌐 Website:</strong> al-anon.org</p>
+        <p><strong>📍 Find meetings:</strong> al-anon.org/al-anon-meetings/</p>
+        
+        <p style="margin-top: 20px;"><strong>Types of meetings:</strong></p>
+        <ul>
+            <li><strong>In-person</strong> - Community centers, churches, libraries</li>
+            <li><strong>Virtual</strong> - Zoom meetings (great if you can't leave the house)</li>
+            <li><strong>Phone meetings</strong> - Call in anonymously</li>
+        </ul>
+        
+        <p style="margin-top: 20px;"><strong>First meeting tips:</strong></p>
+        <ul>
+            <li>You don't have to share if you don't want to</li>
+            <li>Everyone uses first names only</li>
+            <li>What's said in the meeting stays in the meeting</li>
+            <li>Try a few different meetings to find one that fits</li>
+            <li>It might feel weird at first. That's okay. Keep going.</li>
+        </ul>
+    </div>
+    
+    <div class="note-space">
+        <p class="label">Al-Anon meeting I plan to attend:</p>
+        <p style="margin: 10px 0;">
+            <strong>Location:</strong> <span style="border-bottom: 2px solid #e91e63; display: inline-block; min-width: 400px; padding: 2px;">&nbsp;</span>
+        </p>
+        <p style="margin: 10px 0;">
+            <strong>Day/Time:</strong> <span style="border-bottom: 2px solid #e91e63; display: inline-block; min-width: 400px; padding: 2px;">&nbsp;</span>
+        </p>
+        <p style="margin: 10px 0;">
+            <strong>First meeting date:</strong> <span style="border-bottom: 2px solid #e91e63; display: inline-block; min-width: 400px; padding: 2px;">&nbsp;</span>
+        </p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">THINGS TO REMEMBER WHEN IT GETS HARD</div>
+    
+    <div class="affirmation">
+        His addiction is not your failure.
+    </div>
+    
+    <div class="affirmation">
+        You can love him and refuse to enable him at the same time.
+    </div>
+    
+    <div class="affirmation">
+        Setting boundaries doesn't make you cruel. It makes you healthy.
+    </div>
+    
+    <div class="affirmation">
+        You are allowed to protect yourself even when he's suffering.
+    </div>
+    
+    <div class="affirmation">
+        His recovery is his responsibility. Your wellbeing is yours.
+    </div>
+    
+    <div class="affirmation">
+        You cannot love someone into sobriety.
+    </div>
+    
+    <div class="affirmation">
+        It's okay to hope AND prepare for disappointment.
+    </div>
+    
+    <div class="affirmation">
+        You deserve peace, even if his life is chaos.
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">SELF-CARE CHECKLIST</div>
+    
+    <div class="checklist-box">
+        <h2 style="border: none; margin: 0 0 15px 0;">This Week, I Will:</h2>
+        
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Attend at least one Al-Anon meeting</li>
+            <li><span class="checkbox"></span> Sleep at least 6 hours on 5 out of 7 nights</li>
+            <li><span class="checkbox"></span> Eat three real meals on most days</li>
+            <li><span class="checkbox"></span> Talk to at least one friend or family member (not about him)</li>
+            <li><span class="checkbox"></span> Do one thing I enjoy that has nothing to do with this situation</li>
+            <li><span class="checkbox"></span> Spend at least 30 minutes outside</li>
+            <li><span class="checkbox"></span> Say "no" to something I don't have energy for</li>
+            <li><span class="checkbox"></span> Write down three things I CAN control</li>
+            <li><span class="checkbox"></span> Take one full day where I don't go to the hospital or discuss treatment</li>
+            <li><span class="checkbox"></span> Be kind to myself when I don't do everything perfectly</li>
+        </ul>
+    </div>
+    
+    <div class="note-space">
+        <p class="label">What I need most right now:</p>
+        <div style="height: 150px;"></div>
+    </div>
+    
+    <div class="note-space">
+        <p class="label">Something I'm doing well (yes, you are):</p>
+        <div style="height: 100px;"></div>
+    </div>
+    
+    <div class="note-space">
+        <p class="label">One thing I'll do today just for me:</p>
+        <div style="height: 100px;"></div>
+    </div>
+    
+    <div style="margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #f8bbd0 0%, #f48fb1 100%); border-radius: 12px; text-align: center;">
+        <p style="font-size: 20px; font-weight: 700; color: #1a1a1a;">
+            You're doing the best you can with an impossible situation.
+        </p>
+        <p style="font-size: 18px; margin-top: 15px; color: #1a1a1a;">
+            That's enough. You are enough.
+        </p>
+    </div>
+    
+    <div style="margin: 40px 0; padding: 20px; background: #f8f9fa; border-radius: 8px; text-align: center;">
+        <p style="font-size: 16px; color: #2c3e50;">
+            <strong>If you need more support:</strong><br>
+            Al-Anon: 1-888-425-2666 • Crisis Line: 1-844-534-4673 • 988 Lifeline: Call or Text 988
+        </p>
+    </div>
+<div class="page-break"></div>
+<h1>SECTION 8: APPENDICES</h1>
+    <div class="subtitle">Blank Forms & Quick Reference Tools</div>
+    
+    <div class="intro-box">
+        <p><strong>This section contains printable tools, blank forms, and quick reference cards.</strong></p>
+        <p style="margin-top: 10px;">
+            Cut out the wallet card. Make copies of the tracking forms. Use these as needed.
+        </p>
+    </div>
+    
+    <div class="section-header">EMERGENCY WALLET CARD</div>
+    
+    <div class="instructions">
+        <strong>INSTRUCTIONS:</strong> Cut along the dashed lines. Laminate if possible. Keep in wallet or purse for quick access.
+    </div>
+    
+    <div class="wallet-card">
+        <h3>🚨 EMERGENCY CONTACTS 🚨</h3>
+        
+        <p class="phone">911 - Emergency</p>
+        <p class="phone">988 - Crisis/Suicide Lifeline</p>
+        <p class="phone">1-844-534-4673 - AZ Crisis Line</p>
+        <p class="phone">1-800-662-4357 - SAMHSA</p>
+        
+        <p style="margin-top: 8px; font-size: 9px; border-top: 1px solid #bdc3c7; padding-top: 5px;">
+            <strong>Banner Thunderbird:</strong> (602) 865-5555<br>
+            <strong>Aurora West:</strong> (877) 870-7012
+        </p>
+    </div>
+    
+    <div style="margin: 40px 0; padding: 15px; text-align: center; border-top: 2px dashed #bdc3c7; border-bottom: 2px dashed #bdc3c7;">
+        <p style="font-size: 14px; color: #7f8c8d;">✂️ ✂️ ✂️ Cut here ✂️ ✂️ ✂️</p>
+    </div>
+    
+    <div class="wallet-card">
+        <h3>PERSONAL INFO CARD</h3>
+        
+        <p style="margin: 5px 0;"><strong>Name:</strong> <span class="fill-in" style="min-width: 150px;"></span></p>
+        <p style="margin: 5px 0;"><strong>DOB:</strong> <span class="fill-in" style="min-width: 150px;"></span></p>
+        <p style="margin: 5px 0;"><strong>Insurance:</strong> <span class="fill-in" style="min-width: 120px;"></span></p>
+        <p style="margin: 5px 0;"><strong>Policy #:</strong> <span class="fill-in" style="min-width: 130px;"></span></p>
+        
+        <p style="margin-top: 8px; font-size: 9px; border-top: 1px solid #bdc3c7; padding-top: 5px;">
+            <strong>Allergies:</strong> <span class="fill-in" style="min-width: 180px;"></span>
+        </p>
+        
+        <p style="margin: 3px 0; font-size: 9px;">
+            <strong>Emergency Contact:</strong> <span class="fill-in" style="min-width: 120px;"></span>
+        </p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">DAILY MEDICATION TRACKER</div>
+    
+    <div class="instructions">
+        <strong>INSTRUCTIONS:</strong> Use this to track his medications after discharge. Make copies as needed.
+    </div>
+    
+    <div class="form-template">
+        <h3>Week of: <span class="fill-in"></span></h3>
+        
+        <table style="margin-top: 15px;">
+            <thead>
+                <tr>
+                    <th>Medication</th>
+                    <th>Dosage</th>
+                    <th>Time</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                    <th>Sun</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p style="margin-top: 15px; font-size: 14px; font-style: italic;">Notes or side effects observed:</p>
+        <div class="note-space" style="min-height: 60px;"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">MEETING ATTENDANCE TRACKER</div>
+    
+    <div class="instructions">
+        <strong>INSTRUCTIONS:</strong> Track AA/IOP/therapy attendance. Make copies for each month.
+    </div>
+    
+    <div class="form-template">
+        <h3>Month: <span class="fill-in"></span></h3>
+        
+        <table style="margin-top: 15px;">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Date</th>
+                    <th style="width: 30%;">Meeting Type</th>
+                    <th style="width: 30%;">Location</th>
+                    <th style="width: 15%;">Attended?</th>
+                    <th style="width: 10%;">Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            </tbody>
+        </table>
+        
+        <p style="margin-top: 15px;"><strong>Total meetings attended this month:</strong> <span class="fill-in"></span></p>
+        <p><strong>Missed meetings:</strong> <span class="fill-in"></span></p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">INSURANCE AUTHORIZATION TRACKER</div>
+    
+    <div class="instructions">
+        <strong>INSTRUCTIONS:</strong> Keep track of insurance calls, authorizations, and claims.
+    </div>
+    
+    <div class="form-template">
+        <h3>Insurance Information</h3>
+        
+        <p style="margin: 10px 0;"><strong>Insurance Company:</strong> <span class="fill-in-long"></span></p>
+        <p style="margin: 10px 0;"><strong>Policy Number:</strong> <span class="fill-in"></span> <strong>Group Number:</strong> <span class="fill-in"></span></p>
+        <p style="margin: 10px 0;"><strong>Member Services Phone:</strong> <span class="fill-in"></span></p>
+        <p style="margin: 10px 0;"><strong>Behavioral Health Phone:</strong> <span class="fill-in"></span></p>
+        
+        <h3 style="margin-top: 30px;">Authorization Tracking</h3>
+        
+        <table style="margin-top: 15px;">
+            <thead>
+                <tr>
+                    <th>Date Called</th>
+                    <th>Reason for Call</th>
+                    <th>Representative</th>
+                    <th>Authorization #</th>
+                    <th>Outcome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">SYMPTOM & TRIGGER LOG</div>
+    
+    <div class="instructions">
+        <strong>INSTRUCTIONS:</strong> Track patterns in cravings, triggers, or concerning behaviors. Useful for therapy/counseling.
+    </div>
+    
+    <div class="form-template">
+        <h3>Week of: <span class="fill-in"></span></h3>
+        
+        <table style="margin-top: 15px;">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Date/Time</th>
+                    <th style="width: 25%;">What Happened</th>
+                    <th style="width: 20%;">Possible Trigger</th>
+                    <th style="width: 20%;">His Response</th>
+                    <th style="width: 20%;">Outcome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td></tr>
+                <tr><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td></tr>
+                <tr><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td></tr>
+                <tr><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td></tr>
+                <tr><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td></tr>
+            </tbody>
+        </table>
+        
+        <p style="margin-top: 15px; font-size: 14px;"><strong>Patterns I'm noticing:</strong></p>
+        <div class="note-space" style="min-height: 80px;"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">IMPORTANT APPOINTMENTS</div>
+    
+    <div class="form-template">
+        <h3>Scheduled Appointments</h3>
+        
+        <table style="margin-top: 15px;">
+            <thead>
+                <tr>
+                    <th style="width: 20%;">Date/Time</th>
+                    <th style="width: 25%;">Type of Appointment</th>
+                    <th style="width: 25%;">Provider/Location</th>
+                    <th style="width: 15%;">Phone</th>
+                    <th style="width: 15%;">Attended?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">BLANK NOTES PAGES</div>
+    
+    <div class="instructions">
+        <strong>INSTRUCTIONS:</strong> Use these pages for any additional notes, thoughts, or tracking. Make copies as needed.
+    </div>
+    
+    <div class="form-template">
+        <h3>Date: <span class="fill-in"></span></h3>
+        
+        <div class="note-space" style="min-height: 500px;"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="form-template">
+        <h3>Date: <span class="fill-in"></span></h3>
+        
+        <div class="note-space" style="min-height: 500px;"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="section-header">RELAPSE EMERGENCY PLAN</div>
+    
+    <div class="instructions">
+        <strong>INSTRUCTIONS:</strong> Fill this out BEFORE a crisis happens. Keep it somewhere you can find it quickly.
+    </div>
+    
+    <div class="form-template">
+        <h3>If He Drinks Again - My Action Plan</h3>
+        
+        <p style="margin: 20px 0; font-weight: 700;">1. Immediate Safety:</p>
+        <div class="note-space" style="min-height: 60px;">
+            <p style="font-size: 14px; font-style: italic; color: #555555;">
+                (Example: Call 911 if he's violent or suicidal. Call crisis line if I need support. Remove myself from the situation if needed.)
+            </p>
+        </div>
+        
+        <p style="margin: 20px 0; font-weight: 700;">2. Who I Will Call for Support:</p>
+        <div class="note-space" style="min-height: 60px;">
+            <p style="font-size: 14px; font-style: italic; color: #555555;">
+                (Name and phone number of at least 2 people)
+            </p>
+        </div>
+        
+        <p style="margin: 20px 0; font-weight: 700;">3. My Boundary:</p>
+        <div class="note-space" style="min-height: 60px;">
+            <p style="font-size: 14px; font-style: italic; color: #555555;">
+                (Example: He must leave the house immediately. He cannot return until he's enrolled in treatment. No negotiation.)
+            </p>
+        </div>
+        
+        <div class="page-break"></div>
+        
+        <p style="margin: 20px 0; font-weight: 700;">4. Where I Can Go If Needed:</p>
+        <div class="note-space" style="min-height: 60px;">
+            <p style="font-size: 14px; font-style: italic; color: #555555;">
+                (Friend's house, family member, hotel - have a backup plan)
+            </p>
+        </div>
+        
+        <p style="margin: 20px 0; font-weight: 700;">5. Treatment Facilities to Call:</p>
+        <div class="note-space" style="min-height: 80px;">
+            <p style="font-size: 14px; font-style: italic; color: #555555;">
+                (From Section 6 - write down top 3 facilities with phone numbers)
+            </p>
+        </div>
+        
+        <p style="margin: 20px 0; font-weight: 700;">6. What I Will NOT Do:</p>
+        <div class="note-space" style="min-height: 60px;">
+            <p style="font-size: 14px; font-style: italic; color: #555555;">
+                (Example: I will not drive him to get alcohol. I will not call in sick for him. I will not make excuses to family.)
+            </p>
+        </div>
+    </div>
+    
+    <div style="margin: 40px 0; padding: 20px; background: #f8f9fa; border-radius: 8px; text-align: center;">
+        <p style="font-size: 16px; color: #1a1a1a;">
+            <strong>You've done everything you can to prepare.</strong><br>
+            Now take care of yourself.
+        </p>
+    </div>
+<div class="page-number"></div>
+</body>
+</html>
