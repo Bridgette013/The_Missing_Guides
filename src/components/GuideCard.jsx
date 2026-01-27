@@ -5,7 +5,7 @@ export default function GuideCard({ guide }) {
     background: '#FFFFFF',
     border: '2px solid #2529A7',
     borderRadius: '8px',
-    padding: '30px',
+    padding: 'clamp(24px, 2.5vw, 40px)',
     textAlign: 'center',
     transition: 'all 0.3s ease',
     cursor: 'pointer'
@@ -17,13 +17,13 @@ export default function GuideCard({ guide }) {
     color: '#FFFFFF',
     padding: '5px 15px',
     borderRadius: '20px',
-    fontSize: '14px',
+    fontSize: 'clamp(12px, 1vw, 15px)',
     marginBottom: '15px',
     fontWeight: 600
   }
 
   const priceStyle = {
-    fontSize: '32px',
+    fontSize: 'clamp(28px, 2.5vw, 38px)',
     fontWeight: 700,
     color: '#2529A7',
     marginBottom: '20px'
@@ -33,14 +33,15 @@ export default function GuideCard({ guide }) {
     display: 'inline-block',
     background: '#2529A7',
     color: '#FFFFFF',
-    padding: '12px 30px',
+    padding: 'clamp(10px, 1vw, 16px) clamp(24px, 2vw, 36px)',
     fontWeight: 600,
     textDecoration: 'none',
     borderRadius: '6px',
     fontFamily: '"Work Sans", sans-serif',
     transition: 'all 0.3s ease',
     border: 'none',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    fontSize: 'clamp(14px, 1.1vw, 18px)'
   }
 
   return (
@@ -53,7 +54,7 @@ export default function GuideCard({ guide }) {
     }}>
       <h3 style={{
         fontFamily: '"Merriweather", serif',
-        fontSize: '22px',
+        fontSize: 'clamp(18px, 1.6vw, 26px)',
         marginBottom: '15px',
         color: '#2529A7'
       }}>
@@ -63,7 +64,8 @@ export default function GuideCard({ guide }) {
       <p style={{
         marginBottom: '20px',
         color: '#8E8E8B',
-        fontSize: '14px'
+        fontSize: 'clamp(13px, 1vw, 16px)',
+        lineHeight: 1.5
       }}>
         {guide.description}
       </p>

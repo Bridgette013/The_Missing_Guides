@@ -24,37 +24,39 @@ export default function PersonalizationForm({ guideId, onSubmit }) {
   }
 
   const formStyle = {
-    maxWidth: '600px',
+    maxWidth: 'min(700px, 90vw)',
     margin: '0 auto',
-    padding: '40px',
+    padding: 'clamp(24px, 4vw, 50px)',
     background: '#F8F9FA',
     borderRadius: '8px'
   }
 
   const fieldStyle = {
-    marginBottom: '20px'
+    marginBottom: 'clamp(16px, 2vw, 24px)'
   }
 
   const labelStyle = {
     display: 'block',
     marginBottom: '8px',
     fontWeight: 600,
-    color: '#20201D'
+    color: '#20201D',
+    fontSize: 'clamp(14px, 1.1vw, 17px)'
   }
 
   const inputStyle = {
     width: '100%',
-    padding: '12px',
-    fontSize: '16px',
+    padding: 'clamp(10px, 1vw, 14px)',
+    fontSize: 'clamp(15px, 1.1vw, 18px)',
     border: '2px solid #9A9DE7',
     borderRadius: '6px',
-    fontFamily: 'Inter, sans-serif'
+    fontFamily: 'Inter, sans-serif',
+    boxSizing: 'border-box'
   }
 
   const buttonStyle = {
     width: '100%',
-    padding: '16px',
-    fontSize: '18px',
+    padding: 'clamp(14px, 1.5vw, 20px)',
+    fontSize: 'clamp(16px, 1.3vw, 20px)',
     fontWeight: 600,
     background: '#2529A7',
     color: '#FFFFFF',
@@ -68,7 +70,7 @@ export default function PersonalizationForm({ guideId, onSubmit }) {
     <form onSubmit={handleSubmit} style={formStyle}>
       <h2 style={{
         fontFamily: '"Merriweather", serif',
-        fontSize: '28px',
+        fontSize: 'clamp(24px, 2.5vw, 34px)',
         marginBottom: '10px',
         color: '#2529A7',
         textAlign: 'center'
@@ -77,16 +79,17 @@ export default function PersonalizationForm({ guideId, onSubmit }) {
       </h2>
       <p style={{
         textAlign: 'center',
-        marginBottom: '30px',
-        color: '#8E8E8B'
+        marginBottom: 'clamp(24px, 3vw, 40px)',
+        color: '#8E8E8B',
+        fontSize: 'clamp(14px, 1.1vw, 17px)'
       }}>
         We'll customize the guide with your information throughout.
       </p>
 
       <div style={fieldStyle}>
         <label style={labelStyle} htmlFor="caregiverName">Your Name *</label>
-        <input 
-          type="text" 
+        <input
+          type="text"
           id="caregiverName"
           name="caregiverName"
           value={formData.caregiverName}
@@ -99,8 +102,8 @@ export default function PersonalizationForm({ guideId, onSubmit }) {
 
       <div style={fieldStyle}>
         <label style={labelStyle} htmlFor="patientName">Patient/Loved One's Name *</label>
-        <input 
-          type="text" 
+        <input
+          type="text"
           id="patientName"
           name="patientName"
           value={formData.patientName}
@@ -113,7 +116,7 @@ export default function PersonalizationForm({ guideId, onSubmit }) {
 
       <div style={fieldStyle}>
         <label style={labelStyle} htmlFor="pronouns">Preferred Pronouns *</label>
-        <select 
+        <select
           id="pronouns"
           name="pronouns"
           value={formData.pronouns}
@@ -128,8 +131,8 @@ export default function PersonalizationForm({ guideId, onSubmit }) {
 
       <div style={fieldStyle}>
         <label style={labelStyle} htmlFor="relationship">Your Relationship</label>
-        <input 
-          type="text" 
+        <input
+          type="text"
           id="relationship"
           name="relationship"
           value={formData.relationship}
@@ -141,8 +144,8 @@ export default function PersonalizationForm({ guideId, onSubmit }) {
 
       <div style={fieldStyle}>
         <label style={labelStyle} htmlFor="emergencyContact">Emergency Contact Phone</label>
-        <input 
-          type="tel" 
+        <input
+          type="tel"
           id="emergencyContact"
           name="emergencyContact"
           value={formData.emergencyContact}
@@ -154,8 +157,8 @@ export default function PersonalizationForm({ guideId, onSubmit }) {
 
       <div style={fieldStyle}>
         <label style={labelStyle} htmlFor="hospital">Hospital/Treatment Center Name</label>
-        <input 
-          type="text" 
+        <input
+          type="text"
           id="hospital"
           name="hospital"
           value={formData.hospital}
@@ -167,8 +170,8 @@ export default function PersonalizationForm({ guideId, onSubmit }) {
 
       <div style={fieldStyle}>
         <label style={labelStyle} htmlFor="email">Email Address *</label>
-        <input 
-          type="email" 
+        <input
+          type="email"
           id="email"
           name="email"
           value={formData.email}
@@ -177,7 +180,7 @@ export default function PersonalizationForm({ guideId, onSubmit }) {
           style={inputStyle}
           placeholder="your@email.com"
         />
-        <small style={{ color: '#8E8E8B', display: 'block', marginTop: '5px' }}>
+        <small style={{ color: '#8E8E8B', display: 'block', marginTop: '5px', fontSize: 'clamp(12px, 0.9vw, 14px)' }}>
           We'll send your personalized guide here.
         </small>
       </div>
