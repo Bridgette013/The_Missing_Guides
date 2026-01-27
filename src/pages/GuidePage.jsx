@@ -25,7 +25,7 @@ export default function GuidePage() {
   return (
     <div>
       <Header />
-      <div style={{ padding: '60px 20px' }}>
+      <div style={{ padding: 'clamp(40px, 6vw, 80px) clamp(20px, 5vw, 80px)' }}>
         {showForm && <PersonalizationForm guideId={guideId} onSubmit={handleFormSubmit} />}
       </div>
     </div>
