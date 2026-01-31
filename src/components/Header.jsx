@@ -13,13 +13,15 @@ export default function Header() {
       <div className="container" style={{
         maxWidth: '1600px',
         margin: '0 auto',
-        padding: '0 clamp(20px, 5vw, 80px)'
+        padding: '0 clamp(20px, 5vw, 80px)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
       }}>
         <Link to="/" style={{
           textDecoration: 'none',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
           gap: 'clamp(12px, 2vw, 24px)'
         }}>
           <img
@@ -53,6 +55,18 @@ export default function Header() {
             </p>
           </div>
         </Link>
+        <nav>
+          <Link to="/about" style={{
+            fontFamily: '"Work Sans", sans-serif',
+            fontSize: 'clamp(14px, 1.1vw, 17px)',
+            fontWeight: 500,
+            color: '#616BA5',
+            textDecoration: 'none',
+            letterSpacing: '0.5px',
+          }}>
+            About
+          </Link>
+        </nav>
       </div>
     </header>
   )
