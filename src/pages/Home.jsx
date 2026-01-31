@@ -48,7 +48,7 @@ export default function Home() {
 
       {/* Hero */}
       <section style={{
-        background: 'linear-gradient(135deg, #2529A7 0%, #9A9DE7 100%)',
+        background: 'linear-gradient(135deg, #616BA5 0%, #9199C7 100%)',
         color: '#FFFFFF',
         padding: 'clamp(60px, 8vw, 120px) clamp(20px, 5vw, 80px)',
         textAlign: 'center'
@@ -79,7 +79,7 @@ export default function Home() {
           <a href="#guides" style={{
             display: 'inline-block',
             background: '#FFFFFF',
-            color: '#2529A7',
+            color: '#616BA5',
             padding: 'clamp(14px, 1.5vw, 22px) clamp(30px, 3vw, 50px)',
             fontSize: 'clamp(16px, 1.3vw, 20px)',
             fontWeight: 600,
@@ -100,7 +100,7 @@ export default function Home() {
             fontSize: 'clamp(28px, 3vw, 44px)',
             textAlign: 'center',
             marginBottom: 'clamp(40px, 5vw, 70px)',
-            color: '#2529A7'
+            color: '#616BA5'
           }}>
             The Missing Guide to Addiction Recovery
           </h2>
@@ -119,7 +119,7 @@ export default function Home() {
 
           {/* Bundle */}
           <div style={{
-            background: 'linear-gradient(135deg, #2529A7 0%, #9A9DE7 100%)',
+            background: 'linear-gradient(135deg, #616BA5 0%, #9199C7 100%)',
             color: '#FFFFFF',
             borderRadius: '8px',
             padding: 'clamp(40px, 5vw, 70px)',
@@ -135,7 +135,7 @@ export default function Home() {
               Complete Recovery Bundle
             </h3>
             <p style={{ fontSize: 'clamp(18px, 1.5vw, 24px)', marginBottom: '30px' }}>
-              Get all 5 guides. Save $88.
+              Get all 5 guides. Save $188.
             </p>
             <p style={{
               textDecoration: 'line-through',
@@ -146,11 +146,11 @@ export default function Home() {
               $485 if purchased separately
             </p>
             <p style={{ fontSize: 'clamp(40px, 4vw, 56px)', fontWeight: 900, marginBottom: '30px' }}>
-              $397
+              $297
             </p>
             <Link to="/guide/bundle" style={{
               background: '#FFFFFF',
-              color: '#2529A7',
+              color: '#616BA5',
               padding: 'clamp(14px, 1.5vw, 22px) clamp(40px, 4vw, 60px)',
               fontSize: 'clamp(18px, 1.5vw, 24px)',
               fontWeight: 700,
