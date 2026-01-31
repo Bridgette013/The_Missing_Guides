@@ -25,7 +25,7 @@ export default function Header() {
           gap: 'clamp(12px, 2vw, 24px)'
         }}>
           <img
-            src="/logo.png"
+            src="/images/logo.png"
             alt="The Missing Guides Logo"
             style={{
               height: 'clamp(50px, 6vw, 80px)',
