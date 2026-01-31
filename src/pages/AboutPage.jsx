@@ -53,7 +53,7 @@ export default function AboutPage() {
         {/* Headshot photo */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(32px, 5vw, 56px)' }}>
           <img
-            src="/images/about-brit.png"
+            src="/images/about_brit.png"
             alt="Brit, founder of The Missing Guides"
             style={{
               width: '180px',
