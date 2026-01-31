@@ -120,7 +120,7 @@ export default function AboutPage() {
           U.S. Army Veteran
         </p>
 
-      </div>
+      </main>
 
       {/* Timeline image banner */}
       <div style={{
