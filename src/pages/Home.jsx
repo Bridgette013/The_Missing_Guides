@@ -1,5 +1,6 @@
 import Header from '../components/Header'
 import GuideCard from '../components/GuideCard'
+import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
 
 const guides = [
@@ -163,16 +164,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer style={{
-        background: '#20201D',
-        color: '#FFFFFF',
-        padding: 'clamp(30px, 4vw, 60px) clamp(20px, 5vw, 80px)',
-        textAlign: 'center'
-      }}>
-        <p>&copy; 2026 The Missing Guides. All rights reserved.</p>
-        <p style={{ marginTop: '10px', fontSize: '14px' }}>TheMissingGuides.com</p>
-      </footer>
       <Footer />
     </div>
   )
