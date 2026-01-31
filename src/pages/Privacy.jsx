@@ -8,15 +8,16 @@ export default function Privacy() {
       <div style={{
         maxWidth: '900px',
         margin: '60px auto',
-        padding: '0 20px',
+        padding: '40px 20px',
         fontFamily: 'Inter, sans-serif',
         lineHeight: 1.8,
-        color: '#20201D'
+        color: '#1a1a1a',
+        background: '#FFFFFF'
       }}>
         <h1 style={{
           fontFamily: '"Merriweather", serif',
           fontSize: '42px',
-          color: '#2529A7',
+          color: '#616BA5',
           marginBottom: '20px'
         }}>
           Privacy Policy
@@ -30,7 +31,7 @@ export default function Privacy() {
           VVV Digitals LLC ("we," "us," "our") operates TheMissingGuides.com. This Privacy Policy explains how we collect, use, and protect your personal information.
         </p>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginTop: '40px', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
           1. Information We Collect
         </h2>
         
@@ -59,7 +60,7 @@ export default function Privacy() {
           <li style={{ marginBottom: '10px' }}>Time and date of visits</li>
         </ul>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginTop: '40px', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
           2. How We Use Your Information
         </h2>
         
@@ -78,7 +79,7 @@ export default function Privacy() {
           <li style={{ marginBottom: '10px' }}>❌ Use your data for advertising</li>
         </ul>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginTop: '40px', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
           3. How We Share Your Information
         </h2>
         
@@ -96,7 +97,7 @@ export default function Privacy() {
           <li style={{ marginBottom: '10px' }}>Sensitive personal information</li>
         </ul>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginTop: '40px', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
           4. Data Security
         </h2>
         <ul style={{ marginBottom: '30px', paddingLeft: '30px' }}>
@@ -106,7 +107,7 @@ export default function Privacy() {
           <li style={{ marginBottom: '10px' }}><strong>No storage:</strong> Personalized data not stored long-term</li>
         </ul>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginTop: '40px', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
           5. Your Rights
         </h2>
         <p style={{ marginBottom: '15px', fontWeight: 600 }}>You Have the Right To:</p>
@@ -117,25 +118,25 @@ export default function Privacy() {
           <li style={{ marginBottom: '10px' }}>Portability - Receive your data in usable format</li>
         </ul>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginTop: '40px', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
           6. Contact Us
         </h2>
         <p style={{ marginBottom: '10px' }}>
           <strong>Questions about your privacy?</strong>
         </p>
-        <p style={{ marginBottom: '10px' }}>Email: support@themissingguides.com</p>
+        <p style={{ marginBottom: '10px' }}>Email: admin@vvvdigitals.com</p>
         <p style={{ marginBottom: '10px' }}>Business: VVV Digitals LLC</p>
         <p style={{ marginBottom: '40px' }}>Response Time: Within 72 hours</p>
 
         <div style={{
           background: '#F8F9FA',
-          border: '2px solid #9A9DE7',
+          border: '2px solid #9199C7',
           borderRadius: '8px',
           padding: '30px',
           marginTop: '40px',
           marginBottom: '40px'
         }}>
-          <h3 style={{ fontSize: '20px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginBottom: '15px' }}>
+          <h3 style={{ fontSize: '20px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginBottom: '15px' }}>
             Our Commitment to Privacy
           </h3>
           <p style={{ margin: 0 }}>
@@ -147,7 +148,7 @@ export default function Privacy() {
         </div>
 
         <div style={{
-          borderTop: '2px solid #9A9DE7',
+          borderTop: '2px solid #9199C7',
           paddingTop: '30px',
           marginTop: '60px',
           color: '#8E8E8B',

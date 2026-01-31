@@ -18,14 +18,29 @@ export default function Footer() {
       }}>
         {/* Brand */}
         <div>
-          <h3 style={{
-            fontFamily: '"Merriweather", serif',
-            fontSize: '20px',
-            marginBottom: '15px',
-            color: '#9A9DE7'
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            marginBottom: '15px'
           }}>
-            THE MISSING GUIDES
-          </h3>
+            <img
+              src="/logo.png"
+              alt="The Missing Guides Logo"
+              style={{
+                height: '45px',
+                width: 'auto'
+              }}
+            />
+            <h3 style={{
+              fontFamily: '"Merriweather", serif',
+              fontSize: '18px',
+              margin: 0,
+              color: '#9199C7'
+            }}>
+              THE MISSING GUIDES
+            </h3>
+          </div>
           <p style={{ fontSize: '14px', lineHeight: 1.6, color: '#8E8E8B' }}>
             The comprehensive guides life forgot to include.
           </p>
@@ -70,7 +85,7 @@ export default function Footer() {
             fontWeight: 600
           }}>Support</h4>
           <p style={{ fontSize: '14px', color: '#8E8E8B', marginBottom: '10px' }}>
-            Email: support@themissingguides.com
+            Email: admin@vvvdigitals.com
           </p>
           <p style={{ fontSize: '14px', color: '#8E8E8B' }}>
             Response time: Within 48 hours
@@ -83,7 +98,7 @@ export default function Footer() {
             fontSize: '16px',
             marginBottom: '15px',
             fontWeight: 600,
-            color: '#9A9DE7'
+            color: '#9199C7'
           }}>Emergency Resources</h4>
           <p style={{ fontSize: '14px', color: '#8E8E8B', marginBottom: '8px' }}>
             <strong>Emergency:</strong> 911

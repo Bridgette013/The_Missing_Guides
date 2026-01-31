@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 export default function GuideCard({ guide }) {
   const cardStyle = {
     background: '#FFFFFF',
-    border: '2px solid #2529A7',
+    border: '2px solid #616BA5',
     borderRadius: '8px',
     padding: 'clamp(24px, 2.5vw, 40px)',
     textAlign: 'center',
@@ -13,7 +13,7 @@ export default function GuideCard({ guide }) {
 
   const substanceStyle = {
     display: 'inline-block',
-    background: '#9A9DE7',
+    background: '#9199C7',
     color: '#FFFFFF',
     padding: '5px 15px',
     borderRadius: '20px',
@@ -25,13 +25,13 @@ export default function GuideCard({ guide }) {
   const priceStyle = {
     fontSize: 'clamp(28px, 2.5vw, 38px)',
     fontWeight: 700,
-    color: '#2529A7',
+    color: '#616BA5',
     marginBottom: '20px'
   }
 
   const buttonStyle = {
     display: 'inline-block',
-    background: '#2529A7',
+    background: '#616BA5',
     color: '#FFFFFF',
     padding: 'clamp(10px, 1vw, 16px) clamp(24px, 2vw, 36px)',
     fontWeight: 600,
@@ -47,7 +47,7 @@ export default function GuideCard({ guide }) {
   return (
     <div style={cardStyle} onMouseEnter={(e) => {
       e.currentTarget.style.transform = 'translateY(-5px)'
-      e.currentTarget.style.boxShadow = '0 10px 30px rgba(37, 41, 167, 0.2)'
+      e.currentTarget.style.boxShadow = '0 10px 30px rgba(97, 107, 165, 0.2)'
     }} onMouseLeave={(e) => {
       e.currentTarget.style.transform = 'translateY(0)'
       e.currentTarget.style.boxShadow = 'none'
@@ -56,7 +56,7 @@ export default function GuideCard({ guide }) {
         fontFamily: '"Merriweather", serif',
         fontSize: 'clamp(18px, 1.6vw, 26px)',
         marginBottom: '15px',
-        color: '#2529A7'
+        color: '#616BA5'
       }}>
         The Missing Guide to<br />{guide.title}
       </h3>

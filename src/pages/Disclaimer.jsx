@@ -8,13 +8,14 @@ export default function Disclaimer() {
       <div style={{
         maxWidth: '900px',
         margin: '60px auto',
-        padding: '0 20px',
+        padding: '40px 20px',
         fontFamily: 'Inter, sans-serif',
         lineHeight: 1.8,
-        color: '#20201D'
+        color: '#1a1a1a',
+        background: '#FFFFFF'
       }}>
         <div style={{
-          background: 'linear-gradient(135deg, #2529A7 0%, #9A9DE7 100%)',
+          background: 'linear-gradient(135deg, #616BA5 0%, #9199C7 100%)',
           color: '#FFFFFF',
           borderRadius: '8px',
           padding: '40px',
@@ -48,7 +49,7 @@ export default function Disclaimer() {
           </p>
         </div>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginTop: '40px', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
           What This Guide IS:
         </h2>
         <ul style={{ marginBottom: '30px', paddingLeft: '30px' }}>
@@ -66,7 +67,7 @@ export default function Disclaimer() {
           </li>
         </ul>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginTop: '40px', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
           What This Guide is NOT:
         </h2>
         <ul style={{ marginBottom: '30px', paddingLeft: '30px' }}>
@@ -84,7 +85,7 @@ export default function Disclaimer() {
           </li>
         </ul>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginTop: '40px', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
           Your Responsibilities:
         </h2>
         <ul style={{ marginBottom: '30px', paddingLeft: '30px' }}>
@@ -127,7 +128,7 @@ export default function Disclaimer() {
           </div>
         </div>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginTop: '40px', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
           Limitation of Liability
         </h2>
         <p style={{ marginBottom: '30px' }}>
@@ -136,14 +137,14 @@ export default function Disclaimer() {
 
         <div style={{
           background: '#F8F9FA',
-          border: '2px solid #2529A7',
+          border: '2px solid #616BA5',
           borderRadius: '8px',
           padding: '30px',
           marginTop: '40px',
           marginBottom: '40px',
           textAlign: 'center'
         }}>
-          <p style={{ fontSize: '18px', fontWeight: 600, marginBottom: '20px', color: '#2529A7' }}>
+          <p style={{ fontSize: '18px', fontWeight: 600, marginBottom: '20px', color: '#616BA5' }}>
             By purchasing and using this guide, you acknowledge that you understand and agree to this disclaimer.
           </p>
           <p style={{ fontSize: '16px', margin: 0, fontStyle: 'italic' }}>
@@ -152,7 +153,7 @@ export default function Disclaimer() {
         </div>
 
         <div style={{
-          borderTop: '2px solid #9A9DE7',
+          borderTop: '2px solid #9199C7',
           paddingTop: '30px',
           marginTop: '60px',
           color: '#8E8E8B',

@@ -47,7 +47,7 @@ export default function PersonalizationForm({ guideId, onSubmit }) {
     width: '100%',
     padding: 'clamp(10px, 1vw, 14px)',
     fontSize: 'clamp(15px, 1.1vw, 18px)',
-    border: '2px solid #9A9DE7',
+    border: '2px solid #9199C7',
     borderRadius: '6px',
     fontFamily: 'Inter, sans-serif',
     boxSizing: 'border-box'
@@ -58,7 +58,7 @@ export default function PersonalizationForm({ guideId, onSubmit }) {
     padding: 'clamp(14px, 1.5vw, 20px)',
     fontSize: 'clamp(16px, 1.3vw, 20px)',
     fontWeight: 600,
-    background: '#2529A7',
+    background: '#616BA5',
     color: '#FFFFFF',
     border: 'none',
     borderRadius: '6px',
@@ -72,7 +72,7 @@ export default function PersonalizationForm({ guideId, onSubmit }) {
         fontFamily: '"Merriweather", serif',
         fontSize: 'clamp(24px, 2.5vw, 34px)',
         marginBottom: '10px',
-        color: '#2529A7',
+        color: '#616BA5',
         textAlign: 'center'
       }}>
         Personalize Your Guide

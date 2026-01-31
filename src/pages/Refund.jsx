@@ -8,15 +8,16 @@ export default function Refund() {
       <div style={{
         maxWidth: '900px',
         margin: '60px auto',
-        padding: '0 20px',
+        padding: '40px 20px',
         fontFamily: 'Inter, sans-serif',
         lineHeight: 1.8,
-        color: '#20201D'
+        color: '#1a1a1a',
+        background: '#FFFFFF'
       }}>
         <h1 style={{
           fontFamily: '"Merriweather", serif',
           fontSize: '42px',
-          color: '#2529A7',
+          color: '#616BA5',
           marginBottom: '20px'
         }}>
           Refund Policy
@@ -28,7 +29,7 @@ export default function Refund() {
 
         <div style={{
           background: '#F8F9FA',
-          border: '3px solid #2529A7',
+          border: '3px solid #616BA5',
           borderRadius: '8px',
           padding: '30px',
           marginBottom: '40px',
@@ -37,7 +38,7 @@ export default function Refund() {
           <h2 style={{
             fontSize: '32px',
             fontFamily: '"Merriweather", serif',
-            color: '#2529A7',
+            color: '#616BA5',
             marginBottom: '15px'
           }}>
             Our Policy: All Sales Are Final
@@ -47,7 +48,7 @@ export default function Refund() {
           </p>
         </div>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginTop: '40px', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
           Why No Refunds?
         </h2>
         <ul style={{ marginBottom: '30px', paddingLeft: '30px' }}>
@@ -62,7 +63,7 @@ export default function Refund() {
           </li>
         </ul>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginTop: '40px', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
           Exceptions - We'll Make It Right
         </h2>
         <p style={{ marginBottom: '20px' }}>
@@ -94,7 +95,7 @@ export default function Refund() {
           </p>
         </div>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginTop: '40px', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
           What We Cannot Refund
         </h2>
         <ul style={{ marginBottom: '30px', paddingLeft: '30px' }}>
@@ -105,7 +106,7 @@ export default function Refund() {
           <li style={{ marginBottom: '10px' }}>❌ "My situation changed" - life circumstances after purchase</li>
         </ul>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginTop: '40px', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
           Before You Purchase - Make Sure
         </h2>
         <p style={{ marginBottom: '15px' }}>To avoid disappointment:</p>
@@ -116,12 +117,12 @@ export default function Refund() {
           <li style={{ marginBottom: '10px' }}>✅ Contact support BEFORE purchasing if you have questions</li>
         </ul>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#2529A7', marginTop: '40px', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
           How to Request a Refund
         </h2>
         <p style={{ marginBottom: '15px' }}>If you believe you qualify for a refund:</p>
         <ol style={{ marginBottom: '20px', paddingLeft: '30px' }}>
-          <li style={{ marginBottom: '10px' }}>Email: support@themissingguides.com</li>
+          <li style={{ marginBottom: '10px' }}>Email: admin@vvvdigitals.com</li>
           <li style={{ marginBottom: '10px' }}>Subject line: "Refund Request - [Your Name]"</li>
           <li style={{ marginBottom: '10px' }}>Include: Order number, reason, description of issue</li>
         </ol>
@@ -130,7 +131,7 @@ export default function Refund() {
         </p>
 
         <div style={{
-          background: '#9A9DE7',
+          background: '#9199C7',
           color: '#FFFFFF',
           borderRadius: '8px',
           padding: '30px',
@@ -146,7 +147,7 @@ export default function Refund() {
         </div>
 
         <div style={{
-          borderTop: '2px solid #9A9DE7',
+          borderTop: '2px solid #9199C7',
           paddingTop: '30px',
           marginTop: '60px',
           color: '#8E8E8B',
