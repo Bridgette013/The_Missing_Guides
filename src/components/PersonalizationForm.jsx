@@ -7,6 +7,7 @@ export default function PersonalizationForm({ guideId, onSubmit }) {
     pronouns: 'they/them',
     relationship: '',
     emergencyContact: '',
+    zip: '',
     hospital: '',
     email: ''
   })
@@ -153,6 +154,23 @@ export default function PersonalizationForm({ guideId, onSubmit }) {
           style={inputStyle}
           placeholder="e.g., (555) 123-4567"
         />
+      </div>
+
+      <div style={fieldStyle}>
+        <label style={labelStyle} htmlFor="zip">ZIP Code</label>
+        <input
+          type="text"
+          id="zip"
+          name="zip"
+          value={formData.zip}
+          onChange={handleChange}
+          style={inputStyle}
+          placeholder="e.g., 12345"
+          maxLength="5"
+        />
+        <small style={{ color: '#8E8E8B', display: 'block', marginTop: '5px', fontSize: 'clamp(12px, 0.9vw, 14px)' }}>
+          Used to find local hospitals and treatment facilities.
+        </small>
       </div>
 
       <div style={fieldStyle}>
