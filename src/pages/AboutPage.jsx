@@ -48,7 +48,7 @@ export default function AboutPage() {
     <div>
       <Header />
 
-      <div style={containerStyle}>
+      <main style={containerStyle}>
 
         <h2 style={{ ...boldLeadStyle, marginTop: 0 }}>
           Nobody teaches you this stuff.
