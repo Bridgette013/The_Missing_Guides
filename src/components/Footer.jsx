@@ -25,7 +25,7 @@ export default function Footer() {
             marginBottom: '15px'
           }}>
             <img
-              src="/logo.png"
+              src="/images/logo.png"
               alt="The Missing Guides Logo"
               style={{
                 height: '45px',
