@@ -173,6 +173,7 @@ export default function Home() {
         <p>&copy; 2026 The Missing Guides. All rights reserved.</p>
         <p style={{ marginTop: '10px', fontSize: '14px' }}>TheMissingGuides.com</p>
       </footer>
+      <Footer />
     </div>
   )
 }

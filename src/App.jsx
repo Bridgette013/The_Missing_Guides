@@ -5,6 +5,10 @@ import GuidePage from './pages/GuidePage'
 import Preview from './pages/Preview'
 import Success from './pages/Success'
 import './App.css'
+import Terms from './pages/Terms'
+import Privacy from './pages/Privacy'
+import Refund from './pages/Refund'
+import Disclaimer from './pages/Disclaimer'
 
 function App() {
   return (
@@ -15,6 +19,10 @@ function App() {
         <Route path="/guide/:guideId" element={<GuidePage />} />
         <Route path="/preview" element={<Preview />} />
         <Route path="/success" element={<Success />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/refund" element={<Refund />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
       </Routes>
     </Router>
   )

@@ -12,6 +12,7 @@ export default function Success() {
           You'll receive an email within the next few minutes with your personalized guide.
         </p>
       </div>
+      <Footer />
     </div>
   )
 }
