@@ -50,6 +50,21 @@ export default function AboutPage() {
 
       <main style={containerStyle}>
 
+        {/* Headshot photo */}
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(32px, 5vw, 56px)' }}>
+          <img
+            src="/images/about_brit.png"
+            alt="Brit, founder of The Missing Guides"
+            style={{
+              width: '180px',
+              height: '180px',
+              borderRadius: '50%',
+              objectFit: 'cover',
+              objectPosition: 'center top',
+            }}
+          />
+        </div>
+
         <h2 style={{ ...boldLeadStyle, marginTop: 0 }}>
           Nobody teaches you this stuff.
         </h2>
@@ -122,20 +137,31 @@ export default function AboutPage() {
 
       </main>
 
-      {/* Timeline image banner */}
+      {/* Timeline image banner — responsive desktop/mobile */}
       <div style={{
         marginTop: 'clamp(60px, 8vw, 120px)',
         width: '100%',
         lineHeight: 0,
       }}>
-        <img
-          src="/images/about-timeline.png"
-          alt=""
-          style={{
-            width: '100%',
-            display: 'block',
-          }}
-        />
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcSet="/images/about-timeline-mobile.png"
+          />
+          <source
+            media="(min-width: 769px)"
+            srcSet="/images/about-timeline-desktop.png"
+          />
+          <img
+            src="/images/about-timeline-desktop.png"
+            alt="Timeline of life moments"
+            style={{
+              width: '100%',
+              height: 'auto',
+              display: 'block',
+            }}
+          />
+        </picture>
       </div>
 
       <Footer />
