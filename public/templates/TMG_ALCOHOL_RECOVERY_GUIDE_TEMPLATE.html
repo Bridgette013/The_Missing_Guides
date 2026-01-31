@@ -536,18 +536,18 @@
     
     <div class="hospital-option primary">
         <h3>PRIMARY OPTION:</h3>
-        <p style="font-size: 18px; font-weight: 700; color: #2c3e50; margin: 10px 0;">Banner Thunderbird Medical Center</p>
-        <p>5555 W Thunderbird Rd, Glendale, AZ 85306</p>
-        <p style="font-size: 20px; font-weight: 700; color: #e74c3c; margin: 10px 0;">Phone: (602) 865-5555</p>
+        <p style="font-size: 18px; font-weight: 700; color: #2c3e50; margin: 10px 0;">{{HOSPITAL_1_NAME}}</p>
+        <p>{{HOSPITAL_1_ADDRESS}}</p>
+        <p style="font-size: 20px; font-weight: 700; color: #e74c3c; margin: 10px 0;">Phone: {{HOSPITAL_1_PHONE}}</p>
         <p style="margin-top: 15px;"><span class="checkbox"></span> This is where we're going</p>
     </div>
-    
-    <h3 style="margin-top: 30px;">BACKUP OPTIONS (if Banner Thunderbird is full or if you prefer):</h3>
-    
+
+    <h3 style="margin-top: 30px;">BACKUP OPTIONS (if {{HOSPITAL_1_NAME}} is full or if you prefer):</h3>
+
     <div class="hospital-option">
-        <p style="font-size: 18px; font-weight: 700; color: #2c3e50; margin: 10px 0;">Aurora Behavioral Health - West</p>
-        <p>6015 W Peoria Ave, Glendale, AZ 85302</p>
-        <p style="font-size: 20px; font-weight: 700; color: #3498db; margin: 10px 0;">Phone: (623) 344-4400 or 24/7 line: (877) 870-7012</p>
+        <p style="font-size: 18px; font-weight: 700; color: #2c3e50; margin: 10px 0;">{{HOSPITAL_2_NAME}}</p>
+        <p>{{HOSPITAL_2_ADDRESS}}</p>
+        <p style="font-size: 20px; font-weight: 700; color: #3498db; margin: 10px 0;">Phone: {{HOSPITAL_2_PHONE}}</p>
         <p style="margin-top: 15px;"><span class="checkbox"></span> This is where we're going instead</p>
     </div>
     
@@ -1584,8 +1584,8 @@
         
         <h3 style="margin-top: 20px;">Facilities in Your Area:</h3>
         <ul style="margin-left: 20px; line-height: 1.8;">
-            <li><strong>The Meadows (Wickenburg)</strong> - (800) 632-3697</li>
-            <li><strong>Cottonwood Tucson</strong> - (888) 727-0441</li>
+            <li><strong>{{DETOX_1_NAME}}</strong> - {{DETOX_1_PHONE}}</li>
+            <li><strong>{{DETOX_2_NAME}}</strong> - {{DETOX_2_PHONE}}</li>
         </ul>
         
         <div class="note-space" style="margin-top: 15px;">
@@ -1627,10 +1627,12 @@
             <li>Requires immense self-discipline during vulnerable period</li>
         </ul>
         
-        <h3 style="margin-top: 20px;">Local IOP Options:</h3>
+        <h3 style="margin-top: 20px;">Finding Local IOP Options:</h3>
         <ul style="margin-left: 20px; line-height: 1.8;">
-            <li><strong>Calvary Healing Center</strong> - (602) 279-1468</li>
-            <li><strong>Terros Health</strong> - (602) 685-6000</li>
+            <li>Contact your insurance provider for in-network IOP programs in your area</li>
+            <li>Ask hospital discharge planners for local IOP referrals</li>
+            <li>Search SAMHSA National Helpline: (1-800-662-4357) for local resources</li>
+            <li>Check with local Alcoholics Anonymous or SMART Recovery for program recommendations</li>
         </ul>
         
         <div class="note-space" style="margin-top: 15px;">
@@ -2271,54 +2273,53 @@
     <div class="page-break"></div>
     
     <div class="section-header">HOSPITALS FOR DETOX</div>
-    
+
     <div class="contact-card hospital">
-        <h3>Banner Thunderbird Medical Center</h3>
-        <p class="phone">📞 (602) 865-5555</p>
-        <p class="address">📍 5555 W Thunderbird Rd, Glendale, AZ 85306</p>
-        <p class="notes">Emergency Room - Full medical detox services</p>
+        <h3>{{HOSPITAL_1_NAME}}</h3>
+        <p class="phone">📞 {{HOSPITAL_1_PHONE}}</p>
+        <p class="address">📍 {{HOSPITAL_1_ADDRESS}}</p>
+        <p class="notes">Emergency Room - Medical detox services available</p>
         <div class="note-space">
             <p class="label">Notes from visit:</p>
         </div>
     </div>
-    
+
     <div class="contact-card hospital">
-        <h3>Aurora Behavioral Health West</h3>
-        <p class="phone">📞 (623) 344-4400</p>
-        <p class="phone">📞 24/7 Crisis: (877) 870-7012</p>
-        <p class="address">📍 6015 W Peoria Ave, Glendale, AZ 85302</p>
-        <p class="notes">Psychiatric hospital with detox unit - Behavioral health focus</p>
+        <h3>{{HOSPITAL_2_NAME}}</h3>
+        <p class="phone">📞 {{HOSPITAL_2_PHONE}}</p>
+        <p class="address">📍 {{HOSPITAL_2_ADDRESS}}</p>
+        <p class="notes">Alternative hospital option - Detox services available</p>
         <div class="note-space">
             <p class="label">Notes from visit:</p>
         </div>
     </div>
-    
+
     <div class="contact-card hospital">
-        <h3>Aurora Behavioral Health East</h3>
-        <p class="phone">📞 (480) 345-5420</p>
-        <p class="address">📍 6350 S Maple Ave, Tempe, AZ 85283</p>
-        <p class="notes">Alternative location if closer or West is full</p>
+        <h3>{{HOSPITAL_3_NAME}}</h3>
+        <p class="phone">📞 {{HOSPITAL_3_PHONE}}</p>
+        <p class="address">📍 {{HOSPITAL_3_ADDRESS}}</p>
+        <p class="notes">Alternative location - Backup option for detox services</p>
     </div>
     
     <div class="page-break"></div>
     
     <div class="section-header">INPATIENT TREATMENT FACILITIES</div>
-    
+
     <div class="contact-card inpatient">
-        <h3>The Meadows</h3>
-        <p class="phone">📞 (800) 632-3697</p>
-        <p class="address">📍 1655 N Tegner St, Wickenburg, AZ 85390</p>
-        <p class="notes">30-90 day residential program - Nationally recognized, trauma-focused, accepts many insurance plans</p>
+        <h3>{{DETOX_1_NAME}}</h3>
+        <p class="phone">📞 {{DETOX_1_PHONE}}</p>
+        <p class="address">📍 {{DETOX_1_ADDRESS}}</p>
+        <p class="notes">Residential treatment program - Contact for program details and insurance verification</p>
         <div class="note-space">
             <p class="label">Insurance verification / admission notes:</p>
         </div>
     </div>
-    
+
     <div class="contact-card inpatient">
-        <h3>Cottonwood Tucson</h3>
-        <p class="phone">📞 (888) 727-0441</p>
-        <p class="address">📍 4110 W Sweetwater Dr, Tucson, AZ 85745</p>
-        <p class="notes">45+ day residential program - Holistic approach, co-occurring disorders, luxury setting</p>
+        <h3>{{DETOX_2_NAME}}</h3>
+        <p class="phone">📞 {{DETOX_2_PHONE}}</p>
+        <p class="address">📍 {{DETOX_2_ADDRESS}}</p>
+        <p class="notes">Alternative treatment facility - Contact for program details and availability</p>
         <div class="note-space">
             <p class="label">Insurance verification / admission notes:</p>
         </div>
@@ -2811,8 +2812,8 @@
         <p class="phone">1-800-662-4357 - SAMHSA</p>
         
         <p style="margin-top: 8px; font-size: 9px; border-top: 1px solid #bdc3c7; padding-top: 5px;">
-            <strong>Banner Thunderbird:</strong> (602) 865-5555<br>
-            <strong>Aurora West:</strong> (877) 870-7012
+            <strong>{{HOSPITAL_1_NAME}}:</strong> {{HOSPITAL_1_PHONE}}<br>
+            <strong>{{HOSPITAL_2_NAME}}:</strong> {{HOSPITAL_2_PHONE}}
         </p>
     </div>
     
