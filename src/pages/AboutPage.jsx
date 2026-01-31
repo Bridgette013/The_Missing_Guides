@@ -50,9 +50,9 @@ export default function AboutPage() {
 
       <div style={containerStyle}>
 
-        <p style={{ ...boldLeadStyle, marginTop: 0 }}>
+        <h2 style={{ ...boldLeadStyle, marginTop: 0 }}>
           Nobody teaches you this stuff.
-        </p>
+        </h2>
 
         <p style={paragraphStyle}>
           Not how to get your husband into detox at 2am. Not what to say when the ER asks how much he drinks. Not how to keep breathing when the person you love is destroying themselves.
