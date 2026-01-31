@@ -12,7 +12,7 @@ export default function AboutPage() {
     fontFamily: 'Inter, sans-serif',
     fontSize: 'clamp(16px, 1.2vw, 18px)',
     lineHeight: 1.9,
-    color: '#2A2A2A',
+    color: '#D4D4D4',
     marginBottom: '28px',
   }
 
@@ -21,7 +21,7 @@ export default function AboutPage() {
     fontSize: 'clamp(18px, 1.4vw, 22px)',
     fontWeight: 700,
     lineHeight: 1.7,
-    color: '#2529A7',
+    color: '#8B9FE8',
     marginBottom: '16px',
     marginTop: '56px',
   }
@@ -30,7 +30,7 @@ export default function AboutPage() {
     fontFamily: '"Merriweather", serif',
     fontSize: 'clamp(17px, 1.3vw, 20px)',
     fontWeight: 700,
-    color: '#2529A7',
+    color: '#8B9FE8',
     marginBottom: '4px',
     marginTop: '56px',
   }
@@ -39,7 +39,7 @@ export default function AboutPage() {
     fontFamily: 'Inter, sans-serif',
     fontSize: 'clamp(14px, 1.1vw, 16px)',
     fontStyle: 'italic',
-    color: '#6B6B6B',
+    color: '#A8A8A8',
     marginBottom: '2px',
     lineHeight: 1.6,
   }
