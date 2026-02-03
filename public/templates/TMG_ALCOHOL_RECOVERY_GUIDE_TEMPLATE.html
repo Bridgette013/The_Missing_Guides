@@ -486,6 +486,8 @@
         <ul style="color: #000000; font-size: 13pt; line-height: 1.7;">
             <li><strong>[PATIENT_NAME]</strong> = Your loved one's first name (e.g., "John", "Sarah")</li>
             <li><strong>[YOUR_NAME]</strong> = Your name as the primary support person</li>
+            <li><strong>[RELATIONSHIP]</strong> = Your relationship to the patient (e.g., "mother", "partner")</li>
+            <li><strong>[EMERGENCY_CONTACT]</strong> = Emergency contact phone number</li>
             <li><strong>[YOUR_PHONE]</strong> = Your cell phone number</li>
             <li><strong>[PATIENT_PHONE]</strong> = Patient's cell phone number (if applicable)</li>
             <li><strong>[BACKUP_CONTACT]</strong> = Secondary contact person's name</li>
@@ -536,18 +538,18 @@
     
     <div class="hospital-option primary">
         <h3>PRIMARY OPTION:</h3>
-        <p style="font-size: 18px; font-weight: 700; color: #2c3e50; margin: 10px 0;">{{HOSPITAL_1_NAME}}</p>
-        <p>{{HOSPITAL_1_ADDRESS}}</p>
-        <p style="font-size: 20px; font-weight: 700; color: #e74c3c; margin: 10px 0;">Phone: {{HOSPITAL_1_PHONE}}</p>
+        <p style="font-size: 18px; font-weight: 700; color: #2c3e50; margin: 10px 0;">[PRIMARY_HOSPITAL_NAME]</p>
+        <p>[PRIMARY_HOSPITAL_ADDRESS]</p>
+        <p style="font-size: 20px; font-weight: 700; color: #e74c3c; margin: 10px 0;">Phone: [PRIMARY_HOSPITAL_PHONE]</p>
         <p style="margin-top: 15px;"><span class="checkbox"></span> This is where we're going</p>
     </div>
 
-    <h3 style="margin-top: 30px;">BACKUP OPTIONS (if {{HOSPITAL_1_NAME}} is full or if you prefer):</h3>
+    <h3 style="margin-top: 30px;">BACKUP OPTIONS (if [PRIMARY_HOSPITAL_NAME] is full or if you prefer):</h3>
 
     <div class="hospital-option">
-        <p style="font-size: 18px; font-weight: 700; color: #2c3e50; margin: 10px 0;">{{HOSPITAL_2_NAME}}</p>
-        <p>{{HOSPITAL_2_ADDRESS}}</p>
-        <p style="font-size: 20px; font-weight: 700; color: #3498db; margin: 10px 0;">Phone: {{HOSPITAL_2_PHONE}}</p>
+        <p style="font-size: 18px; font-weight: 700; color: #2c3e50; margin: 10px 0;">[BACKUP_HOSPITAL_1_NAME]</p>
+        <p>[BACKUP_HOSPITAL_1_ADDRESS]</p>
+        <p style="font-size: 20px; font-weight: 700; color: #3498db; margin: 10px 0;">Phone: [BACKUP_HOSPITAL_1_PHONE]</p>
         <p style="margin-top: 15px;"><span class="checkbox"></span> This is where we're going instead</p>
     </div>
     
@@ -565,16 +567,16 @@
         </h2>
     </div>
     
-    <h3>FOR HIM - ABSOLUTE ESSENTIALS:</h3>
+    <h3>FOR [HIM_HER] - ABSOLUTE ESSENTIALS:</h3>
     
     <ul class="checklist">
-        <li><span class="checkbox"></span> <strong>His photo ID / Driver's License</strong></li>
+        <li><span class="checkbox"></span> <strong>[HIS_HER] photo ID / Driver's License</strong></li>
         <li><span class="checkbox"></span> <strong>Insurance card</strong> (front and back)<br>
             <span style="font-size: 14px; color: #7f8c8d;">→ Take a photo of it with your phone as backup</span></li>
-        <li><span class="checkbox"></span> <strong>His phone + charger</strong></li>
+        <li><span class="checkbox"></span> <strong>[HIS_HER] phone + charger</strong></li>
         <li><span class="checkbox"></span> <strong>Comfortable clothes</strong> (sweatpants, t-shirt, hoodie, slip-on shoes)<br>
             <span style="font-size: 14px; color: #7f8c8d;">→ No belts, no drawstrings, no laces (hospital will remove them)</span></li>
-        <li><span class="checkbox"></span> <strong>Glasses</strong> (if he wears them)</li>
+        <li><span class="checkbox"></span> <strong>Glasses</strong> (if [he_she] wears them)</li>
         <li><span class="checkbox"></span> <strong>List of current medications</strong> (write below if you don't have a list):
             <div style="margin: 10px 0;">
                 <span class="fill-in-long"></span>
@@ -1584,8 +1586,8 @@
         
         <h3 style="margin-top: 20px;">Facilities in Your Area:</h3>
         <ul style="margin-left: 20px; line-height: 1.8;">
-            <li><strong>{{DETOX_1_NAME}}</strong> - {{DETOX_1_PHONE}}</li>
-            <li><strong>{{DETOX_2_NAME}}</strong> - {{DETOX_2_PHONE}}</li>
+            <li><strong>[INPATIENT_FACILITY_1_NAME]</strong> - [INPATIENT_FACILITY_1_PHONE]</li>
+            <li><strong>[INPATIENT_FACILITY_2_NAME]</strong> - [INPATIENT_FACILITY_2_PHONE]</li>
         </ul>
         
         <div class="note-space" style="margin-top: 15px;">
@@ -2247,13 +2249,13 @@
         <h2>🚨 CRISIS RESOURCES - CALL THESE FIRST 🚨</h2>
         
         <div style="margin: 20px 0;">
-            <p style="font-weight: 700; font-size: 18px;">If he's in immediate danger or you are:</p>
+            <p style="font-weight: 700; font-size: 18px;">If [he_she] is in immediate danger or you are:</p>
             <p class="crisis-number">📞 911</p>
         </div>
         
         <div style="margin: 20px 0;">
-            <p style="font-weight: 700; font-size: 18px;">Arizona Crisis Line (24/7):</p>
-            <p class="crisis-number">📞 1-844-534-4673</p>
+            <p style="font-weight: 700; font-size: 18px;">[STATE_NAME] Crisis Line (24/7):</p>
+            <p class="crisis-number">📞 [STATE_CRISIS_LINE_PHONE]</p>
             <p style="margin-top: 5px;">Mental health crisis, suicide prevention, substance abuse support</p>
         </div>
         
@@ -2275,9 +2277,9 @@
     <div class="section-header">HOSPITALS FOR DETOX</div>
 
     <div class="contact-card hospital">
-        <h3>{{HOSPITAL_1_NAME}}</h3>
-        <p class="phone">📞 {{HOSPITAL_1_PHONE}}</p>
-        <p class="address">📍 {{HOSPITAL_1_ADDRESS}}</p>
+        <h3>[PRIMARY_HOSPITAL_NAME]</h3>
+        <p class="phone">📞 [PRIMARY_HOSPITAL_PHONE]</p>
+        <p class="address">📍 [PRIMARY_HOSPITAL_ADDRESS]</p>
         <p class="notes">Emergency Room - Medical detox services available</p>
         <div class="note-space">
             <p class="label">Notes from visit:</p>
@@ -2285,9 +2287,9 @@
     </div>
 
     <div class="contact-card hospital">
-        <h3>{{HOSPITAL_2_NAME}}</h3>
-        <p class="phone">📞 {{HOSPITAL_2_PHONE}}</p>
-        <p class="address">📍 {{HOSPITAL_2_ADDRESS}}</p>
+        <h3>[BACKUP_HOSPITAL_1_NAME]</h3>
+        <p class="phone">📞 [BACKUP_HOSPITAL_1_PHONE]</p>
+        <p class="address">📍 [BACKUP_HOSPITAL_1_ADDRESS]</p>
         <p class="notes">Alternative hospital option - Detox services available</p>
         <div class="note-space">
             <p class="label">Notes from visit:</p>
@@ -2295,9 +2297,9 @@
     </div>
 
     <div class="contact-card hospital">
-        <h3>{{HOSPITAL_3_NAME}}</h3>
-        <p class="phone">📞 {{HOSPITAL_3_PHONE}}</p>
-        <p class="address">📍 {{HOSPITAL_3_ADDRESS}}</p>
+        <h3>[BACKUP_HOSPITAL_2_NAME]</h3>
+        <p class="phone">📞 [BACKUP_HOSPITAL_2_PHONE]</p>
+        <p class="address">📍 [BACKUP_HOSPITAL_2_ADDRESS]</p>
         <p class="notes">Alternative location - Backup option for detox services</p>
     </div>
     
@@ -2306,9 +2308,9 @@
     <div class="section-header">INPATIENT TREATMENT FACILITIES</div>
 
     <div class="contact-card inpatient">
-        <h3>{{DETOX_1_NAME}}</h3>
-        <p class="phone">📞 {{DETOX_1_PHONE}}</p>
-        <p class="address">📍 {{DETOX_1_ADDRESS}}</p>
+        <h3>[INPATIENT_FACILITY_1_NAME]</h3>
+        <p class="phone">📞 [INPATIENT_FACILITY_1_PHONE]</p>
+        <p class="address">📍 [INPATIENT_FACILITY_1_ADDRESS]</p>
         <p class="notes">Residential treatment program - Contact for program details and insurance verification</p>
         <div class="note-space">
             <p class="label">Insurance verification / admission notes:</p>
@@ -2316,9 +2318,9 @@
     </div>
 
     <div class="contact-card inpatient">
-        <h3>{{DETOX_2_NAME}}</h3>
-        <p class="phone">📞 {{DETOX_2_PHONE}}</p>
-        <p class="address">📍 {{DETOX_2_ADDRESS}}</p>
+        <h3>[INPATIENT_FACILITY_2_NAME]</h3>
+        <p class="phone">📞 [INPATIENT_FACILITY_2_PHONE]</p>
+        <p class="address">📍 [INPATIENT_FACILITY_2_ADDRESS]</p>
         <p class="notes">Alternative treatment facility - Contact for program details and availability</p>
         <div class="note-space">
             <p class="label">Insurance verification / admission notes:</p>
@@ -2330,30 +2332,30 @@
     <div class="section-header">OUTPATIENT PROGRAMS (IOP)</div>
     
     <div class="contact-card outpatient">
-        <h3>Calvary Healing Center</h3>
-        <p class="phone">📞 (602) 279-1468</p>
-        <p class="address">📍 717 E Monroe St, Phoenix, AZ 85034</p>
-        <p class="notes">Faith-based program - Men's and women's programs, sliding scale fees, 12-step focus</p>
+        <h3>[IOP_FACILITY_1_NAME]</h3>
+        <p class="phone">📞 [IOP_FACILITY_1_PHONE]</p>
+        <p class="address">📍 [IOP_FACILITY_1_ADDRESS]</p>
+        <p class="notes">Intensive outpatient program - Contact for program details and scheduling</p>
         <div class="note-space">
             <p class="label">Program details / schedule:</p>
         </div>
     </div>
     
     <div class="contact-card outpatient">
-        <h3>Terros Health</h3>
-        <p class="phone">📞 (602) 685-6000</p>
-        <p class="address">📍 Multiple Valley locations</p>
-        <p class="notes">Non-profit behavioral health - IOP, counseling, medication management, accepts Medicaid</p>
+        <h3>[IOP_FACILITY_2_NAME]</h3>
+        <p class="phone">📞 [IOP_FACILITY_2_PHONE]</p>
+        <p class="address">📍 [IOP_FACILITY_2_ADDRESS]</p>
+        <p class="notes">Outpatient treatment program - Contact for services and availability</p>
         <div class="note-space">
             <p class="label">Program details / schedule:</p>
         </div>
     </div>
     
     <div class="contact-card outpatient">
-        <h3>Community Bridges</h3>
-        <p class="phone">📞 (480) 831-7566</p>
-        <p class="address">📍 Multiple locations in Mesa, Phoenix, Scottsdale</p>
-        <p class="notes">IOP and outpatient counseling - Low-cost options, flexible scheduling</p>
+        <h3>SAMHSA National Helpline</h3>
+        <p class="phone">📞 1-800-662-4357</p>
+        <p class="address">📍 samhsa.gov/find-treatment</p>
+        <p class="notes">Free 24/7 referral service - Find local treatment options, including IOP programs</p>
         <div class="note-space">
             <p class="label">Program details / schedule:</p>
         </div>
@@ -2375,9 +2377,9 @@
     
     <div class="contact-card support">
         <h3>Alcoholics Anonymous (AA)</h3>
-        <p class="phone">📞 Phoenix: (602) 264-1341</p>
-        <p class="phone">🌐 azaa.org</p>
-        <p class="notes">12-step recovery meetings - Find meetings 24/7 at azaa.org/meetings</p>
+        <p class="phone">📞 [STATE_NAME] AA Hotline</p>
+        <p class="phone">🌐 aa.org</p>
+        <p class="notes">12-step recovery meetings - Find meetings 24/7 at aa.org/meetings</p>
         <div class="note-space">
             <p class="label">Meeting location / time for him:</p>
         </div>
@@ -2783,7 +2785,7 @@
     <div style="margin: 40px 0; padding: 20px; background: #f8f9fa; border-radius: 8px; text-align: center;">
         <p style="font-size: 16px; color: #2c3e50;">
             <strong>If you need more support:</strong><br>
-            Al-Anon: 1-888-425-2666 • Crisis Line: 1-844-534-4673 • 988 Lifeline: Call or Text 988
+            Al-Anon: 1-888-425-2666 • Crisis Line: [STATE_CRISIS_LINE_PHONE] • 988 Lifeline: Call or Text 988
         </p>
     </div>
 <div class="page-break"></div>
@@ -2808,12 +2810,12 @@
         
         <p class="phone">911 - Emergency</p>
         <p class="phone">988 - Crisis/Suicide Lifeline</p>
-        <p class="phone">1-844-534-4673 - AZ Crisis Line</p>
+        <p class="phone">[STATE_CRISIS_LINE_PHONE] - [STATE_NAME] Crisis Line</p>
         <p class="phone">1-800-662-4357 - SAMHSA</p>
         
         <p style="margin-top: 8px; font-size: 9px; border-top: 1px solid #bdc3c7; padding-top: 5px;">
-            <strong>{{HOSPITAL_1_NAME}}:</strong> {{HOSPITAL_1_PHONE}}<br>
-            <strong>{{HOSPITAL_2_NAME}}:</strong> {{HOSPITAL_2_PHONE}}
+            <strong>[PRIMARY_HOSPITAL_NAME]:</strong> [PRIMARY_HOSPITAL_PHONE]<br>
+            <strong>[BACKUP_HOSPITAL_1_NAME]:</strong> [BACKUP_HOSPITAL_1_PHONE]
         </p>
     </div>
     
@@ -3097,12 +3099,12 @@
     </div>
     
     <div class="form-template">
-        <h3>If He Drinks Again - My Action Plan</h3>
+        <h3>If [HE_SHE] Relapses - My Action Plan</h3>
         
         <p style="margin: 20px 0; font-weight: 700;">1. Immediate Safety:</p>
         <div class="note-space" style="min-height: 60px;">
             <p style="font-size: 14px; font-style: italic; color: #555555;">
-                (Example: Call 911 if he's violent or suicidal. Call crisis line if I need support. Remove myself from the situation if needed.)
+                (Example: Call 911 if [he_she] is violent or suicidal. Call crisis line if I need support. Remove myself from the situation if needed.)
             </p>
         </div>
         
@@ -3116,7 +3118,7 @@
         <p style="margin: 20px 0; font-weight: 700;">3. My Boundary:</p>
         <div class="note-space" style="min-height: 60px;">
             <p style="font-size: 14px; font-style: italic; color: #555555;">
-                (Example: He must leave the house immediately. He cannot return until he's enrolled in treatment. No negotiation.)
+                (Example: [HE_SHE] must leave the house immediately. [HE_SHE] cannot return until [he_she] is enrolled in treatment. No negotiation.)
             </p>
         </div>
         
@@ -3139,7 +3141,7 @@
         <p style="margin: 20px 0; font-weight: 700;">6. What I Will NOT Do:</p>
         <div class="note-space" style="min-height: 60px;">
             <p style="font-size: 14px; font-style: italic; color: #555555;">
-                (Example: I will not drive him to get alcohol. I will not call in sick for him. I will not make excuses to family.)
+                (Example: I will not drive him to get alcohol. I will not call in sick for [him_her]. I will not make excuses to family.)
             </p>
         </div>
     </div>
