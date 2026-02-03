@@ -12,6 +12,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 // Direct imports — no HTTP round-trips within the same function runtime
 const { generateGuideHTML, GUIDE_NAMES } = require('./generate-guide');
 const { sendGuideEmail, sendFailureAlert } = require('./send-guide-email');
+const { fetchFacilitiesData } = require('./get-local-facilities');
 
 // Lazy-loaded to avoid cold start penalty when not needed
 let chromium, puppeteer;
@@ -20,88 +21,6 @@ async function loadBrowserDeps() {
   if (!chromium) {
     chromium = require('@sparticuz/chromium');
     puppeteer = require('puppeteer-core');
-  }
-}
-
-// Fetch facilities data for a ZIP code (direct function call, not HTTP)
-async function fetchFacilitiesData(zip) {
-  if (!zip) return null;
-
-  const GOOGLE_API_KEY = process.env.GOOGLE_PLACES_API_KEY;
-  if (!GOOGLE_API_KEY) {
-    console.warn('GOOGLE_PLACES_API_KEY not set, skipping facility lookup');
-    return null;
-  }
-
-  try {
-    // Geocode ZIP to coordinates
-    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${zip}&key=${GOOGLE_API_KEY}`;
-    const geoResponse = await fetch(geocodeUrl);
-    const geoData = await geoResponse.json();
-
-    if (geoData.status !== 'OK' || !geoData.results.length) {
-      console.warn(`Could not geocode ZIP: ${zip}`);
-      return null;
-    }
-
-    const { lat, lng } = geoData.results[0].geometry.location;
-
-    // Derive state from ZIP prefix
-    const { getStateFromZip } = require('./get-local-facilities');
-    const stateName = typeof getStateFromZip === 'function'
-      ? getStateFromZip(zip)
-      : null;
-
-    // Search for facilities in parallel
-    const searchPlaces = async (query, maxResults) => {
-      const response = await fetch('https://places.googleapis.com/v1/places:searchText', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Goog-Api-Key': GOOGLE_API_KEY,
-          'X-Goog-FieldMask': 'places.displayName,places.formattedAddress,places.nationalPhoneNumber,places.websiteUri',
-        },
-        body: JSON.stringify({
-          textQuery: query,
-          locationBias: {
-            circle: {
-              center: { latitude: lat, longitude: lng },
-              radius: 40233.6,
-            },
-          },
-          maxResultCount: maxResults,
-          languageCode: 'en',
-        }),
-      });
-
-      const data = await response.json();
-      if (!data.places) return [];
-
-      return data.places.map((place) => ({
-        name: place.displayName?.text || 'Unknown',
-        address: place.formattedAddress || 'Address not available',
-        phone: place.nationalPhoneNumber || 'Phone not available',
-        website: place.websiteUri || null,
-      }));
-    };
-
-    const [hospitals, inpatientFacilities, iopFacilities] = await Promise.all([
-      searchPlaces('emergency room hospital', 3),
-      searchPlaces('detox center addiction treatment inpatient facility', 2),
-      searchPlaces('intensive outpatient program IOP substance abuse treatment', 2),
-    ]);
-
-    return {
-      success: true,
-      stateName,
-      hospitals,
-      inpatientFacilities,
-      iopFacilities,
-      detoxFacilities: inpatientFacilities,
-    };
-  } catch (error) {
-    console.error('Facility lookup error:', error.message);
-    return null;
   }
 }
 
@@ -204,7 +123,8 @@ exports.handler = async (event) => {
     let facilitiesData = null;
     if (parsedData.zip) {
       console.log(`Looking up facilities for ZIP: ${parsedData.zip}`);
-      facilitiesData = await fetchFacilitiesData(parsedData.zip);
+      const apiKey = process.env.GOOGLE_PLACES_API_KEY;
+      facilitiesData = await fetchFacilitiesData(parsedData.zip, apiKey);
       if (!facilitiesData) {
         console.warn('Facility lookup returned no data - using SAMHSA fallback');
       }
