@@ -16,6 +16,12 @@
 
 [functions]
   node_bundler = "esbuild"
+  external_node_modules = ["@sparticuz/chromium"]
+
+[functions."stripe-webhook"]
+  # Extended timeout for PDF generation + email sending
+  # Netlify allows up to 26 seconds for synchronous functions
+  timeout = 26
 
 [[headers]]
   for = "/*"

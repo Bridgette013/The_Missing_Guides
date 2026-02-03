@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^8.1.6",
+    "@sparticuz/chromium": "^143.0.4",
     "@stripe/stripe-js": "^8.6.4",
+    "puppeteer-core": "^24.36.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.0",
