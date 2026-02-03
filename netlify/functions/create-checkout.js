@@ -13,9 +13,9 @@ exports.handler = async (event) => {
     if (isBundle) {
       priceId = process.env.STRIPE_PRICE_BUNDLE
     } else {
+      const alcoholPriceId = process.env.STRIPE_PRICE_ALCOHOL;
       const priceMap = {
-        // TEMPORARY: Test mode price ID - switch back to live price after testing
-        'alcohol': 'price_1SwlW2BgiaEKVIS7jniM4JLG',
+        'alcohol': alcoholPriceId,
         'opioid': process.env.STRIPE_PRICE_OPIOID,
         'stimulant': process.env.STRIPE_PRICE_STIMULANT,
         'benzo': process.env.STRIPE_PRICE_BENZO,
