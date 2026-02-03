@@ -69,10 +69,10 @@ function buildReplacements(data, fac) {
   r['[INPATIENT_FACILITY_2_ADDRESS]'] = inp[1]?.address || 'See SAMHSA.gov';
   r['[INPATIENT_FACILITY_2_PHONE]'] = inp[1]?.phone || '1-800-662-4357';
   r['[INPATIENT_FACILITY_2_WEBSITE]'] = inp[1]?.website || '';
-  r['[INPATIENT_FACILITY_3_NAME]'] = (inp[2] || inp[0])?.name || FALLBACK;
-  r['[INPATIENT_FACILITY_3_ADDRESS]'] = (inp[2] || inp[0])?.address || 'See SAMHSA.gov';
-  r['[INPATIENT_FACILITY_3_PHONE]'] = (inp[2] || inp[0])?.phone || '1-800-662-4357';
-  r['[INPATIENT_FACILITY_3_WEBSITE]'] = (inp[2] || inp[0])?.website || '';
+  r['[INPATIENT_FACILITY_3_NAME]'] = inp[2]?.name || FALLBACK;
+  r['[INPATIENT_FACILITY_3_ADDRESS]'] = inp[2]?.address || 'See SAMHSA.gov';
+  r['[INPATIENT_FACILITY_3_PHONE]'] = inp[2]?.phone || '1-800-662-4357';
+  r['[INPATIENT_FACILITY_3_WEBSITE]'] = inp[2]?.website || '';
 
   const iop = fac?.iopFacilities || [];
   r['[IOP_FACILITY_1_NAME]'] = iop[0]?.name || FALLBACK;

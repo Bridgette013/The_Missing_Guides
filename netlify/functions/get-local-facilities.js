@@ -224,8 +224,8 @@ function getStateFromZip(zip) {
 }
 
 // Convert ZIP code to lat/lng using Google Geocoding API
-async function zipToCoordinates(zip) {
-  const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${zip}&key=${GOOGLE_API_KEY}`;
+async function zipToCoordinates(zip, apiKey) {
+  const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${zip}&key=${apiKey}`;
   const response = await fetch(geocodeUrl);
   const data = await response.json();
 
@@ -242,7 +242,7 @@ async function zipToCoordinates(zip) {
 }
 
 // Search for places using Google Places API (v1)
-async function searchPlaces(lat, lng, query, maxResults = 3) {
+async function searchPlaces(lat, lng, query, apiKey, maxResults = 3) {
   const searchUrl = 'https://places.googleapis.com/v1/places:searchText';
 
   const requestBody = {
@@ -261,7 +261,7 @@ async function searchPlaces(lat, lng, query, maxResults = 3) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'X-Goog-Api-Key': GOOGLE_API_KEY,
+      'X-Goog-Api-Key': apiKey,
       'X-Goog-FieldMask': 'places.displayName,places.formattedAddress,places.nationalPhoneNumber,places.websiteUri',
     },
     body: JSON.stringify(requestBody),
@@ -279,6 +279,44 @@ async function searchPlaces(lat, lng, query, maxResults = 3) {
     phone: place.nationalPhoneNumber || 'Phone not available',
     website: place.websiteUri || null,
   }));
+}
+
+// Main facility lookup logic (exported for use by stripe-webhook.js)
+async function fetchFacilitiesData(zip, apiKey = GOOGLE_API_KEY) {
+  if (!zip) return null;
+  if (!apiKey) {
+    console.warn('Google API key not provided, skipping facility lookup');
+    return null;
+  }
+
+  try {
+    // Get state from ZIP
+    const stateName = getStateFromZip(zip);
+
+    // Get coordinates from ZIP
+    const coords = await zipToCoordinates(zip, apiKey);
+
+    // Search for hospitals, inpatient facilities, and IOP programs in parallel
+    const [hospitals, inpatientFacilities, iopFacilities] = await Promise.all([
+      searchPlaces(coords.lat, coords.lng, 'emergency room hospital', apiKey, 3),
+      searchPlaces(coords.lat, coords.lng, 'detox center addiction treatment inpatient facility', apiKey, 2),
+      searchPlaces(coords.lat, coords.lng, 'intensive outpatient program IOP substance abuse treatment', apiKey, 2),
+    ]);
+
+    return {
+      success: true,
+      location: coords.formattedAddress,
+      stateName,
+      hospitals,
+      inpatientFacilities,
+      iopFacilities,
+      // Keep backward compat
+      detoxFacilities: inpatientFacilities,
+    };
+  } catch (error) {
+    console.error('Facility lookup error:', error.message);
+    return null;
+  }
 }
 
 exports.handler = async (event) => {
@@ -313,18 +351,19 @@ exports.handler = async (event) => {
       };
     }
 
-    // Get state from ZIP
-    const stateName = getStateFromZip(zip);
+    // Use the exported helper function
+    const result = await fetchFacilitiesData(zip, GOOGLE_API_KEY);
 
-    // Get coordinates from ZIP
-    const coords = await zipToCoordinates(zip);
-
-    // Search for hospitals, inpatient facilities, and IOP programs in parallel
-    const [hospitals, inpatientFacilities, iopFacilities] = await Promise.all([
-      searchPlaces(coords.lat, coords.lng, 'emergency room hospital', 3),
-      searchPlaces(coords.lat, coords.lng, 'detox center addiction treatment inpatient facility', 2),
-      searchPlaces(coords.lat, coords.lng, 'intensive outpatient program IOP substance abuse treatment', 2),
-    ]);
+    if (!result) {
+      return {
+        statusCode: 500,
+        headers: { 'Access-Control-Allow-Origin': '*' },
+        body: JSON.stringify({
+          error: 'Failed to fetch facilities',
+          details: 'No data returned',
+        }),
+      };
+    }
 
     return {
       statusCode: 200,
@@ -332,16 +371,7 @@ exports.handler = async (event) => {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        success: true,
-        location: coords.formattedAddress,
-        stateName: stateName,
-        hospitals,
-        inpatientFacilities,
-        iopFacilities,
-        // Keep backward compat
-        detoxFacilities: inpatientFacilities,
-      }),
+      body: JSON.stringify(result),
     };
   } catch (error) {
     console.error('Error fetching facilities:', error);
@@ -358,3 +388,4 @@ exports.handler = async (event) => {
 
 // Export helper for use by stripe-webhook.js
 exports.getStateFromZip = getStateFromZip;
+exports.fetchFacilitiesData = fetchFacilitiesData;
