@@ -36,7 +36,7 @@ export default function Footer() {
               fontFamily: '"Merriweather", serif',
               fontSize: '18px',
               margin: 0,
-              color: '#9199C7'
+              color: '#9A9DE7'
             }}>
               THE MISSING GUIDES
             </h3>
@@ -98,7 +98,7 @@ export default function Footer() {
             fontSize: '16px',
             marginBottom: '15px',
             fontWeight: 600,
-            color: '#9199C7'
+            color: '#9A9DE7'
           }}>Emergency Resources</h4>
           <p style={{ fontSize: '14px', color: '#8E8E8B', marginBottom: '8px' }}>
             <strong>Emergency:</strong> 911

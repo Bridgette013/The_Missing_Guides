@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header style={{
       background: '#FFFFFF',
-      borderBottom: '2px solid #616BA5',
+      borderBottom: '2px solid #2529A7',
       padding: 'clamp(15px, 2vw, 30px) 0',
       position: 'sticky',
       top: 0,
@@ -38,7 +38,7 @@ export default function Header() {
               fontFamily: '"Merriweather", serif',
               fontSize: 'clamp(20px, 2.2vw, 36px)',
               fontWeight: 900,
-              color: '#616BA5',
+              color: '#2529A7',
               letterSpacing: '1px',
               marginBottom: '2px',
               lineHeight: 1.2
@@ -60,7 +60,7 @@ export default function Header() {
             fontFamily: '"Work Sans", sans-serif',
             fontSize: 'clamp(14px, 1.1vw, 17px)',
             fontWeight: 500,
-            color: '#616BA5',
+            color: '#2529A7',
             textDecoration: 'none',
             letterSpacing: '0.5px',
           }}>
