@@ -122,10 +122,10 @@ function buildReplacements(data, facilitiesData) {
   replacements['[INPATIENT_FACILITY_2_PHONE]'] = inpatient[1]?.phone || '1-800-662-4357';
   replacements['[INPATIENT_FACILITY_2_WEBSITE]'] = inpatient[1]?.website || '';
 
-  replacements['[INPATIENT_FACILITY_3_NAME]'] = inpatient[2]?.name || FALLBACK_FACILITY_TEXT;
-  replacements['[INPATIENT_FACILITY_3_ADDRESS]'] = inpatient[2]?.address || 'See SAMHSA.gov';
-  replacements['[INPATIENT_FACILITY_3_PHONE]'] = inpatient[2]?.phone || '1-800-662-4357';
-  replacements['[INPATIENT_FACILITY_3_WEBSITE]'] = inpatient[2]?.website || '';
+  replacements['[INPATIENT_FACILITY_3_NAME]'] = (inpatient[2] || inpatient[0])?.name || FALLBACK_FACILITY_TEXT;
+  replacements['[INPATIENT_FACILITY_3_ADDRESS]'] = (inpatient[2] || inpatient[0])?.address || 'See SAMHSA.gov';
+  replacements['[INPATIENT_FACILITY_3_PHONE]'] = (inpatient[2] || inpatient[0])?.phone || '1-800-662-4357';
+  replacements['[INPATIENT_FACILITY_3_WEBSITE]'] = (inpatient[2] || inpatient[0])?.website || '';
 
   // --- IOP facility placeholders ---
   const iop = facilitiesData?.iopFacilities || [];
