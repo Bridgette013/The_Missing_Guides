@@ -1,7 +1,7 @@
 import Header from '../components/Header'
 import GuideCard from '../components/GuideCard'
 import Footer from '../components/Footer'
-import { Link } from 'react-router-dom'
+
 
 const guides = [
   {
@@ -148,18 +148,11 @@ export default function Home() {
             <p style={{ fontSize: 'clamp(40px, 4vw, 56px)', fontWeight: 900, marginBottom: '30px' }}>
               $297
             </p>
-            <Link to="/guide/bundle" style={{
-              background: '#FFFFFF',
-              color: '#616BA5',
-              padding: 'clamp(14px, 1.5vw, 22px) clamp(40px, 4vw, 60px)',
-              fontSize: 'clamp(18px, 1.5vw, 24px)',
-              fontWeight: 700,
-              textDecoration: 'none',
-              borderRadius: '8px',
-              display: 'inline-block'
-            }}>
-              Get Complete Bundle
-            </Link>
+            <stripe-buy-button
+              buy-button-id="buy_btn_1T097pPea2K0BBSUylAtvwhL"
+              publishable-key="pk_live_51RydQzPea2K0BBSUfD5Y0vlVNN3k2iMGyMzJbOMowUmBx6WCiynQjE0g76xbrd8psBFpGymeqbATRBc6epZtjAye00ucNCZ9Jn"
+            >
+            </stripe-buy-button>
           </div>
         </div>
       </section>
