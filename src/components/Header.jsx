@@ -55,7 +55,17 @@ export default function Header() {
             </p>
           </div>
         </Link>
-        <nav>
+        <nav style={{ display: 'flex', gap: 'clamp(16px, 2vw, 32px)' }}>
+          <Link to="/blog" style={{
+            fontFamily: '"Work Sans", sans-serif',
+            fontSize: 'clamp(14px, 1.1vw, 17px)',
+            fontWeight: 500,
+            color: '#616BA5',
+            textDecoration: 'none',
+            letterSpacing: '0.5px',
+          }}>
+            Blog
+          </Link>
           <Link to="/about" style={{
             fontFamily: '"Work Sans", sans-serif',
             fontSize: 'clamp(14px, 1.1vw, 17px)',

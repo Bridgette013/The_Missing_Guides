@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --cream: #F5EFE6;
+  --cream-mid: #EDE4D7;
+  --cream-dark: #E0D5C4;
+  --ink: #1C1510;
+  --ink-mid: #3D2F24;
+  --ink-light: #6B5B4E;
+  --rust: #8C3B24;
+  --rust-light: #B05030;
+  --gold: #C9A96E;
+  --gold-light: #E8D5A8;
+  --gold-faint: rgba(201, 169, 110, 0.12);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Crimson Pro', Georgia, serif;
+  --font-ui: 'Raleway', sans-serif;
+}

@@ -1,0 +1,16 @@
+.logoWrap {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.compass {
+  transform-origin: 100px 100px;
+  transform-box: fill-box;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.logoWrap:hover .compass {
+  transform: rotate(45deg);
+}
