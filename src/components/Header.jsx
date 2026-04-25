@@ -1,83 +1,106 @@
 import { Link } from 'react-router-dom'
 
-export default function Header() {
-  return (
-    <header style={{
-      background: '#FFFFFF',
-      borderBottom: '2px solid #616BA5',
-      padding: 'clamp(15px, 2vw, 30px) 0',
-      position: 'sticky',
-      top: 0,
-      zIndex: 100
-    }}>
-      <div className="container" style={{
-        maxWidth: '1600px',
-        margin: '0 auto',
-        padding: '0 clamp(20px, 5vw, 80px)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-      }}>
-        <Link to="/" style={{
-          textDecoration: 'none',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 'clamp(12px, 2vw, 24px)'
-        }}>
-          <img
-            src="/images/logo.png"
-            alt="The Missing Guides Logo"
-            style={{
-              height: 'clamp(50px, 6vw, 80px)',
-              width: 'auto',
-              flexShrink: 0
-            }}
-          />
-          <div style={{ textAlign: 'left' }}>
-            <h1 style={{
-              fontFamily: '"Merriweather", serif',
-              fontSize: 'clamp(20px, 2.2vw, 36px)',
-              fontWeight: 900,
-              color: '#616BA5',
-              letterSpacing: '1px',
-              marginBottom: '2px',
-              lineHeight: 1.2
-            }}>
-              THE MISSING GUIDES
-            </h1>
-            <p style={{
-              fontSize: 'clamp(11px, 0.9vw, 14px)',
-              color: '#8E8E8B',
-              fontWeight: 400,
-              margin: 0
-            }}>
-              The comprehensive guides life forgot to include.
-            </p>
-          </div>
-        </Link>
-        <nav style={{ display: 'flex', gap: 'clamp(16px, 2vw, 32px)' }}>
-          <Link to="/blog" style={{
-            fontFamily: '"Work Sans", sans-serif',
-            fontSize: 'clamp(14px, 1.1vw, 17px)',
-            fontWeight: 500,
-            color: '#616BA5',
-            textDecoration: 'none',
-            letterSpacing: '0.5px',
-          }}>
-            Blog
-          </Link>
-          <Link to="/about" style={{
-            fontFamily: '"Work Sans", sans-serif',
-            fontSize: 'clamp(14px, 1.1vw, 17px)',
-            fontWeight: 500,
-            color: '#616BA5',
-            textDecoration: 'none',
-            letterSpacing: '0.5px',
-          }}>
-            About
-          </Link>
-        </nav>
-      </div>
-    </header>
-  )
+.header {
+  background: var(--cream, #F5EFE6);
+  border-bottom: 1.5px solid var(--rust, #8C3B24);
+  padding: clamp(12px, 1.5vw, 24px) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
+ 
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 80px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ 
+.brand {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.5vw, 20px);
+}
+ 
+.wordmark {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+ 
+.wordmarkTitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(16px, 1.8vw, 28px);
+  font-weight: 600;
+  color: var(--ink, #1C1510);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+ 
+.tagline {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: clamp(10px, 0.8vw, 13px);
+  color: var(--ink, #1C1510);
+  opacity: 0.55;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 2px;
+  letter-spacing: 0.01em;
+}
+ 
+.nav {
+  display: flex;
+  gap: clamp(16px, 2vw, 32px);
+}
+ 
+.navLink {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(13px, 1vw, 16px);
+  font-weight: 500;
+  color: var(--ink, #1C1510);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+}
+ 
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--rust, #8C3B24);
+  transition: width 0.25s ease;
+}
+ 
+.navLink:hover {
+  color: var(--rust, #8C3B24);
+}
+ 
+.navLink:hover::after {
+  width: 100%;
+}
+ 
+@media (max-width: 600px) {
+  .wordmarkTitle {
+    font-size: 15px;
+  }
+ 
+  .tagline {
+    display: none;
+  }
+ 
+  .nav {
+    gap: 14px;
+  }
+ 
+  .navLink {
+    font-size: 13px;
+  }
