@@ -15,7 +15,7 @@ exports.handler = async (event) => {
     } else {
       const priceMap = {
         // TEMPORARY: Test mode price ID - switch back to live price after testing
-        'alcohol': 'price_1SwlW2BgiaEKVIS7jniM4JLG',
+        'alcohol': process.env.STRIPE_PRICE_ALCOHOL,
         'opioid': process.env.STRIPE_PRICE_OPIOID,
         'stimulant': process.env.STRIPE_PRICE_STIMULANT,
         'benzo': process.env.STRIPE_PRICE_BENZO,
