@@ -1,0 +1,105 @@
+.header {
+  background: var(--cream, #F5EFE6);
+  border-bottom: 1.5px solid var(--rust, #8C3B24);
+  padding: clamp(12px, 1.5vw, 24px) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 80px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.5vw, 20px);
+}
+
+.wordmark {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.wordmarkTitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(16px, 1.8vw, 28px);
+  font-weight: 600;
+  color: var(--ink, #1C1510);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.tagline {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: clamp(10px, 0.8vw, 13px);
+  color: var(--ink, #1C1510);
+  opacity: 0.55;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 2px;
+  letter-spacing: 0.01em;
+}
+
+.nav {
+  display: flex;
+  gap: clamp(16px, 2vw, 32px);
+}
+
+.navLink {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(13px, 1vw, 16px);
+  font-weight: 500;
+  color: var(--ink, #1C1510);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--rust, #8C3B24);
+  transition: width 0.25s ease;
+}
+
+.navLink:hover {
+  color: var(--rust, #8C3B24);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .wordmarkTitle {
+    font-size: 15px;
+  }
+
+  .tagline {
+    display: none;
+  }
+
+  .nav {
+    gap: 14px;
+  }
+
+  .navLink {
+    font-size: 13px;
+  }
+}

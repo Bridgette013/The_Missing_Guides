@@ -1,0 +1,142 @@
+.footer {
+  background: var(--ink, #1C1510);
+  color: var(--cream, #F5EFE6);
+  padding: 60px 20px 40px;
+  margin-top: 80px;
+}
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* Brand column */
+.brandCol {
+  max-width: 280px;
+}
+
+.brandMark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.brandName {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--cream, #F5EFE6);
+  letter-spacing: 0.03em;
+}
+
+.brandTagline {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--cream, #F5EFE6);
+  opacity: 0.45;
+  font-style: italic;
+}
+
+/* Column headings */
+.colHeading {
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  color: var(--cream, #F5EFE6);
+  opacity: 0.8;
+}
+
+.emergencyHeading {
+  color: var(--gold, #C9A96E);
+  opacity: 1;
+}
+
+/* Link list */
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkList li {
+  margin-bottom: 10px;
+}
+
+.footerLink {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 14px;
+  color: var(--cream, #F5EFE6);
+  opacity: 0.5;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footerLink:hover {
+  opacity: 0.9;
+  color: var(--gold, #C9A96E);
+}
+
+/* Muted text */
+.muted {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 14px;
+  color: var(--cream, #F5EFE6);
+  opacity: 0.5;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.muted strong {
+  opacity: 1;
+  font-weight: 600;
+  color: var(--cream, #F5EFE6);
+}
+
+/* Bottom bar */
+.bottomBar {
+  border-top: 1px solid var(--cream, #F5EFE6);
+  border-top-color: rgba(245, 239, 230, 0.15);
+  padding-top: 28px;
+  text-align: center;
+}
+
+.copyright {
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  color: var(--cream, #F5EFE6);
+  opacity: 0.4;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.disclaimer {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 12px;
+  color: var(--cream, #F5EFE6);
+  opacity: 0.3;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 40px 16px 30px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .brandCol {
+    grid-column: 1 / -1;
+  }
+}
