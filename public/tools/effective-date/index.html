@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VA Effective Date Estimator | The Missing Guides</title>
+<meta name="description" content="A free, no-signup tool that estimates the effective date for a VA claim. Built by a veteran, for veterans.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://themissingguides.com/tools/effective-date">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Crimson+Pro:wght@400;500&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:        #F5EFE6;
+    --cream-mid:    #EDE4D7;
+    --cream-dark:   #E0D5C4;
+    --ink:          #1C1510;
+    --ink-mid:      #3D2F24;
+    --ink-light:    #6B5B4E;
+    --rust:         #8C3B24;
+    --rust-light:   #B05030;
+    --gold:         #C9A96E;
+    --gold-light:   #E8D5A8;
+    --gold-faint:   rgba(201, 169, 110, 0.12);
+
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'Crimson Pro', Georgia, serif;
+    --font-ui:      'Raleway', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 28px 20px 80px;
+  }
+
+  header.hdr {
+    margin-bottom: 28px;
+  }
+
+  .eyebrow {
+    font-family: var(--font-ui);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--rust);
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 1.1;
+    margin: 0 0 14px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+
+  .lede {
+    font-family: var(--font-body);
+    color: var(--ink-mid);
+    font-size: 19px;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 56ch;
+  }
+
+  hr.rule {
+    border: 0;
+    border-top: 1px solid var(--cream-dark);
+    margin: 28px 0;
+  }
+
+  form {
+    background: #fff;
+    border: 1px solid var(--cream-dark);
+    border-radius: 6px;
+    padding: 24px 22px 10px;
+    box-shadow: 0 1px 0 rgba(28,21,16,0.02);
+  }
+
+  .field {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-mid);
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .req {
+    color: var(--rust);
+    font-weight: 700;
+  }
+
+  .help {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--ink-light);
+    margin-top: 6px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+  }
+
+  input[type="date"],
+  select {
+    width: 100%;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 11px 12px;
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px;
+    background: #fff;
+    color: var(--ink);
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  input[type="date"]:focus,
+  select:focus {
+    outline: none;
+    border-color: var(--rust);
+    box-shadow: 0 0 0 3px rgba(140, 59, 36, 0.15);
+  }
+
+  select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'><path fill='%236B5B4E' d='M6 8 0 0h12z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 10px;
+    padding-right: 36px;
+  }
+
+  .actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+
+  button {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 13px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+
+  button.primary {
+    background: var(--rust);
+    color: var(--cream);
+    border-color: var(--rust);
+  }
+  button.primary:hover { background: var(--rust-light); border-color: var(--rust-light); }
+
+  button.ghost {
+    background: transparent;
+    color: var(--ink-mid);
+    border-color: var(--cream-dark);
+  }
+  button.ghost:hover { background: var(--cream-mid); }
+
+  .result {
+    margin-top: 26px;
+    background: var(--gold-faint);
+    border: 1px solid var(--gold-light);
+    border-left: 4px solid var(--rust);
+    border-radius: 6px;
+    padding: 22px 24px;
+  }
+
+  .result-label {
+    font-family: var(--font-ui);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--rust);
+    margin-bottom: 8px;
+  }
+
+  .result-date {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 14px;
+    letter-spacing: -0.005em;
+  }
+
+  .rationale {
+    font-family: var(--font-body);
+    color: var(--ink-mid);
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .rationale strong { color: var(--ink); }
+
+  .rule-cite {
+    display: inline-block;
+    margin-top: 12px;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    background: #fff;
+    border: 1px solid var(--cream-dark);
+    border-radius: 3px;
+    padding: 5px 9px;
+  }
+
+  .error {
+    margin-top: 16px;
+    background: #fbeeea;
+    border-left: 4px solid var(--rust);
+    color: #5c2415;
+    padding: 13px 16px;
+    border-radius: 4px;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* CTA */
+  .cta {
+    margin-top: 40px;
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 8px;
+    padding: 30px 28px;
+  }
+
+  .cta-eyebrow {
+    font-family: var(--font-ui);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .cta h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 0 0 14px;
+    color: var(--cream);
+    letter-spacing: -0.005em;
+  }
+
+  .cta p {
+    font-family: var(--font-body);
+    color: var(--cream-mid);
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0 0 20px;
+    max-width: 52ch;
+  }
+
+  .cta-list {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--cream-mid);
+    padding-left: 18px;
+    margin: 0 0 22px;
+    line-height: 1.7;
+  }
+  .cta-list li { margin-bottom: 4px; }
+
+  .cta-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 13px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .cta-btn:hover { background: var(--gold-light); }
+
+  .cta-price {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 26px;
+    color: var(--gold);
+  }
+
+  /* Disclaimers */
+  .disclaimer {
+    margin-top: 40px;
+    padding-top: 22px;
+    border-top: 1px solid var(--cream-dark);
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--ink-light);
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+  }
+
+  footer.foot {
+    margin-top: 26px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-light);
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+  footer.foot a {
+    color: var(--ink-mid);
+    text-decoration: underline;
+    text-decoration-color: var(--cream-dark);
+  }
+
+  /* Mobile tweaks */
+  @media (max-width: 480px) {
+    .wrap { padding: 22px 16px 60px; }
+    h1 { font-size: 34px; }
+    .lede { font-size: 17px; }
+    .result-date { font-size: 30px; }
+    form { padding: 20px 16px 8px; }
+    .cta { padding: 24px 20px; }
+    .cta h2 { font-size: 24px; }
+  }
+
+  /* Focus-visible */
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid var(--rust);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hdr">
+      <div class="eyebrow">The Missing Guides · Free Tool</div>
+      <h1>VA Effective Date Estimator</h1>
+      <p class="lede">Estimate the effective date the VA is likely to assign your claim. Built by a veteran. No signup, no email, no data stored.</p>
+    </header>
+
+    <form id="calcForm" novalidate>
+      <div class="field">
+        <label for="claimType">Claim type <span class="req">*</span></label>
+        <select id="claimType" required>
+          <option value="original">Original claim</option>
+          <option value="increase">Increase / re-evaluation</option>
+          <option value="supplemental">Supplemental claim</option>
+          <option value="hlr">Higher-Level Review (HLR)</option>
+        </select>
+        <span class="help">Original = first time filing for this condition. Increase = already service-connected, asking for a higher rating. Supplemental/HLR = continuing a prior decision.</span>
+      </div>
+
+      <div class="field">
+        <label for="itfDate">Intent to File (ITF) date</label>
+        <input type="date" id="itfDate">
+        <span class="help">Optional. If you filed VA Form 21-0966 first, enter that date. ITF holds your place for one year.</span>
+      </div>
+
+      <div class="field">
+        <label for="claimDate">Formal claim date <span class="req">*</span></label>
+        <input type="date" id="claimDate" required>
+        <span class="help">Date the VA received your formal claim (VA Form 21-526EZ, 20-0995, or 20-0996).</span>
+      </div>
+
+      <div class="field">
+        <label for="entitlementDate">Date entitlement arose</label>
+        <input type="date" id="entitlementDate">
+        <span class="help">Optional. The date the medical or factual basis for entitlement existed — e.g., the date a doctor documented the condition worsened, or the date a new diagnosis was made. Leave blank if unsure.</span>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="primary">Estimate effective date</button>
+        <button type="reset" class="ghost" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <div id="output" aria-live="polite"></div>
+
+    <section class="cta" aria-label="VA Toolkit upsell">
+      <div class="cta-eyebrow">Need the full picture?</div>
+      <h2>This is one part of the picture.</h2>
+      <p>Effective date is only one piece. For retro pay estimates, the HLR vs Supplemental decision tree, and 6 walkthrough PDFs that explain the whole claim process step-by-step:</p>
+      <ul class="cta-list">
+        <li>Retro pay calculator (with rating &amp; dependent math)</li>
+        <li>HLR vs Supplemental decision tree</li>
+        <li>6 walkthrough PDFs covering filing, evidence, appeals, and exam prep</li>
+        <li>Plain-English templates and checklists</li>
+      </ul>
+      <div class="cta-row">
+        <a class="cta-btn" href="https://vvvdigitals.com/store/va-toolkit" rel="noopener">Get the VA Toolkit</a>
+        <span class="cta-price">$39</span>
+      </div>
+    </section>
+
+    <p class="disclaimer">
+      Educational use only. Estimates only. Verify with the VA. Not legal or claims advice. Not affiliated with the U.S. Department of Veterans Affairs. This tool implements general rules under 38 CFR 3.400; individual cases may have facts or exceptions that change the result.
+    </p>
+
+    <footer class="foot">
+      <a href="https://themissingguides.com">themissingguides.com</a> · A project by VVV Digitals
+    </footer>
+  </div>
+
+<script>
+(function () {
+  'use strict';
+
+  /**
+   * computeEffectiveDate
+   * --------------------
+   * Mirrors the math reference at /vvv-store/src/lib/va-calculator.js
+   * Rules anchored in 38 CFR 3.400 and 3.2500.
+   *
+   * Inputs:
+   *   claimType       : "original" | "increase" | "supplemental" | "hlr"
+   *   itfDate         : Date | null
+   *   claimDate       : Date  (required)
+   *   entitlementDate : Date | null
+   *
+   * Returns { effectiveDate: Date, rationale: string, rule: string }
+   */
+  function computeEffectiveDate(claimType, itfDate, claimDate, entitlementDate) {
+    if (!claimDate) {
+      throw new Error('Formal claim date is required.');
+    }
+
+    // Step 1: Apply Intent to File logic.
+    // If an ITF was filed and the formal claim is received within 1 year of the ITF,
+    // the ITF date is treated as the date of claim. (38 CFR 3.155)
+    var effectiveClaimDate = claimDate;
+    var itfApplied = false;
+
+    if (itfDate) {
+      var oneYearAfterITF = addYears(itfDate, 1);
+      if (itfDate <= claimDate && claimDate <= oneYearAfterITF) {
+        effectiveClaimDate = itfDate;
+        itfApplied = true;
+      }
+    }
+
+    var result = {
+      effectiveDate: effectiveClaimDate,
+      rationale: '',
+      rule: ''
+    };
+
+    // Step 2: Apply claim-type-specific rules.
+    switch (claimType) {
+      case 'original': {
+        // 38 CFR 3.400(b)(2): later of date of claim or date entitlement arose.
+        if (entitlementDate && entitlementDate > effectiveClaimDate) {
+          result.effectiveDate = entitlementDate;
+          result.rationale =
+            (itfApplied
+              ? 'Your ITF locked in <strong>' + fmt(effectiveClaimDate) + '</strong> as the date of claim. '
+              : 'Your formal claim was received <strong>' + fmt(effectiveClaimDate) + '</strong>. ') +
+            'But the date entitlement arose (<strong>' + fmt(entitlementDate) + '</strong>) is later, so the effective date is the date entitlement arose. ' +
+            'For original claims, the VA uses the <em>later</em> of date of claim or date entitlement arose.';
+        } else {
+          result.effectiveDate = effectiveClaimDate;
+          result.rationale =
+            'For an original claim, the effective date is the <em>later</em> of date of claim or date entitlement arose. ' +
+            (itfApplied
+              ? 'Your ITF locked in <strong>' + fmt(effectiveClaimDate) + '</strong> as the date of claim, and that controls.'
+              : 'The date of claim is <strong>' + fmt(effectiveClaimDate) + '</strong>' +
+                (entitlementDate
+                  ? ', and the date entitlement arose (' + fmt(entitlementDate) + ') is earlier or the same, so the claim date controls.'
+                  : '. (No entitlement date provided, so the claim date controls.)'));
+        }
+        result.rule = '38 CFR 3.400(b)(2) — Original claim';
+        break;
+      }
+
+      case 'increase': {
+        // 38 CFR 3.400(o)(2): for a claim for increase, the effective date is the
+        // EARLIEST date factually ascertainable that an increase occurred, IF a
+        // claim is received within 1 year from that date. Otherwise, date of claim.
+        if (entitlementDate && entitlementDate < effectiveClaimDate) {
+          var oneYearPriorToClaim = addYears(effectiveClaimDate, -1);
+          if (entitlementDate >= oneYearPriorToClaim) {
+            result.effectiveDate = entitlementDate;
+            result.rationale =
+              'For an increase, the effective date can reach back up to <strong>1 year before the claim date</strong> to the date the increase was factually ascertainable. ' +
+              'Your entitlement date (<strong>' + fmt(entitlementDate) + '</strong>) falls within that window, so it controls. ' +
+              (itfApplied
+                ? 'Your ITF (used as date of claim) was ' + fmt(effectiveClaimDate) + '. '
+                : 'Your date of claim is ' + fmt(effectiveClaimDate) + '. ');
+          } else {
+            result.effectiveDate = effectiveClaimDate;
+            result.rationale =
+              'For an increase, the effective date can reach back up to 1 year before the date of claim — but no further. ' +
+              'Your entitlement date (<strong>' + fmt(entitlementDate) + '</strong>) is more than a year before the claim date (<strong>' + fmt(effectiveClaimDate) + '</strong>), so the effective date is the date of claim. ' +
+              (itfApplied ? '(Your ITF locked in the date of claim.)' : '');
+          }
+        } else {
+          result.effectiveDate = effectiveClaimDate;
+          result.rationale =
+            'For an increase, the effective date is the date of claim — unless a factually ascertainable increase occurred within the year before. ' +
+            (entitlementDate
+              ? 'Your entitlement date (<strong>' + fmt(entitlementDate) + '</strong>) is not earlier than the claim date, so the claim date controls.'
+              : '(No entitlement date provided, so the claim date controls.)') + ' ' +
+            (itfApplied ? 'Your ITF locked in <strong>' + fmt(effectiveClaimDate) + '</strong> as the date of claim.' : '');
+        }
+        result.rule = '38 CFR 3.400(o)(2) — Claim for increase';
+        break;
+      }
+
+      case 'supplemental':
+      case 'hlr': {
+        // 38 CFR 3.2500: continuous pursuit. If the supplemental claim or HLR is
+        // filed within 1 year of notice of the prior decision, the effective date
+        // generally relates back to the date of the qualifying (original) claim.
+        // Without a prior-decision date input, we treat the formal claim date as
+        // the operative date and flag the relation-back rule for the user.
+        var label = (claimType === 'hlr') ? 'Higher-Level Review' : 'Supplemental claim';
+        var ruleCite = (claimType === 'hlr')
+          ? '38 CFR 3.2500 / 3.2601 — Higher-Level Review'
+          : '38 CFR 3.2500 — Supplemental claim';
+
+        if (entitlementDate && entitlementDate > effectiveClaimDate) {
+          result.effectiveDate = entitlementDate;
+        } else {
+          result.effectiveDate = effectiveClaimDate;
+        }
+
+        result.rationale =
+          'For a ' + label + ', the effective date depends on <em>continuous pursuit</em>: ' +
+          'if filed within 1 year of the prior decision, the effective date generally relates back to the original qualifying claim. ' +
+          'If filed later, the effective date is typically the date of the ' + label.toLowerCase() + ' (or date entitlement arose, whichever is later). ' +
+          'Based on the dates you provided, the working estimate is <strong>' + fmt(result.effectiveDate) + '</strong>. ' +
+          'For an accurate result, you also need the date of the prior VA decision — that input is in the full VA Toolkit.';
+        result.rule = ruleCite;
+        break;
+      }
+
+      default:
+        throw new Error('Unknown claim type.');
+    }
+
+    return result;
+  }
+
+  // ---- date helpers ----
+  function parseDateLocal(value) {
+    if (!value) return null;
+    var parts = value.split('-');
+    if (parts.length !== 3) return null;
+    var y = parseInt(parts[0], 10);
+    var m = parseInt(parts[1], 10);
+    var d = parseInt(parts[2], 10);
+    if (!y || !m || !d) return null;
+    return new Date(y, m - 1, d);
+  }
+
+  function addYears(date, years) {
+    var d = new Date(date.getTime());
+    d.setFullYear(d.getFullYear() + years);
+    return d;
+  }
+
+  function fmt(date) {
+    if (!(date instanceof Date) || isNaN(date)) return '—';
+    var months = ['January','February','March','April','May','June',
+                  'July','August','September','October','November','December'];
+    return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+  }
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+    });
+  }
+
+  // ---- UI wiring ----
+  var form = document.getElementById('calcForm');
+  var output = document.getElementById('output');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    output.innerHTML = '';
+
+    var claimType = document.getElementById('claimType').value;
+    var itfDate = parseDateLocal(document.getElementById('itfDate').value);
+    var claimDate = parseDateLocal(document.getElementById('claimDate').value);
+    var entitlementDate = parseDateLocal(document.getElementById('entitlementDate').value);
+
+    // Validation
+    if (!claimDate) {
+      renderError('Please enter the formal claim date.');
+      return;
+    }
+    if (itfDate && itfDate > claimDate) {
+      renderError('The ITF date should be on or before the formal claim date.');
+      return;
+    }
+    var today = new Date();
+    today.setHours(0,0,0,0);
+    if (claimDate > today) {
+      renderError('The formal claim date is in the future. Use the date the VA actually received your claim.');
+      return;
+    }
+
+    try {
+      var result = computeEffectiveDate(claimType, itfDate, claimDate, entitlementDate);
+      renderResult(result);
+    } catch (err) {
+      renderError(err.message || 'Something went wrong.');
+    }
+  });
+
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    output.innerHTML = '';
+  });
+
+  function renderResult(result) {
+    var html = '' +
+      '<div class="result" role="region" aria-label="Estimated effective date">' +
+        '<div class="result-label">Estimated Effective Date</div>' +
+        '<p class="result-date">' + esc(fmt(result.effectiveDate)) + '</p>' +
+        '<p class="rationale">' + result.rationale + '</p>' +
+        '<span class="rule-cite">' + esc(result.rule) + '</span>' +
+      '</div>';
+    output.innerHTML = html;
+    output.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function renderError(msg) {
+    output.innerHTML = '<div class="error">' + esc(msg) + '</div>';
+  }
+
+  // Expose for testing / parity check with vvv-store version
+  window.computeEffectiveDate = computeEffectiveDate;
+})();
+</script>
+</body>
+</html>
