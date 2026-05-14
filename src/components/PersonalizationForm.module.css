@@ -94,7 +94,8 @@
 }
 
 .button:hover {
-  background: #7A3320;
+  background: var(--rust);
+  filter: brightness(0.88);
   transform: translateY(-1px);
 }
 

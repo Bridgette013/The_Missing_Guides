@@ -119,8 +119,8 @@
 }
 
 .personal { color: var(--rust); }
-.recovery { color: #5B7C6B; }
-.systems  { color: #4A5E7A; }
+.recovery { color: var(--rust); }
+.systems  { color: var(--gold); }
 
 .featuredTitle {
   font-family: var(--font-display);

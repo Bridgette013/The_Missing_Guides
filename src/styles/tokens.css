@@ -15,4 +15,19 @@
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Crimson Pro', Georgia, serif;
   --font-ui: 'Raleway', sans-serif;
+
+  /* Cross-brand legal palette — neutral, designed for reuse across
+     properties (Missing Guides, VVV Digitals). Never reference brand
+     tokens above. */
+  --legal-bg: #FAFAFA;
+  --legal-surface: #FFFFFF;
+  --legal-text: #1F2937;
+  --legal-heading: #111827;
+  --legal-muted: #6B7280;
+  --legal-link: #2563EB;
+  --legal-link-hover: #1E40AF;
+  --legal-divider: #E5E7EB;
+  --legal-emphasis: #B91C1C;
+  --legal-font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --legal-font-heading: var(--legal-font-body);
 }

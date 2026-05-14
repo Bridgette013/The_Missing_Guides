@@ -4,14 +4,14 @@ const Logo = ({ variant = 'light', size = 42 }) => {
   const isDark = variant === 'dark'
   const cream = 'rgba(245,239,230,'
   const gold = 'rgba(201,169,110,'
-  const outerStroke = isDark ? `${cream}0.35)` : '#1C1510'
-  const ringStroke = isDark ? `${gold}0.55)` : '#1C1510'
-  const southFill = isDark ? `${cream}0.5)` : '#1C1510'
-  const eastFill = isDark ? `${cream}0.5)` : '#1C1510'
-  const westFill = isDark ? `${cream}0.5)` : '#1C1510'
-  const ordinalFill = isDark ? `${cream}0.25)` : '#1C1510'
-  const crosshairStroke = isDark ? `${cream}0.15)` : '#1C1510'
-  const gFill = isDark ? `${cream}0.88)` : '#1C1510'
+  const outerStroke = isDark ? `${cream}0.35)` : 'var(--ink)'
+  const ringStroke = isDark ? `${gold}0.55)` : 'var(--ink)'
+  const southFill = isDark ? `${cream}0.5)` : 'var(--ink)'
+  const eastFill = isDark ? `${cream}0.5)` : 'var(--ink)'
+  const westFill = isDark ? `${cream}0.5)` : 'var(--ink)'
+  const ordinalFill = isDark ? `${cream}0.25)` : 'var(--ink)'
+  const crosshairStroke = isDark ? `${cream}0.15)` : 'var(--ink)'
+  const gFill = isDark ? `${cream}0.88)` : 'var(--ink)'
   const maskId = `ring-mask-${variant}-${Math.random().toString(36).slice(2, 7)}`
 
   return (
@@ -39,7 +39,7 @@ const Logo = ({ variant = 'light', size = 42 }) => {
       <g className={styles.compass} opacity="0.72">
         <circle cx="100" cy="100" r="95" stroke={outerStroke} strokeWidth="1.25" />
         <circle cx="100" cy="100" r="62" stroke={ringStroke} strokeWidth="0.85" strokeDasharray="2.5 5.5" opacity="0.55" mask={`url(#${maskId})`} />
-        <polygon points="100,5 105,30 100,58 95,30" fill="#8C3B24" />
+        <polygon points="100,5 105,30 100,58 95,30" fill="var(--rust)" />
         <polygon points="100,195 105,170 100,142 95,170" fill={southFill} />
         <polygon points="195,100 170,95 142,100 170,105" fill={eastFill} />
         <polygon points="5,100 30,95 58,100 30,105" fill={westFill} />

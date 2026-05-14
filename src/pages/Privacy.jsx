@@ -1,163 +1,105 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import LegalLayout, { legalStyles } from '../components/LegalLayout'
 
 export default function Privacy() {
   return (
     <div>
       <Header />
-      <div style={{
-        maxWidth: '900px',
-        margin: '60px auto',
-        padding: '40px 20px',
-        fontFamily: 'Inter, sans-serif',
-        lineHeight: 1.8,
-        color: '#1a1a1a',
-        background: '#FFFFFF'
-      }}>
-        <h1 style={{
-          fontFamily: '"Merriweather", serif',
-          fontSize: '42px',
-          color: '#616BA5',
-          marginBottom: '20px'
-        }}>
-          Privacy Policy
-        </h1>
-        
-        <p style={{ color: '#8E8E8B', marginBottom: '40px' }}>
-          Effective Date: January 27, 2026
-        </p>
-
-        <p style={{ marginBottom: '30px' }}>
+      <LegalLayout
+        title="Privacy Policy"
+        effectiveDate="January 27, 2026"
+        lastUpdated="January 27, 2026"
+        entity="VVV Digitals LLC • The Missing Guides"
+      >
+        <p>
           VVV Digitals LLC ("we," "us," "our") operates TheMissingGuides.com. This Privacy Policy explains how we collect, use, and protect your personal information.
         </p>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
-          1. Information We Collect
-        </h2>
-        
-        <p style={{ marginBottom: '15px', fontWeight: 600 }}>Information You Provide:</p>
-        <ul style={{ marginBottom: '20px', paddingLeft: '30px' }}>
-          <li style={{ marginBottom: '10px' }}>Your name (caregiver)</li>
-          <li style={{ marginBottom: '10px' }}>Loved one's name (patient)</li>
-          <li style={{ marginBottom: '10px' }}>Email address (for delivery)</li>
-          <li style={{ marginBottom: '10px' }}>Relationship (e.g., mother, partner, friend)</li>
-          <li style={{ marginBottom: '10px' }}>Pronoun preferences</li>
-          <li style={{ marginBottom: '10px' }}>Optional information (hospital name, emergency contact)</li>
+        <h2>1. Information We Collect</h2>
+        <p><strong>Information You Provide:</strong></p>
+        <ul>
+          <li>Your name (caregiver)</li>
+          <li>Loved one's name (patient)</li>
+          <li>Email address (for delivery)</li>
+          <li>Relationship (e.g., mother, partner, friend)</li>
+          <li>Pronoun preferences</li>
+          <li>Optional information (hospital name, emergency contact)</li>
+        </ul>
+        <p><strong>Payment Information:</strong></p>
+        <ul>
+          <li>Processed by Stripe (our payment processor)</li>
+          <li>We DO NOT store credit card information</li>
+          <li>Stripe handles all payment data securely</li>
+        </ul>
+        <p><strong>Automatically Collected:</strong></p>
+        <ul>
+          <li>IP address</li>
+          <li>Browser type and version</li>
+          <li>Pages visited on our site</li>
+          <li>Time and date of visits</li>
         </ul>
 
-        <p style={{ marginBottom: '15px', fontWeight: 600 }}>Payment Information:</p>
-        <ul style={{ marginBottom: '20px', paddingLeft: '30px' }}>
-          <li style={{ marginBottom: '10px' }}>Processed by Stripe (our payment processor)</li>
-          <li style={{ marginBottom: '10px' }}>We DO NOT store credit card information</li>
-          <li style={{ marginBottom: '10px' }}>Stripe handles all payment data securely</li>
+        <h2>2. How We Use Your Information</h2>
+        <p><strong>Primary Purpose - Guide Personalization:</strong></p>
+        <ul>
+          <li>Customize your guide with names, pronouns, and relationships</li>
+          <li>Generate a personalized 200-page PDF</li>
+          <li>Deliver your guide via email</li>
+        </ul>
+        <p><strong>What We DON'T Do:</strong></p>
+        <ul>
+          <li>Sell your information to third parties</li>
+          <li>Share sensitive details with anyone</li>
+          <li>Send marketing emails (unless you opt-in)</li>
+          <li>Use your data for advertising</li>
         </ul>
 
-        <p style={{ marginBottom: '15px', fontWeight: 600 }}>Automatically Collected:</p>
-        <ul style={{ marginBottom: '30px', paddingLeft: '30px' }}>
-          <li style={{ marginBottom: '10px' }}>IP address</li>
-          <li style={{ marginBottom: '10px' }}>Browser type and version</li>
-          <li style={{ marginBottom: '10px' }}>Pages visited on our site</li>
-          <li style={{ marginBottom: '10px' }}>Time and date of visits</li>
+        <h2>3. How We Share Your Information</h2>
+        <p><strong>Service Providers:</strong></p>
+        <ul>
+          <li><strong>Stripe</strong> - Payment processing</li>
+          <li><strong>SendGrid</strong> - Email delivery (email address only)</li>
+          <li><strong>Netlify</strong> - Hosting (technical data only)</li>
+        </ul>
+        <p><strong>We Never Share:</strong></p>
+        <ul>
+          <li>Patient names with third parties</li>
+          <li>Relationship details with anyone</li>
+          <li>Sensitive personal information</li>
         </ul>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
-          2. How We Use Your Information
-        </h2>
-        
-        <p style={{ marginBottom: '15px', fontWeight: 600 }}>Primary Purpose - Guide Personalization:</p>
-        <ul style={{ marginBottom: '20px', paddingLeft: '30px' }}>
-          <li style={{ marginBottom: '10px' }}>Customize your guide with names, pronouns, and relationships</li>
-          <li style={{ marginBottom: '10px' }}>Generate a personalized 200-page PDF</li>
-          <li style={{ marginBottom: '10px' }}>Deliver your guide via email</li>
+        <h2>4. Data Security</h2>
+        <ul>
+          <li><strong>Encryption:</strong> SSL/TLS encryption for all data transmission</li>
+          <li><strong>Secure hosting:</strong> Netlify's secure infrastructure</li>
+          <li><strong>Payment security:</strong> PCI-compliant through Stripe</li>
+          <li><strong>No storage:</strong> Personalized data not stored long-term</li>
         </ul>
 
-        <p style={{ marginBottom: '15px', fontWeight: 600 }}>What We DON'T Do:</p>
-        <ul style={{ marginBottom: '30px', paddingLeft: '30px' }}>
-          <li style={{ marginBottom: '10px' }}>❌ Sell your information to third parties</li>
-          <li style={{ marginBottom: '10px' }}>❌ Share sensitive details with anyone</li>
-          <li style={{ marginBottom: '10px' }}>❌ Send marketing emails (unless you opt-in)</li>
-          <li style={{ marginBottom: '10px' }}>❌ Use your data for advertising</li>
+        <h2>5. Your Rights</h2>
+        <p><strong>You Have the Right To:</strong></p>
+        <ul>
+          <li>Access - Request a copy of your data</li>
+          <li>Correction - Update inaccurate information</li>
+          <li>Deletion - Request removal of your data</li>
+          <li>Portability - Receive your data in usable format</li>
         </ul>
 
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
-          3. How We Share Your Information
-        </h2>
-        
-        <p style={{ marginBottom: '15px', fontWeight: 600 }}>Service Providers:</p>
-        <ul style={{ marginBottom: '20px', paddingLeft: '30px' }}>
-          <li style={{ marginBottom: '10px' }}><strong>Stripe</strong> - Payment processing</li>
-          <li style={{ marginBottom: '10px' }}><strong>SendGrid</strong> - Email delivery (email address only)</li>
-          <li style={{ marginBottom: '10px' }}><strong>Netlify</strong> - Hosting (technical data only)</li>
-        </ul>
+        <h2>6. Contact Us</h2>
+        <p><strong>Questions about your privacy?</strong></p>
+        <p>Email: admin@vvvdigitals.com</p>
+        <p>Business: VVV Digitals LLC</p>
+        <p>Response Time: Within 72 hours</p>
 
-        <p style={{ marginBottom: '15px', fontWeight: 600 }}>We Never Share:</p>
-        <ul style={{ marginBottom: '30px', paddingLeft: '30px' }}>
-          <li style={{ marginBottom: '10px' }}>Patient names with third parties</li>
-          <li style={{ marginBottom: '10px' }}>Relationship details with anyone</li>
-          <li style={{ marginBottom: '10px' }}>Sensitive personal information</li>
-        </ul>
-
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
-          4. Data Security
-        </h2>
-        <ul style={{ marginBottom: '30px', paddingLeft: '30px' }}>
-          <li style={{ marginBottom: '10px' }}><strong>Encryption:</strong> SSL/TLS encryption for all data transmission</li>
-          <li style={{ marginBottom: '10px' }}><strong>Secure hosting:</strong> Netlify's secure infrastructure</li>
-          <li style={{ marginBottom: '10px' }}><strong>Payment security:</strong> PCI-compliant through Stripe</li>
-          <li style={{ marginBottom: '10px' }}><strong>No storage:</strong> Personalized data not stored long-term</li>
-        </ul>
-
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
-          5. Your Rights
-        </h2>
-        <p style={{ marginBottom: '15px', fontWeight: 600 }}>You Have the Right To:</p>
-        <ul style={{ marginBottom: '30px', paddingLeft: '30px' }}>
-          <li style={{ marginBottom: '10px' }}>Access - Request a copy of your data</li>
-          <li style={{ marginBottom: '10px' }}>Correction - Update inaccurate information</li>
-          <li style={{ marginBottom: '10px' }}>Deletion - Request removal of your data</li>
-          <li style={{ marginBottom: '10px' }}>Portability - Receive your data in usable format</li>
-        </ul>
-
-        <h2 style={{ fontSize: '28px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginTop: '40px', marginBottom: '20px' }}>
-          6. Contact Us
-        </h2>
-        <p style={{ marginBottom: '10px' }}>
-          <strong>Questions about your privacy?</strong>
-        </p>
-        <p style={{ marginBottom: '10px' }}>Email: admin@vvvdigitals.com</p>
-        <p style={{ marginBottom: '10px' }}>Business: VVV Digitals LLC</p>
-        <p style={{ marginBottom: '40px' }}>Response Time: Within 72 hours</p>
-
-        <div style={{
-          background: '#F8F9FA',
-          border: '2px solid #9199C7',
-          borderRadius: '8px',
-          padding: '30px',
-          marginTop: '40px',
-          marginBottom: '40px'
-        }}>
-          <h3 style={{ fontSize: '20px', fontFamily: '"Merriweather", serif', color: '#616BA5', marginBottom: '15px' }}>
-            Our Commitment to Privacy
-          </h3>
-          <p style={{ margin: 0 }}>
+        <aside className={legalStyles.callout}>
+          <h3>Our Commitment to Privacy</h3>
+          <p>
             We understand the sensitive nature of addiction recovery. Your privacy and your loved one's privacy are paramount. We collect only what's necessary to personalize your guide and will never share sensitive details.
           </p>
-          <p style={{ marginTop: '15px', marginBottom: 0, fontWeight: 600 }}>
-            You trusted us with your story. We take that seriously.
-          </p>
-        </div>
-
-        <div style={{
-          borderTop: '2px solid #9199C7',
-          paddingTop: '30px',
-          marginTop: '60px',
-          color: '#8E8E8B',
-          fontSize: '14px'
-        }}>
-          <p>Last Updated: January 27, 2026</p>
-          <p>VVV Digitals LLC • The Missing Guides</p>
-        </div>
-      </div>
+          <p><strong>You trusted us with your story. We take that seriously.</strong></p>
+        </aside>
+      </LegalLayout>
       <Footer />
     </div>
   )

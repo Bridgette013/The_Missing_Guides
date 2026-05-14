@@ -1,0 +1,136 @@
+/* Cross-brand legal layout. Uses --legal-* tokens only — never reference
+   brand tokens (cream/ink/rust/gold) so this component can be cloned to
+   sibling repos (VVV Digitals, etc.) with only verbiage changes. */
+
+.shell {
+  background: var(--legal-bg);
+  font-family: var(--legal-font-body);
+  color: var(--legal-text);
+  line-height: 1.7;
+  padding: 60px 20px 80px;
+}
+
+.article {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--legal-surface);
+  padding: clamp(28px, 5vw, 56px);
+  border: 1px solid var(--legal-divider);
+  border-radius: 10px;
+}
+
+.title {
+  font-family: var(--legal-font-heading);
+  font-size: clamp(32px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--legal-heading);
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.effectiveDate {
+  color: var(--legal-muted);
+  font-size: 14px;
+  margin: 0 0 40px;
+}
+
+.body {
+  font-size: 16px;
+}
+
+.body h2 {
+  font-family: var(--legal-font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--legal-heading);
+  margin: 44px 0 16px;
+  letter-spacing: -0.005em;
+}
+
+.body h3 {
+  font-family: var(--legal-font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--legal-heading);
+  margin: 28px 0 12px;
+}
+
+.body p {
+  margin: 0 0 18px;
+}
+
+.body ul,
+.body ol {
+  margin: 0 0 22px;
+  padding-left: 28px;
+}
+
+.body li {
+  margin-bottom: 10px;
+}
+
+.body strong {
+  color: var(--legal-heading);
+  font-weight: 600;
+}
+
+.body a {
+  color: var(--legal-link);
+  text-decoration: underline;
+}
+
+.body a:hover {
+  color: var(--legal-link-hover);
+}
+
+/* Emphasis callout — for "all sales final" / privacy commitment / etc.
+   Replaces the old purple decorative boxes. */
+.callout {
+  background: var(--legal-bg);
+  border-left: 4px solid var(--legal-emphasis);
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin: 28px 0;
+}
+
+.callout :is(h2, h3) {
+  margin-top: 0;
+  color: var(--legal-emphasis);
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* Neutral surface — used for the "what we collect / how to refund"
+   sub-sections that grouped content in light gray boxes before. */
+.subSurface {
+  background: var(--legal-bg);
+  border: 1px solid var(--legal-divider);
+  border-radius: 6px;
+  padding: 22px 26px;
+  margin: 0 0 20px;
+}
+
+.subSurface p:last-child,
+.subSurface ul:last-child,
+.subSurface ol:last-child {
+  margin-bottom: 0;
+}
+
+.footer {
+  border-top: 1px solid var(--legal-divider);
+  margin-top: 56px;
+  padding-top: 24px;
+  color: var(--legal-muted);
+  font-size: 14px;
+}
+
+.footer p {
+  margin: 4px 0;
+}
+
+@media (max-width: 600px) {
+  .shell { padding: 40px 12px 60px; }
+  .article { padding: 28px 20px; }
+}
