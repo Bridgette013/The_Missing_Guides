@@ -461,8 +461,7 @@
   /**
    * computeEffectiveDate
    * --------------------
-   * Mirrors the math reference at /vvv-store/src/lib/va-calculator.js
-   * Rules anchored in 38 CFR 3.400 and 3.2500.
+   * Implements 38 CFR 3.400 effective date rules.
    *
    * Inputs:
    *   claimType       : "original" | "increase" | "supplemental" | "hlr"
@@ -581,7 +580,7 @@
           'if filed within 1 year of the prior decision, the effective date generally relates back to the original qualifying claim. ' +
           'If filed later, the effective date is typically the date of the ' + label.toLowerCase() + ' (or date entitlement arose, whichever is later). ' +
           'Based on the dates you provided, the working estimate is <strong>' + fmt(result.effectiveDate) + '</strong>. ' +
-          'For an accurate result, you also need the date of the prior VA decision — that input is in the full VA Toolkit.';
+          'Run your scenario through the full VA Toolkit to walk the supplemental and HLR decision tree, lock in the relation-back logic, and pull the retro estimate against current rates.';
         result.rule = ruleCite;
         break;
       }
