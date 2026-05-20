@@ -10,6 +10,11 @@ import Refund from './pages/Refund'
 import Disclaimer from './pages/Disclaimer'
 import Blog from './pages/Blog'
 import ClosingTheGap from './pages/blog/ClosingTheGap'
+import Store from './pages/Store'
+import ProductPage from './pages/ProductPage'
+import ThankYou from './pages/store/ThankYou'
+import VaCalculator from './pages/tools/VaCalculator'
+import LicenseGate from './components/store/LicenseGate'
 import './App.css'
 
 function App() {
@@ -27,6 +32,17 @@ function App() {
         <Route path="/disclaimer" element={<Disclaimer />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/closing-the-gap" element={<ClosingTheGap />} />
+        <Route path="/store" element={<Store />} />
+        <Route path="/store/:slug" element={<ProductPage />} />
+        <Route path="/store/:slug/thank-you" element={<ThankYou />} />
+        <Route
+          path="/tools/va-calculator"
+          element={
+            <LicenseGate slug="va-toolkit">
+              <VaCalculator />
+            </LicenseGate>
+          }
+        />
       </Routes>
     </Router>
   )
